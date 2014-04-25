@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'localhost:8080/SportApp';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
