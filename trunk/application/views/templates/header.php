@@ -7,6 +7,7 @@
         <script type="text/javascript"
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEsUxlS6oNJQeozlpm9Kc7J6B4-xJtAys&sensor=false">
         </script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
         <script type="text/javascript" src="assets/js/googlemapapi.js"></script>
         
      </head>
