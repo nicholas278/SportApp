@@ -1,5 +1,5 @@
 	<div id="footer">
-            <strong>&copy; Nicholas&Canon 2014</strong>
+         <!--   <strong>&copy; Nicholas&Canon 2014</strong> -->
 		<div ID="footerchild">
 			<a href="about.html">About</a>
 			|

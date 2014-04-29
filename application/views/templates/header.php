@@ -11,4 +11,4 @@
         <script type="text/javascript" src="assets/js/googlemapapi.js"></script>
         
      </head>
-     <body>
+     <body class="color5">
