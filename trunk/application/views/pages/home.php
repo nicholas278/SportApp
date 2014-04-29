@@ -33,16 +33,5 @@
 			<p>testing</p>
 		</div>
 	</div>
-	<div id="footer">
-		<div ID="footerchild">
-			<a href="about.html">About</a>
-			|
-			<a href="contribute.html">Contribute</a>
-			|
-			<a href="contact.html">Contact Us</a>
-			|
-			<a href="terms.html">Terms of Use</a>
-		</div>
-	</div>
 
 
