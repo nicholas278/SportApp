@@ -5,8 +5,6 @@ class Pages extends CI_Controller {
         public function __construct()
             {
 		parent::__construct();
-		$this->load->helper('html');
-                link_tag('localhost:8080/SportApp/application/views/css/style.css');
             }
             
 	public function view($page = 'home')
