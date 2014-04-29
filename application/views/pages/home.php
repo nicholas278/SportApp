@@ -1,8 +1,4 @@
 <!--HTML body goes here-->
-
-<h1>Sports App</h1>
-
-
 	<div id="top" class="color1">
 	</div>
 	<div id="contentwrap">
