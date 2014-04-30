@@ -26,11 +26,6 @@
                 <div id="map-canvas" class="color6">   
                 </div>		
 		<div id="results" class="color6">
-			<p>testing</p>
-			<p>testing</p>
-			<p>testing</p>
-			<p>testing</p>
-			<p>testing</p>
 		</div>
 	</div>
 
