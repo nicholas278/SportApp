@@ -1,6 +1,6 @@
 var map;
 var infowindow;
-var result_string = "";
+var result_string=[];
 
 function initialize() {
     
@@ -24,11 +24,11 @@ function initialize() {
 }
 
 function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
       createMarker(results[i]);
-      result_string+=place.name;
+      result_string.push(place.name);
     }
   }
 }
@@ -49,3 +49,18 @@ function createMarker(place) {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+//google.maps.event.addDomListener(window,'load', function(){document.getElementById("banner").innerHTML=result_string;});
+var loading_interval = setInterval(function(){
+    if(result_string.length !== 0){
+        var ol=document.createElement("ol");
+        for(var result in result_string){
+            var li=document.createElement("li");
+            var node=document.createTextNode(result_string[result]);
+            li.appendChild(node);
+            ol.appendChild(li);
+        }
+        var element=document.getElementById("results");
+        element.appendChild(ol);
+        clearInterval(loading_interval);
+    }
+},0);
