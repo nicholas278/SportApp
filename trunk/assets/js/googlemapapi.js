@@ -5,8 +5,8 @@ var result_string=[];
 function initialize() {
     
     var mapOptions = {
-      center: new google.maps.LatLng(49.2553531, -123.1905086),
-      zoom: 12
+      center: new google.maps.LatLng(49.2553531, -123.1400000),
+      zoom: 11
     };
     map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
