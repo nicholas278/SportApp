@@ -10,46 +10,33 @@ function initialize() {
     };
     map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
-    
-    var request = {
-        location: new google.maps.LatLng(49.2553531, -123.1905086),
-        radius: '10000',
-        //types: ['gym']
-        name:  'steve nash fitness'
-    };
-    
+    geocoder = new google.maps.Geocoder()
     infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
 }
 
 function callback(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      var place = results[i];
-      createMarker(results[i]);
-      result_string.push(place.name);
+    if (status === google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      createMarker(results[0]);
+      result_string.push(results[0].formatted_address);
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
     }
-  }
 }
 
 function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
-    position: place.geometry.location
+    position: placeLoc
   });
 
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
+    infowindow.setContent(place.formatted_address);
     infowindow.open(map, this);
   });
 }
 
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-//google.maps.event.addDomListener(window,'load', function(){document.getElementById("banner").innerHTML=result_string;});
 var loading_interval = setInterval(function(){
     if(result_string.length !== 0){
         var ol=document.createElement("ol");
@@ -64,3 +51,20 @@ var loading_interval = setInterval(function(){
         clearInterval(loading_interval);
     }
 },0);
+
+function findByType(sportslist, type){
+    for(var sports in sportslist){
+        if(sportslist[sports].type === type){
+            findByAddress(sportslist[sports].address);
+        }
+    }
+}
+
+function findByAddress(address){
+    var request = {
+        address: address
+    };
+    geocoder.geocode(request, callback);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
