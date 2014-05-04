@@ -15,7 +15,7 @@ class Sports_model extends CI_Model {
             }
 
             $query = $this->db->get_where('sportslist', array('type' => $type));
-            return $query->row_array();
+            return $query->result_array();
         }
         
         public function set_sports()
