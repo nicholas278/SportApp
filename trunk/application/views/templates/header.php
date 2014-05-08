@@ -10,6 +10,7 @@
         </script>
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
         <script type="text/javascript" src="assets/js/googlemapapi.js"></script>
+        <script type="text/javascript" src="assets/js/elements.js"></script>
         
      </head>
      <body class="color3">
