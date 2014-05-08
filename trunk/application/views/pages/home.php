@@ -5,21 +5,21 @@
 		<div id="leftbar" class="color6">
 			<h2>Choose a Sport
 			</h2>
-			<ul>
-                                <li><label><input id='tennis' type='checkbox'>Tennis</label></li>
-				<li>Basketball</li>
-				<li>Tennis</li>
-				<li>Hockey</li>
-				<li>Volleyball</li>
-				<li>Ultimate</li>
-				<li>Soccer</li>
-				<li>Gym</li>
-				<li>Baseball</li>
-				<li>Badminton</li>
-				<li>Table Tennis</li>
-				<li>Swimming Pool</li>
-				<li>Squash</li>
-				<li>Golf</li>
+			<ul>    
+                                <li><a href="#" id='basketball'>Basketball</a></li>
+                                <li><a href="#" id='tennis'>Tennis</a></li>
+                                <li><a href="#" id='hockey'>Hockey</a></li>
+                                <li><a href="#" id='volleyball'>Volleyball</a></li>
+                                <li><a href="#" id='ultimate'>Ultimate</a></li>
+                                <li><a href="#" id='soccer'>Soccer</a></li>
+                                <li><a href="#" id='gym'>Gym</a></li>
+                                <li><a href="#" id='baseball'>Baseball</a></li>
+                                <li><a href="#" id='badminton'>Badminton</a></li>
+                                <li><a href="#" id='table_tennis'>Table Tennis</a></li>
+                                <li><a href="#" id='swimming'>Swimming</a></li>
+                                <li><a href="#" id='squash'>Squash</a></li>
+                                <li><a href="#" id='golf'>Golf</a></li>
+
 			</ul>
 		</div>
 		<div id="banner" class="color6">

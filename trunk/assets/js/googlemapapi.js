@@ -1,8 +1,9 @@
 var map;
-var markers = [];
+var markers;
 var infowindow;
 
 function initialize() {
+    markers = [];
     
     var mapOptions = {
       center: new google.maps.LatLng(49.2553531, -123.1400000),
@@ -15,16 +16,12 @@ function initialize() {
 
     //Check the state of list on left panel and display the right results
     $(document).ready(function(){
-        $(":checkbox").change(function(){
-            if($(this).is(':checked')){
-                var p = {};
-                p['type'] = this.id;
-                $('#results').load('index.php/pages/lookup', p);   
-            }
-            else{
-                deleteMarkers();
-                $('#results').load(' ');
-            }
+        $('a').click( function() {
+            deleteMarkers();
+            var p = {};
+            p['type'] = this.id;
+            $('#results').load('index.php/pages/lookup', p); 
+            return false;
         });
     });
 }
@@ -46,12 +43,23 @@ function createMarker(place) {
     position: placeLoc
   });
   markers.push(marker);
+  //alert("add "+markers.length);
 
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.formatted_address);
     infowindow.open(map, this);
   });
 }
+
+// Deletes all markers in the array by removing references to them
+function deleteMarkers() {
+  //alert("delete " + markers.length);
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
+}
+
 /*
 var loading_interval = setInterval(function(){
     if(result_string.length !== 0){
@@ -75,15 +83,6 @@ function findByAddress(address){
         address: address
     };
     geocoder.geocode(request, callback);
-}
-
-// Deletes all markers in the array by removing references to them
-function deleteMarkers() {
-  //alert(markers.length);
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
-  markers = [];
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
