@@ -40,7 +40,8 @@ function createMarker(place) {
   var placeLoc = place.geometry.location;
   marker = new google.maps.Marker({
     map: map,
-    position: placeLoc
+    position: placeLoc,
+    animation: google.maps.Animation.DROP
   });
   markers.push(marker);
   //alert("add "+markers.length);
