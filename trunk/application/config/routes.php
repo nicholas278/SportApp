@@ -41,8 +41,8 @@
 //$route['default_controller'] = "welcome";
 //$route['404_override'] = '';
 
+$route['pages/lookup'] = 'pages/lookup';
 $route['default_controller'] = 'pages';
-$route['(:any)'] = 'pages/lookup/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

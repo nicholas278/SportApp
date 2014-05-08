@@ -6,6 +6,7 @@
 			<h2>Choose a Sport
 			</h2>
 			<ul>
+                                <li><label><input id='tennis' type='checkbox'>Tennis</label></li>
 				<li>Basketball</li>
 				<li>Tennis</li>
 				<li>Hockey</li>

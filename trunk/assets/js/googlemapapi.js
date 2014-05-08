@@ -1,6 +1,6 @@
 var map;
+var markers = [];
 var infowindow;
-var result_string=[];
 
 function initialize() {
     
@@ -12,13 +12,28 @@ function initialize() {
         mapOptions);
     geocoder = new google.maps.Geocoder()
     infowindow = new google.maps.InfoWindow();
+
+    //Check the state of list on left panel and display the right results
+    $(document).ready(function(){
+        $(":checkbox").change(function(){
+            if($(this).is(':checked')){
+                var p = {};
+                p['type'] = this.id;
+                $('#results').load('index.php/pages/lookup', p);   
+            }
+            else{
+                deleteMarkers();
+                $('#results').load(' ');
+            }
+        });
+    });
 }
 
+//Callback function for geocoder
 function callback(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
-      createMarker(results[0]);
-      result_string.push(results[0].formatted_address);
+      createMarker(results[0]);;
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
@@ -26,17 +41,18 @@ function callback(results, status) {
 
 function createMarker(place) {
   var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
+  marker = new google.maps.Marker({
     map: map,
     position: placeLoc
   });
+  markers.push(marker);
 
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.formatted_address);
     infowindow.open(map, this);
   });
 }
-
+/*
 var loading_interval = setInterval(function(){
     if(result_string.length !== 0){
         var ol=document.createElement("ol");
@@ -51,20 +67,23 @@ var loading_interval = setInterval(function(){
         clearInterval(loading_interval);
     }
 },0);
+*/
 
-function findByType(sportslist, type){
-    for(var sports in sportslist){
-        if(sportslist[sports].type === type){
-            findByAddress(sportslist[sports].address);
-        }
-    }
-}
-
+//Translate address into markers on the map
 function findByAddress(address){
     var request = {
         address: address
     };
     geocoder.geocode(request, callback);
+}
+
+// Deletes all markers in the array by removing references to them
+function deleteMarkers() {
+  //alert(markers.length);
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
