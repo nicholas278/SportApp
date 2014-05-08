@@ -41,6 +41,11 @@ body {
 	font-size: 12.75;
 }
 
+li{ 
+        margin-top: 0pt;
+        margin-bottom: 0pt;
+}
+
 #top {
 	height: 100px;
 	position: relative;
@@ -58,7 +63,7 @@ body {
 
 #leftbar {
 	width: 144px;
-	min-height: 572px; /* change this later to overflow */
+	height: 572px; /* change this later to overflow */
 	overflow: auto; /* see if this works */
 	float: left;
 	margin-left: 4px;

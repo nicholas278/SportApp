@@ -9,7 +9,7 @@ class Pages extends CI_Controller {
             }
             
         public function index($page = 'home'){            
-            $data['sports'] = $this->sports_model->get_sports();
+            //$data['sports'] = $this->sports_model->get_sports();
             
             if ( ! file_exists('application/views/pages/'.$page.'.php'))
             {
@@ -24,11 +24,14 @@ class Pages extends CI_Controller {
             $this->load->view('templates/footer', $data);
         }    
             
-	public function lookup($type)
-	{     
-            $data['sports'] = $this->sports_model->get_sports($type);
-
-            $this->load->vars($data);
-            
+	public function lookup(){   
+            $type = $this->input->post('type');
+            if($type != NULL){
+                $data['sports'] = $this->sports_model->get_sports($type);
+            }
+            else{
+                $data['sports'] = $this->sports_model->get_sports();
+            }
+            $this->load->view('templates/results', $data);
 	}
 }
