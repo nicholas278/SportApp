@@ -11,7 +11,7 @@ function initialize() {
     };
     map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
-    geocoder = new google.maps.Geocoder()
+    geocoder = new google.maps.Geocoder();
     infowindow = new google.maps.InfoWindow();
 
     //Check the state of list on left panel and display the right results
@@ -60,23 +60,6 @@ function deleteMarkers() {
   }
   markers = [];
 }
-
-/*
-var loading_interval = setInterval(function(){
-    if(result_string.length !== 0){
-        var ol=document.createElement("ol");
-        for(var result in result_string){
-            var li=document.createElement("li");
-            var node=document.createTextNode(result_string[result]);
-            li.appendChild(node);
-            ol.appendChild(li);
-        }
-        var element=document.getElementById("results");
-        element.appendChild(ol);
-        clearInterval(loading_interval);
-    }
-},0);
-*/
 
 //Translate address into markers on the map
 function findByAddress(address){
