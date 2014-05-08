@@ -3,8 +3,10 @@
 	</div>
 	<div id="contentwrap">
 		<div id="leftbar" class="color6">
-			<h2>Choose a Sport
-			</h2>
+			<div id="leftbarheader">
+				<h2>Sports
+				</h2>
+			</div>
 			<ul>    
                                 <li><a href="#" id='basketball'>Basketball</a></li>
                                 <li><a href="#" id='tennis'>Tennis</a></li>
@@ -22,11 +24,46 @@
 
 			</ul>
 		</div>
-		<div id="banner" class="color6">
+		<div id="banner" class="color6"> <!-- work on this part -->
+			<div id="bannerheaddiv">
+				<h2>Locations
+				</h2>
+			</div>
+			<div id="locationlist">
+				<ul>
+					<li>Richmond</li>
+					|
+					<li>Vancouver</li>
+					|
+					<li>Burnaby</li>
+				</ul>
+			</div>
 		</div>
-                <div id="map-canvas" class="color6">   
-                </div>		
+		<div id="map-canvas" class="color6">
+		</div>
 		<div id="results" class="color6">
+			<div class="resultboxodd">
+				<div class="boxnumber">
+					<img src="http://www.clker.com/cliparts/Y/d/d/b/I/5/google-maps-purple-marker-hi.png" /> <!--insert icon here-->
+				</div>
+				<div class="boxname">
+					insert name of place here
+				</div>
+				<div class="boxaddress">
+					insert address of place here
+				</div>
+			</div>
+			<div class="resultboxeven">
+				<div class="boxnumber">
+					<img src="http://www.clker.com/cliparts/Y/d/d/b/I/5/google-maps-purple-marker-hi.png" /> <!--insert icon here-->
+				</div>
+				<div class="boxname">
+					insert name of place here
+				</div>
+				<div class="boxaddress">
+					insert address of place here
+				</div>
+			</div>
 		</div>
 	</div>
 

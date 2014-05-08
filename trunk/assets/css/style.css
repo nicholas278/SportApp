@@ -38,12 +38,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-family: Helvetica, Arial, clean, sans-serif;
-	font-size: 12.75;
-}
-
-li{ 
-        margin-top: 0pt;
-        margin-bottom: 0pt;
+	font-size: 0.85em	;
 }
 
 #top {
@@ -63,7 +58,7 @@ li{
 
 #leftbar {
 	width: 144px;
-	height: 572px; /* change this later to overflow */
+	min-height: 572px; /* change this later to overflow */
 	overflow: auto; /* see if this works */
 	float: left;
 	margin-left: 4px;
@@ -71,12 +66,18 @@ li{
 	margin-top: 4px;
 	margin-bottom: 4px;
 }
+#leftbarheader {
+	width: 136px;
+	height: 30px;
+	border-bottom: 2px solid #DFDED4;
+	margin-left: auto;
+	margin-right: auto;
+}
 #leftbar h2 {
 	text-align: center;
-	font-size: 17; 
+	font-size: 1.2em;
 }
 #leftbar ul li {
-	font-size: 14;
 	list-style-type: none;
 	margin-top: 1em;
 	text-indent: -2em;
@@ -85,11 +86,33 @@ li{
 #banner {
 	width: 844px;
 	height: 94px;
-	float: left;
+	float: right;
 	margin-left: 2px;
 	margin-right: 4px;
 	margin-top: 4px;
 	margin-bottom: 2px;
+}
+#bannerheaddiv {
+	width: 844px;
+	height: 47px;
+	float: left;
+}
+#banner h2 {
+  	vertical-align: middle;
+	text-align: center;
+	font-size: 1.2em;
+}
+#locationlist {
+	width: 844px;
+	height: 47px;
+	float: left;
+  	vertical-align: middle;
+	text-align: center;
+	text-indent: -2em;
+}
+#banner li {
+	display: inline;
+	list-style-type: none;
 }
 
 #map-canvas {
@@ -105,16 +128,53 @@ li{
 #results {
 	width: 208px;
 	height: 474px;
-	overflow: scroll;
+	overflow: hidden;
 	float: right;
 	margin-left: 2px;
 	margin-right: 4px;
 	margin-top: 2px;
 	margin-bottom: 0px;
 }
+.resultboxodd {
+	width: 200px;
+	height: 94px;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	background-color: #DFDED4;
+}
+.resultboxeven {
+	width: 200px;
+	height: 94px;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+}
+.boxnumber {
+	width: 50px;
+	height: 94px;
+	float: left;
+}
+.boxnumber img {
+	width: 25px;
+	margin: 0 auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 27px;
+}
+.boxname {
+	width: 150px;
+	height: 47px;
+	float: right;
+}
+.boxaddress {
+	width: 150px;
+	height: 47px;
+	float: right;
+}
 
 #footer {
-	background-color: #CDCAB9;
 	width: 100%;
 	height: 100px;
 	display: table;
@@ -134,5 +194,5 @@ li{
 }
 #footerchild a:visited {
 	text-decoration: none;
-	color: #DFDED4;
+	color: #A4A4A4;
 }
