@@ -82,6 +82,9 @@ body {
 	margin-top: 1em;
 	text-indent: -2em;
 }
+#leftbar a {
+	text-decoration: none;
+}
 
 #banner {
 	width: 844px;
