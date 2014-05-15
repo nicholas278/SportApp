@@ -21,6 +21,7 @@
                                 <li><a href="#" id='swimming'>Swimming</a></li>
                                 <li><a href="#" id='squash'>Squash</a></li>
                                 <li><a href="#" id='golf'>Golf</a></li>
+                                <li><a href="#" id='rock_climbing'>Rock Climbing</a></li>
 
 			</ul>
 		</div>
