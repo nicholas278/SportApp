@@ -8,20 +8,20 @@
 				</h2>
 			</div>
 			<ul>    
-                                <li><a href="#" id='badminton'>Badminton</a></li>
-                                <li><a href="#" id='baseball'>Baseball</a></li>
-                                <li><a href="#" id='basketball'>Basketball</a></li>
-                                <li><a href="#" id='golf'>Golf</a></li>
-                                <li><a href="#" id='gym'>Gym</a></li>
-                                <li><a href="#" id='hockey'>Hockey</a></li>
-                                <li><a href="#" id='rock_climbing'>Rock Climbing</a></li>
-                                <li><a href="#" id='soccer'>Soccer</a></li>
-                                <li><a href="#" id='squash'>Squash</a></li>
-                                <li><a href="#" id='swimming'>Swimming</a></li>
-                                <li><a href="#" id='table_tennis'>Table Tennis</a></li>
-                                <li><a href="#" id='tennis'>Tennis</a></li>
-                                <li><a href="#" id='ultimate'>Ultimate</a></li>
-                                <li><a href="#" id='volleyball'>Volleyball</a></li>
+                                <li><a href="#" id="badminton" class="sportslist">Badminton</a></li>
+                                <li><a href="#" id="baseball" class="sportslist">Baseball</a></li>
+                                <li><a href="#" id="basketball" class="sportslist">Basketball</a></li>
+                                <li><a href="#" id="golf" class="sportslist">Golf</a></li>
+                                <li><a href="#" id="gym" class="sportslist">Gym</a></li>
+                                <li><a href="#" id="hockey" class="sportslist">Hockey</a></li>
+                                <li><a href="#" id="rock_climbing" class="sportslist">Rock Climbing</a></li>
+                                <li><a href="#" id="soccer" class="sportslist">Soccer</a></li>
+                                <li><a href="#" id="squash" class="sportslist">Squash</a></li>
+                                <li><a href="#" id="swimming" class="sportslist">Swimming</a></li>
+                                <li><a href="#" id="table_tennis" class="sportslist">Table Tennis</a></li>
+                                <li><a href="#" id="tennis" class="sportslist">Tennis</a></li>
+                                <li><a href="#" id="ultimate" class="sportslist">Ultimate</a></li>
+                                <li><a href="#" id="volleyball" class="sportslist">Volleyball</a></li>
 
 			</ul>
 		</div>
@@ -32,11 +32,11 @@
 			</div>
 			<div id="locationlist">
 				<ul>
-					<li>Richmond</li>
+					<li><a href="#" id="Richmond BC" class="area">Richmond</a></li>
 					|
-					<li>Vancouver</li>
+					<li><a href="#" id="Vancouver BC" class="area">Vancouver</a></li>
 					|
-					<li>Burnaby</li>
+					<li><a href="#" id="Burnaby BC" class="area">Burnaby</a></li>
 				</ul>
 			</div>
 		</div>
