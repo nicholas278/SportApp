@@ -1,26 +1,45 @@
-var map;
+var map, geocoder, infowindow; //Google Objects
 var markers;
-var infowindow;
 
 function initialize() {
     markers = [];
-    
-    var mapOptions = {
-      center: new google.maps.LatLng(49.2553531, -123.1400000),
-      zoom: 11
-    };
-    map = new google.maps.Map(document.getElementById("map-canvas"),
-        mapOptions);
     geocoder = new google.maps.Geocoder();
     infowindow = new google.maps.InfoWindow();
+    
+    //Initialize map on Vancouver
+    geocoder.geocode({'address' : "Vancouver BC"}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            var mapOptions = {
+              center: results[0].geometry.location,
+              zoom: 12
+            };
+            map = new google.maps.Map(document.getElementById("map-canvas"),
+                mapOptions);
+        }
+        else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
 
-    //Check the state of list on left panel and display the right results
     $(document).ready(function(){
-        $('a').click( function() {
+        //Check the state of list on left panel and display the right results
+        $('.sportslist').click( function() {
             deleteMarkers();
             var p = {};
             p['type'] = this.id;
             $('#results').load('index.php/pages/lookup', p); 
+            return false;
+        });
+        //Check what area is clicked and center map to that area
+        $('.area').click( function() {
+            geocoder.geocode({'address' : this.id}, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                }
+                else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
             return false;
         });
     });
@@ -44,7 +63,6 @@ function createMarker(place) {
     animation: google.maps.Animation.DROP
   });
   markers.push(marker);
-  //alert("add "+markers.length);
 
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.formatted_address);
@@ -54,7 +72,6 @@ function createMarker(place) {
 
 // Deletes all markers in the array by removing references to them
 function deleteMarkers() {
-  //alert("delete " + markers.length);
   for (var i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
   }
@@ -68,5 +85,24 @@ function findByAddress(address){
     };
     geocoder.geocode(request, callback);
 }
+
+//Return distance (KM) between 2 latlng points
+function distance(lat1, lon1, lat2, lon2) {
+    var radlat1 = Math.PI * lat1/180;
+    var radlat2 = Math.PI * lat2/180;
+    var radlon1 = Math.PI * lon1/180;
+    var radlon2 = Math.PI * lon2/180;
+    var theta = lon1-lon2;
+    var radtheta = Math.PI * theta/180;
+    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    dist = Math.acos(dist);
+    dist = dist * 180/Math.PI;
+    dist = dist * 60 * 1.1515;
+    dist = dist * 1.609344;
+    //if (unit==="K") { dist = dist * 1.609344; }
+    //if (unit==="N") { dist = dist * 0.8684; }
+    return dist;
+}
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
