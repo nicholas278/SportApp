@@ -1,5 +1,9 @@
 <!--HTML body goes here-->
 	<div id="top" class="color1">
+		<form name="input" method="get"> <!--nick add something for the action and method attribute, not sure what they do-->
+			<input type="text" name="user_location_input" placeholder="Starting Point">
+			<input type="button" value="Current Location">
+		</form>
 	</div>
 	<div id="contentwrap">
 		<div id="leftbar" class="color6">
