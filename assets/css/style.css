@@ -48,6 +48,32 @@ body {
 	right: 0px;
 	top: 0px;
 }
+#topwrapper {
+	height: 100px;
+	width: 992px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#logo {
+	height: 100px;
+	width: 144px;
+	margin-right: 2px;
+	float: left;
+}
+#locationinputbox {
+	height: 70px;
+	width: 844px;
+	margin-left: 2px;
+	position: relative;
+	float: right;
+}
+#buttonbox {
+	height: 30px;
+	width: 844px;
+	margin-left: 2px;
+	position: relative;
+	float: right;	
+}
 
 #contentwrap {
 	width: 1000px;
@@ -119,7 +145,7 @@ body {
 }
 
 #map-canvas {
-	width: 632px;
+	width: 474px;
 	height: 474px;
 	float: left;
 	margin-left: 2px;
@@ -129,7 +155,7 @@ body {
 }
 
 #results {
-	width: 208px;
+	width: 366px;
 	height: 474px;
 	overflow: hidden;
 	float: right;
@@ -138,43 +164,51 @@ body {
 	margin-top: 2px;
 	margin-bottom: 0px;
 }
-.resultboxodd {
-	width: 200px;
-	height: 94px;
+.resultboxunselected {
+	width: 358px;
+	height: 96px;
 	margin-left: 4px;
 	margin-right: 4px;
 	margin-top: 4px;
-	background-color: #DFDED4;
+	margin-bottom: 0px;
+	position: relative;
 }
-.resultboxeven {
-	width: 200px;
-	height: 94px;
-	margin-left: 4px;
-	margin-right: 4px;
-	margin-top: 4px;
+.resultboxselected {
+	width: 358px;
+	height: 96px;	
+	position: relative;
+	border: 4px solid #CA171B
 }
 .boxnumber {
-	width: 50px;
-	height: 94px;
-	float: left;
+	width: 48px;
+	height: 47px;
+	background-color: purple;
+	position: abolute;
+	top: 0px;
+	left: 0px;
 }
-.boxnumber img {
-	width: 25px;
-	margin: 0 auto;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 27px;
+.distancebox {
+	width: 48px;
+	height: 47px;
+	position: absolute;
+	left: 0px;
+	bottom 0px;
+	border-bottom: 2px solid #DFDED4;
 }
 .boxname {
-	width: 150px;
+	width: 310px;
 	height: 47px;
-	float: right;
+	position: absolute;
+	top: 0px;
+	right: 0px;
 }
 .boxaddress {
-	width: 150px;
+	width: 310px;
 	height: 47px;
-	float: right;
+	position: absolute;
+	border-bottom: 2px solid #DFDED4;
+	right: 0px;
+	bottom: 0px;
 }
 
 #footer {
