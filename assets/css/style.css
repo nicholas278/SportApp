@@ -183,7 +183,7 @@ body {
 	width: 48px;
 	height: 47px;
 	background-color: purple;
-	position: abolute;
+	position: absolute;
 	top: 0px;
 	left: 0px;
 }
@@ -192,7 +192,7 @@ body {
 	height: 47px;
 	position: absolute;
 	left: 0px;
-	bottom 0px;
+	bottom: 0px;
 	border-bottom: 2px solid #DFDED4;
 }
 .boxname {
