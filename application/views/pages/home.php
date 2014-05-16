@@ -3,12 +3,11 @@
 	<div id="topwrapper">
 		<div id="logo">
 		</div>
-		<div id="locationinputbox">
+		<div id="topinputbox">
 			<form name="input" method="get"> <!--nick add something for the action and method attribute, not sure what they do-->
-				<div id="input_container">
-					<input type="text" name="user_location_input" placeholder="Starting Point">
-				</div>
-				<input type="button" value="Current Location">
+					Location<input type="text" name="user_location_input" placeholder="Starting Point">
+					<input id="locationsubmit" type="submit" value="Submit">
+					<a href="???" id="current_location">Your Current Location</a> <!-- change the href here nick -->			
 			</form>
 		</div>
 		<div id="buttonbox">
