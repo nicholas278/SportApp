@@ -164,7 +164,7 @@ body {
 	margin-top: 2px;
 	margin-bottom: 0px;
 }
-.resultboxunselected {
+.resultbox {
 	width: 358px;
 	height: 96px;
 	margin-left: 4px;
@@ -172,12 +172,7 @@ body {
 	margin-top: 4px;
 	margin-bottom: 0px;
 	position: relative;
-}
-.resultboxselected {
-	width: 358px;
-	height: 96px;	
-	position: relative;
-	border: 4px solid #CA171B
+	border: 4px solid white
 }
 .boxnumber {
 	width: 48px;
@@ -187,7 +182,7 @@ body {
 	top: 0px;
 	left: 0px;
 }
-.distancebox {
+.boxdistance {
 	width: 48px;
 	height: 47px;
 	position: absolute;
