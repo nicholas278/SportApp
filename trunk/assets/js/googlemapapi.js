@@ -42,13 +42,31 @@ function initialize() {
             });
             return false;
         });
+        //Check location
+        $('#locationSubmit').click( function() {
+            deleteMarkers();
+            geocoder.geocode({'address' : document.getElementById("locationForm").elements.item(0).value}, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    var p = {};
+                    p['sortByDist'] = true;
+                    p['currentLat'] = results[0].geometry.location.lat();
+                    p['currentLng'] = results[0].geometry.location.lng();
+                    $('#results').load('index.php/pages/lookup', p);
+                }
+                else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        });
     });
+    
 }
 
 //Callback function for geocoder
 function callback(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
-      map.setCenter(results[0].geometry.location);
+      //map.setCenter(results[0].geometry.location);
       createMarker(results[0]);;
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
@@ -63,7 +81,7 @@ function createMarker(place) {
     animation: google.maps.Animation.DROP
   });
   markers.push(marker);
-
+  adjustZoom(); //may need to find a better place for this
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.formatted_address);
     infowindow.open(map, this);
@@ -84,6 +102,23 @@ function findByAddress(address){
         address: address
     };
     geocoder.geocode(request, callback);
+}
+
+function adjustZoom(){
+    //  Make an array of the LatLng's of the markers you want to show
+    var LatLngList = new Array ();
+    for (var i in markers){
+        LatLngList.push(new google.maps.LatLng(markers[i].position.lat(),markers[i].position.lng()));
+    }
+    //  Create a new viewpoint bound
+    var bounds = new google.maps.LatLngBounds ();
+    //  Go through each...
+    for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
+      //  And increase the bounds to take this point
+      bounds.extend (LatLngList[i]);
+    }
+    //  Fit these bounds to the map
+    map.fitBounds (bounds);
 }
 
 //Return distance (KM) between 2 latlng points
