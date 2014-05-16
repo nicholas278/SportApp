@@ -60,12 +60,19 @@ body {
 	margin-right: 2px;
 	float: left;
 }
-#locationinputbox {
+#topinputbox {
 	height: 70px;
 	width: 844px;
 	margin-left: 2px;
 	position: relative;
 	float: right;
+}
+#locationsubmit {
+	border: 1px solid #000; /* canon fix this */
+    background: #f00; /* canon fix this */
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
 }
 #buttonbox {
 	height: 30px;
