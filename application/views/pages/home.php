@@ -1,9 +1,19 @@
 <!--HTML body goes here-->
 	<div id="top" class="color1">
-		<form name="input" method="get"> <!--nick add something for the action and method attribute, not sure what they do-->
-			<input type="text" name="user_location_input" placeholder="Starting Point">
-			<input type="button" value="Current Location">
-		</form>
+	<div id="topwrapper">
+		<div id="logo">
+		</div>
+		<div id="locationinputbox">
+			<form name="input" method="get"> <!--nick add something for the action and method attribute, not sure what they do-->
+				<div id="input_container">
+					<input type="text" name="user_location_input" placeholder="Starting Point">
+				</div>
+				<input type="button" value="Current Location">
+			</form>
+		</div>
+		<div id="buttonbox">
+		</div>
+	</div>
 	</div>
 	<div id="contentwrap">
 		<div id="leftbar" class="color6">
@@ -47,9 +57,12 @@
 		<div id="map-canvas" class="color6">
 		</div>
 		<div id="results" class="color6">
-			<div class="resultboxodd">
+			<div class="resultboxunselected">
 				<div class="boxnumber">
-					<img src="http://www.clker.com/cliparts/Y/d/d/b/I/5/google-maps-purple-marker-hi.png" /> <!--insert icon here-->
+					icon
+				</div>
+				<div class="distancebox">
+					dist.
 				</div>
 				<div class="boxname">
 					insert name of place here
@@ -58,13 +71,16 @@
 					insert address of place here
 				</div>
 			</div>
-			<div class="resultboxeven">
+			<div class="resultboxselected">
 				<div class="boxnumber">
-					<img src="http://www.clker.com/cliparts/Y/d/d/b/I/5/google-maps-purple-marker-hi.png" /> <!--insert icon here-->
+					icon
 				</div>
 				<div class="boxname">
 					insert name of place here
 				</div>
+				<div class="distancebox">
+					dist.
+				</div>				
 				<div class="boxaddress">
 					insert address of place here
 				</div>
