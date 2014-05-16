@@ -57,30 +57,16 @@
 		<div id="map-canvas" class="color6">
 		</div>
 		<div id="results" class="color6">
-			<div class="resultboxunselected">
+			<div class="resultbox">
 				<div class="boxnumber">
 					icon
 				</div>
-				<div class="distancebox">
+				<div class="boxdistance">
 					dist.
 				</div>
 				<div class="boxname">
 					insert name of place here
 				</div>
-				<div class="boxaddress">
-					insert address of place here
-				</div>
-			</div>
-			<div class="resultboxselected">
-				<div class="boxnumber">
-					icon
-				</div>
-				<div class="boxname">
-					insert name of place here
-				</div>
-				<div class="distancebox">
-					dist.
-				</div>				
 				<div class="boxaddress">
 					insert address of place here
 				</div>
