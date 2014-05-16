@@ -4,10 +4,10 @@
 		<div id="logo">
 		</div>
 		<div id="topinputbox">
-			<form name="input" method="get"> <!--nick add something for the action and method attribute, not sure what they do-->
+			<form name="input"  action="javascript:void(0);" id="locationForm"> <!--nick add something for the action and method attribute, not sure what they do-->
 					Location<input type="text" name="user_location_input" placeholder="Starting Point">
-					<input id="locationsubmit" type="submit" value="Submit">
-					<a href="???" id="current_location">Your Current Location</a> <!-- change the href here nick -->			
+					<input type="submit" value="Submit" id="locationSubmit">
+					<a href="#" id="current_location">Your Current Location</a> <!-- change the href here nick -->			
 			</form>
 		</div>
 		<div id="buttonbox">

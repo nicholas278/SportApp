@@ -26,6 +26,9 @@ class Pages extends CI_Controller {
             
 	public function lookup(){   
             $type = $this->input->post('type');
+            $data['currentLat'] = $this->input->post('currentLat');
+            $data['currentLng'] = $this->input->post('currentLng');
+            $data['sortByDist'] = $this->input->post('sortByDist');
             if($type != NULL){
                 $data['sports'] = $this->sports_model->get_sports($type);
             }
