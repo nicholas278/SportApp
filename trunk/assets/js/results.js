@@ -54,6 +54,7 @@ function createElement(tag, property){
     return element;
 }
 
+//Sorting the array of sports by distance
 function sortSports(sports, lat, lng){
     var sortedList = [];
     for(var i in sports){
