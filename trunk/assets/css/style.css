@@ -167,12 +167,8 @@ body {
 .resultbox {
 	width: 358px;
 	height: 96px;
-	margin-left: 4px;
-	margin-right: 4px;
-	margin-top: 4px;
-	margin-bottom: 0px;
 	position: relative;
-	border: 4px solid white
+	border: 4px solid white;
 }
 .boxnumber {
 	width: 48px;
