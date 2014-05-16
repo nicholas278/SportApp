@@ -1,8 +1,9 @@
 var map, geocoder, infowindow; //Google Objects
-var markers;
+var markers, arrayLength;
 
 function initialize() {
     markers = [];
+    loaded = false;
     geocoder = new google.maps.Geocoder();
     infowindow = new google.maps.InfoWindow();
     
@@ -81,7 +82,9 @@ function createMarker(place) {
     animation: google.maps.Animation.DROP
   });
   markers.push(marker);
-  adjustZoom(); //may need to find a better place for this
+  if(markers.length === arrayLength){
+    adjustZoom();
+  }
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.formatted_address);
     infowindow.open(map, this);
@@ -97,7 +100,8 @@ function deleteMarkers() {
 }
 
 //Translate address into markers on the map
-function findByAddress(address){
+function findByAddress(address, length){
+    arrayLength = length; //created a global counter to only run adjustZoom once in every request
     var request = {
         address: address
     };
@@ -105,19 +109,14 @@ function findByAddress(address){
 }
 
 function adjustZoom(){
-    //  Make an array of the LatLng's of the markers you want to show
     var LatLngList = new Array ();
     for (var i in markers){
         LatLngList.push(new google.maps.LatLng(markers[i].position.lat(),markers[i].position.lng()));
     }
-    //  Create a new viewpoint bound
     var bounds = new google.maps.LatLngBounds ();
-    //  Go through each...
     for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
-      //  And increase the bounds to take this point
       bounds.extend (LatLngList[i]);
     }
-    //  Fit these bounds to the map
     map.fitBounds (bounds);
 }
 
@@ -125,8 +124,6 @@ function adjustZoom(){
 function distance(lat1, lon1, lat2, lon2) {
     var radlat1 = Math.PI * lat1/180;
     var radlat2 = Math.PI * lat2/180;
-    var radlon1 = Math.PI * lon1/180;
-    var radlon2 = Math.PI * lon2/180;
     var theta = lon1-lon2;
     var radtheta = Math.PI * theta/180;
     var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
