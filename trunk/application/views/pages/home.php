@@ -5,20 +5,23 @@
 			</div>
 			<div id="topinputbox">
 				<div id="topinputcontainer">
-					<form name="input"  action="javascript:void(0);" id="locationform"> <!--nick add something for the action and method attribute, not sure what they do-->
-							<input type="text" name="user_location_input" placeholder="&nbsp;Starting Point" id="locationinput"><!--
-							--><input type="submit" value="Search Location" id="locationsubmit"><!--
-                                                        --><a href="#" id="current_location">&nbsp;&nbsp;Use Current Location</a> <!-- change the href here nick -->			        
+					<form name="input"  action="javascript:void(0);" id="searchform"> <!--nick add something for the action and method attribute, not sure what they do-->
+							<input type="text" name="user_location_input" placeholder="&nbsp;Sports, Locations, Names..." id="searchinput"><!--
+							--><input type="submit" value="Search" id="searchsubmit">			        
 					</form>
 				</div>
 			</div>
 			<div id="buttonbox">
+				<button type="button">Home</button>
+				<button type="button">About</button>
+				<button type="button">Contribute</button>
+				<button type="button">Contact Us</button>
 			</div>
 		</div>
         </div>
 	<div id="contentwrap">
 		<div id="leftbar" class="color6">
-			<div id="leftbarheader">
+			<div class="leftbarheader">
 				<h2>Sports
 				</h2>
 			</div>
@@ -40,21 +43,18 @@
                                 <li><a href="#" id="yoga" class="sportslist">Yoga</a></li>
 
 			</ul>
-		</div>
-		<div id="banner" class="color6"> <!-- work on this part -->
-			<div id="bannerheaddiv">
+                        <div class="leftbarheader">
 				<h2>Locations
 				</h2>
 			</div>
-			<div id="locationlist">
-				<ul>
-					<li><a href="#" id="Richmond BC" class="area">Richmond</a></li>
-					|
-					<li><a href="#" id="Vancouver BC" class="area">Vancouver</a></li>
-					|
-					<li><a href="#" id="Burnaby BC" class="area">Burnaby</a></li>
-				</ul>
-			</div>
+			<ul>    
+                                <li><a href="#" id="Current Location" class="area">Current Location</a></li> <!--Nick work on this-->
+                                <li><a href="#" id="Burnaby BC" class="area">Burnaby</a></li>
+                                <li><a href="#" id="Richmond BC" class="area">Richmond</a></li>
+                                <li><a href="#" id="Vancouver BC" class="area">Vancouver</a></li>
+			</ul>
+		</div>
+		<div id="banner" class="color6">
 		</div>
 		<div id="map-canvas" class="color6">
 		</div>
