@@ -67,12 +67,43 @@ body {
 	position: relative;
 	float: right;
 }
+#topinputcontainer {
+	width: 515px;
+	height: 30px;
+	position: absolute;	
+	left: 175px;
+	bottom: 10px;
+}
+#locationinput {
+	width: 250px;
+	height: 30px;
+	border: 0px;
+        padding: 0px;
+        margin: 0px;
+}
+#locationinput[type="text"] {
+	font-size: 0.9em;
+}
 #locationsubmit {
-	border: 1px solid #000; /* canon fix this */
-    background: #f00; /* canon fix this */
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
+    border: 1px solid black;
+    
     border-radius: 0px;
+        -moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+    height: 30px;
+    width: 105px;
+    position: relative;
+    top: 0px;
+}
+#locationsubmit[type="submit"] {
+	font-size: 0.9em;
+}
+#locationform a {
+	text-decoration: none;
+        position: relative;
+}
+#locationform a:hover {
+	text-decoration: underline;
 }
 #buttonbox {
 	height: 30px;
