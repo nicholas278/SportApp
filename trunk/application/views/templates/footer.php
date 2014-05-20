@@ -1,6 +1,8 @@
 	<div id="footer">
          <!--   <strong>&copy; Nicholas&Canon 2014</strong> -->
 		<div ID="footerchild">
+                        <a href="index.php">Home</a>
+			|
 			<a href="about.html">About</a>
 			|
 			<a href="contribute.html">Contribute</a>
