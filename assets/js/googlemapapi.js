@@ -44,9 +44,9 @@ function initialize() {
             return false;
         });
         //Check location
-        $('#locationSubmit').click( function() {
+        $('#locationsubmit').click( function() {
             deleteMarkers();
-            geocoder.geocode({'address' : document.getElementById("locationForm").elements.item(0).value}, function(results, status) {
+            geocoder.geocode({'address' : document.getElementById("locationform").elements.item(0).value}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                     map.setCenter(results[0].geometry.location);
                     var p = {};
