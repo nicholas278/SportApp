@@ -8,7 +8,7 @@
 					<form name="input"  action="javascript:void(0);" id="locationform"> <!--nick add something for the action and method attribute, not sure what they do-->
 							<input type="text" name="user_location_input" placeholder="&nbsp;Starting Point" id="locationinput"><!--
 							--><input type="submit" value="Search Location" id="locationsubmit"><!--
-                                                        --><a href="#" id="current_location">&nbsp;&nbsp;Your Current Location</a> <!-- change the href here nick -->			        
+                                                        --><a href="#" id="current_location">&nbsp;&nbsp;Use Current Location</a> <!-- change the href here nick -->			        
 					</form>
 				</div>
 			</div>
