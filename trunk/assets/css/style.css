@@ -68,41 +68,34 @@ body {
 	float: right;
 }
 #topinputcontainer {
-	width: 515px;
+	width: 340px;
 	height: 30px;
 	position: absolute;	
-	left: 175px;
+	left: 202px;
 	bottom: 10px;
 }
-#locationinput {
-	width: 250px;
+#searchinput {
+	width: 275px;
 	height: 30px;
 	border: 0px;
         padding: 0px;
         margin: 0px;
 }
-#locationinput[type="text"] {
+#searchinput[type="text"] {
 	font-size: 0.9em;
 }
-#locationsubmit {
-    border: 0px;    
+#searchsubmit {
+    border: 0px;
     border-radius: 0px;
         -moz-border-radius: 0px;
 	-webkit-border-radius: 0px;
     height: 30px;
-    width: 105px;
+    width: 65px;
     position: relative;
     top: 0px;
 }
-#locationsubmit[type="submit"] {
+#searchsubmit[type="submit"] {
 	font-size: 0.9em;
-}
-#locationform a {
-	text-decoration: none;
-        position: relative;
-}
-#locationform a:hover {
-	text-decoration: underline;
 }
 #buttonbox {
 	height: 30px;
@@ -129,7 +122,7 @@ body {
 	margin-top: 4px;
 	margin-bottom: 4px;
 }
-#leftbarheader {
+.leftbarheader {
 	width: 136px;
 	height: 30px;
 	border-bottom: 1px solid #DFDED4;
@@ -144,6 +137,11 @@ body {
 	list-style-type: none;
 	margin-top: 1em;
 	text-indent: -2em;
+        padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0.25em;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 #leftbar a {
 	text-decoration: none;
@@ -157,28 +155,6 @@ body {
 	margin-right: 4px;
 	margin-top: 4px;
 	margin-bottom: 2px;
-}
-#bannerheaddiv {
-	width: 844px;
-	height: 47px;
-	float: left;
-}
-#banner h2 {
-  	vertical-align: middle;
-	text-align: center;
-	font-size: 1.2em;
-}
-#locationlist {
-	width: 844px;
-	height: 47px;
-	float: left;
-  	vertical-align: middle;
-	text-align: center;
-	text-indent: -2em;
-}
-#banner li {
-	display: inline;
-	list-style-type: none;
 }
 
 #map-canvas {
