@@ -1,19 +1,21 @@
 <!--HTML body goes here-->
 	<div id="top" class="color1">
-	<div id="topwrapper">
-		<div id="logo">
+		<div id="topwrapper">
+			<div id="logo">
+			</div>
+			<div id="topinputbox">
+				<div id="topinputcontainer">
+					<form name="input"  action="javascript:void(0);" id="locationform"> <!--nick add something for the action and method attribute, not sure what they do-->
+							<input type="text" name="user_location_input" placeholder="&nbsp;Starting Point" id="locationinput"><!--
+							--><input type="submit" value="Search Location" id="locationsubmit"><!--
+                                                        --><a href="#" id="current_location">&nbsp;&nbsp;Your Current Location</a> <!-- change the href here nick -->			        
+					</form>
+				</div>
+			</div>
+			<div id="buttonbox">
+			</div>
 		</div>
-		<div id="topinputbox">
-			<form name="input"  action="javascript:void(0);" id="locationForm"> <!--nick add something for the action and method attribute, not sure what they do-->
-					Location<input type="text" name="user_location_input" placeholder="Starting Point">
-					<input type="submit" value="Submit" id="locationSubmit">
-					<a href="#" id="current_location">Your Current Location</a> <!-- change the href here nick -->			
-			</form>
-		</div>
-		<div id="buttonbox">
-		</div>
-	</div>
-	</div>
+        </div>
 	<div id="contentwrap">
 		<div id="leftbar" class="color6">
 			<div id="leftbarheader">
@@ -35,6 +37,7 @@
                                 <li><a href="#" id="tennis" class="sportslist">Tennis</a></li>
                                 <li><a href="#" id="ultimate" class="sportslist">Ultimate</a></li>
                                 <li><a href="#" id="volleyball" class="sportslist">Volleyball</a></li>
+                                <li><a href="#" id="yoga" class="sportslist">Yoga</a></li>
 
 			</ul>
 		</div>
