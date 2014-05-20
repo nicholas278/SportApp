@@ -85,8 +85,7 @@ body {
 	font-size: 0.9em;
 }
 #locationsubmit {
-    border: 1px solid black;
-    
+    border: 0px;    
     border-radius: 0px;
         -moz-border-radius: 0px;
 	-webkit-border-radius: 0px;
@@ -133,7 +132,7 @@ body {
 #leftbarheader {
 	width: 136px;
 	height: 30px;
-	border-bottom: 2px solid #DFDED4;
+	border-bottom: 1px solid #DFDED4;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -222,7 +221,7 @@ body {
 	position: absolute;
 	left: 0px;
 	bottom: 0px;
-	border-bottom: 2px solid #DFDED4;
+	border-bottom: 1px solid #DFDED4;
 }
 .boxname {
 	width: 310px;
@@ -235,7 +234,7 @@ body {
 	width: 310px;
 	height: 47px;
 	position: absolute;
-	border-bottom: 2px solid #DFDED4;
+	border-bottom: 1px solid #DFDED4;
 	right: 0px;
 	bottom: 0px;
 }
