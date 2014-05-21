@@ -12,10 +12,10 @@
 				</div>
 			</div>
 			<div id="buttonbox">
-				<button type="button">Home</button>
-				<button type="button">About</button>
-				<button type="button">Contribute</button>
-				<button type="button">Contact Us</button>
+				<button type="button" class="color1">Contact Us</button>
+				<button type="button" class="color1">Contribute</button>
+				<button type="button" class="color1">About</button>
+				<button type="button" class="color1">Home</button>
 			</div>
 		</div>
         </div>
