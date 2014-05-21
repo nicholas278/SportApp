@@ -95,7 +95,8 @@ body {
     top: 0px;
 }
 #searchsubmit[type="submit"] {
-	font-size: 0.9em;
+    font-size: 0.9em;
+    background-color: #CDCAB9;
 }
 #buttonbox {
 	height: 30px;
@@ -103,6 +104,22 @@ body {
 	margin-left: 2px;
 	position: relative;
 	float: right;	
+}
+#buttonbox button {
+    width: 100px;
+    height: 30px;
+    float: right;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+    color: white;
+    font-size: 0.85em;
+}
+#buttonbox button:hover {
+	background-color: #CDCAB9;
 }
 
 #contentwrap {
