@@ -59,7 +59,9 @@
 		<div id="map-canvas" class="color6">
 		</div>
 		<div id="results" class="color6">
-			<div class="resultbox">
+			<div id="resultsfilter">
+                        </div>
+                        <div class="resultbox">
 				<div class="boxnumber">
 					icon
 				</div>
@@ -72,6 +74,8 @@
 				<div class="boxaddress">
 					insert address of place here
 				</div>
+			</div>
+                        <div id="resultssort">
 			</div>
 		</div>
 	</div>
