@@ -1,18 +1,12 @@
 <?php if($sortByDist == TRUE): ?>
     <script>
         sortedSports = sortSports(<?php echo json_encode($sports); ?>, <?php echo $currentLat; ?>, <?php echo $currentLng; ?> );
-        for(var i in sortedSports){
-            findByAddress(sortedSports[i].sports["address"], sortedSports.length);
-            createNewItem(sortedSports[i].sports["name"], sortedSports[i].sports["address"], sortedSports[i].dist);
-        }
+        displayResults(sortedSports);
     </script>
-<?php else: 
-    foreach ($sports as $sp): ?>
-        <script> 
-            findByAddress(<?php echo json_encode($sp["address"]); ?>, <?php echo sizeof($sports); ?> ); 
-            createNewItem(<?php echo json_encode($sp["name"]); ?>, <?php echo json_encode($sp["address"]); ?> );
-        </script> 
-    <?php endforeach;
-endif; 
+<?php else: ?>
+    <script> 
+        displayResults(<?php echo json_encode($sports); ?>);
+    </script> 
+<?php endif; 
 
         
