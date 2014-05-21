@@ -1,9 +1,18 @@
-function createNewItem(name, address, dist){
+function displayResults(sportArray){
+    for(var i in sportArray){
+        createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
+        createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["type"], sportArray[i]["distance"])
+    }
+    adjustZoom();
+}
+
+function createNewItem(name, address, type, dist){
     var box = createResultBox();
     box.appendChild(createIcon());
     box.appendChild(createDistBox(dist));
     box.appendChild(createNameBox(name));
     box.appendChild(createAddressBox(address));
+    box.appendChild(createSportTypeBox(type));
     var element=document.getElementById("results");
     element.appendChild(box);
 }
@@ -41,6 +50,13 @@ function createAddressBox(address){
     return content;
 }
 
+function createSportTypeBox(sportType){
+    var content = createElement("div", "sportsavailable");
+    var node=document.createTextNode(sportType);
+    content.appendChild(node);
+    return content;
+}
+
 function createElement(tag, property){
     var element = document.createElement(tag);
     if(property !== null){
@@ -57,17 +73,20 @@ function createElement(tag, property){
 //Sorting the array of sports by distance
 function sortSports(sports, lat, lng){
     var sortedList = [];
+    var list = [];
     for(var i in sports){
-        sortedList.push({dist: distance(sports[i].latitude, sports[i].longitude, lat, lng), sports: sports[i]});
+        //sortedList.push({dist: distance(sports[i].latitude, sports[i].longitude, lat, lng), sports: sports[i]});
+        sports[i]["distance"] = distance(sports[i].latitude, sports[i].longitude, lat, lng)
+        sortedList.push(sports[i]);
     }
     sortedList.sort(compare);
     return sortedList;
 }
 
 function compare(a,b) {
-  if (a.dist < b.dist)
+  if (a["distance"] < b["distance"])
      return -1;
-  if (a.dist > b.dist)
+  if (a["distance"] > b["distance"])
     return 1;
   return 0;
 }

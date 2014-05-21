@@ -1,5 +1,5 @@
 var map, geocoder, infowindow; //Google Objects
-var markers, arrayLength;
+var markers;
 
 function initialize() {
     markers = [];
@@ -44,9 +44,9 @@ function initialize() {
             return false;
         });
         //Check location
-        $('#locationsubmit').click( function() {
+        $('#searchsubmit').click( function() {
             deleteMarkers();
-            geocoder.geocode({'address' : document.getElementById("locationform").elements.item(0).value}, function(results, status) {
+            geocoder.geocode({'address' : document.getElementById("searchform").elements.item(0).value}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                     map.setCenter(results[0].geometry.location);
                     var p = {};
@@ -64,33 +64,6 @@ function initialize() {
     
 }
 
-//Callback function for geocoder
-function callback(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      //map.setCenter(results[0].geometry.location);
-      createMarker(results[0]);;
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-}
-
-function createMarker(place) {
-  var placeLoc = place.geometry.location;
-  marker = new google.maps.Marker({
-    map: map,
-    position: placeLoc,
-    animation: google.maps.Animation.DROP
-  });
-  markers.push(marker);
-  if(markers.length === arrayLength){
-    adjustZoom();
-  }
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.formatted_address);
-    infowindow.open(map, this);
-  });
-}
-
 // Deletes all markers in the array by removing references to them
 function deleteMarkers() {
   for (var i = 0; i < markers.length; i++) {
@@ -100,12 +73,35 @@ function deleteMarkers() {
 }
 
 //Translate address into markers on the map
-function findByAddress(address, length){
-    arrayLength = length; //created a global counter to only run adjustZoom once in every request
+function findByAddress(address, country){
     var request = {
-        address: address
+        address: address,
+        componentRestrictions:{country: country}
     };
     geocoder.geocode(request, callback);
+}
+
+
+//Callback function for geocoder
+function callback(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      createMarker(results[0].geometry.location);
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+}
+
+function createMarker(place) {
+  marker = new google.maps.Marker({
+    map: map,
+    position: place,
+    animation: google.maps.Animation.DROP
+  });
+  markers.push(marker);
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.formatted_address);
+    infowindow.open(map, this);
+  });
 }
 
 function adjustZoom(){
