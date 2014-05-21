@@ -12,10 +12,10 @@
 				</div>
 			</div>
 			<div id="buttonbox">
-				<button type="button" class="color1">Contact Us</button>
-				<button type="button" class="color1">Contribute</button>
-				<button type="button" class="color1">About</button>
 				<button type="button" class="color1">Home</button>
+                                <button type="button" class="color1">About</button>
+                                <button type="button" class="color1">Contribute</button>
+                                <button type="button" class="color1">Contact Us</button>
 			</div>
 		</div>
         </div>
@@ -59,8 +59,14 @@
 		<div id="map-canvas" class="color6">
 		</div>
 		<div id="results" class="color6">
-			<div id="resultsfilter">
-                        </div>
+			<div id="resultsfilter" class="color5">
+				<a href="???">Sort A-Z</a> <!--Nick fix href-->
+				|
+				<a href="???">Sort Dist.</a> <!--Nick fix href-->
+				<div class="filterbox">
+					filter-type <a href="???">&#10006</a> <!--Nick fix href-->
+				</div>
+			</div>
                         <div class="resultbox">
 				<div class="boxnumber">
 					icon
@@ -74,8 +80,9 @@
 				<div class="boxaddress">
 					insert address of place here
 				</div>
-			</div>
-                        <div id="resultssort">
+                            	<div class="sportsavailable">
+					insert types of sports available
+				</div>
 			</div>
 		</div>
 	</div>
