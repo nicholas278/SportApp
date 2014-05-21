@@ -163,6 +163,12 @@ body {
 #leftbar a {
 	text-decoration: none;
 }
+#leftbar a:hover {
+	text-decoration: underline;
+}
+#leftbar a:visited {
+	color: blue;
+}
 
 #banner {
 	width: 844px;
@@ -230,6 +236,18 @@ body {
 	border-bottom: 1px solid #DFDED4;
 	right: 0px;
 	bottom: 0px;
+}
+#resultsfilter {
+        width: 366px;
+	min-height: 30px;
+	background-color: green;
+}
+#resultssort {
+    	width: 366px;
+	height: 30px;
+	background-color: green;
+	position: absolute;
+	bottom: 25px;
 }
 
 #footer {
