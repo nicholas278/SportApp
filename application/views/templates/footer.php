@@ -3,13 +3,13 @@
 		<div ID="footerchild">
                         <a href="index.php">Home</a>
 			|
-			<a href="about.html">About</a>
+			<a href="<?php echo base_url(); ?>index.php/about">About</a>
 			|
-			<a href="contribute.html">Contribute</a>
+			<a href="<?php echo base_url(); ?>index.php/contribute">Contribute</a>
 			|
-			<a href="contact.html">Contact Us</a>
+			<a href="<?php echo base_url(); ?>index.php/contact">Contact Us</a>
 			|
-			<a href="terms.html">Terms of Use</a>
+			<a href="<?php echo base_url(); ?>index.php/terms">Terms of Use</a>
 		</div>
 	</div>
     </body>

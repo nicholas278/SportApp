@@ -28,7 +28,7 @@ function initialize() {
             deleteMarkers();
             var p = {};
             p['type'] = this.id;
-            $('#results').load('index.php/pages/lookup', p); 
+            $('#results').load('index.php/lookup', p); 
             return false;
         });
         //Check what area is clicked and center map to that area
@@ -53,7 +53,7 @@ function initialize() {
                     p['sortByDist'] = true;
                     p['currentLat'] = results[0].geometry.location.lat();
                     p['currentLng'] = results[0].geometry.location.lng();
-                    $('#results').load('index.php/pages/lookup', p);
+                    $('#results').load('index.php/lookup', p);
                 }
                 else {
                     alert('Geocode was not successful for the following reason: ' + status);
