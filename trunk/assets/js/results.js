@@ -1,9 +1,11 @@
 function displayResults(sportArray){
     for(var i in sportArray){
         createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
-        createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["type"], sportArray[i]["distance"])
+        createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["type"], sportArray[i]["distance"]);
     }
-    adjustZoom();
+    if(markers.length > 0){
+        adjustZoom();
+    }
 }
 
 function createNewItem(name, address, type, dist){

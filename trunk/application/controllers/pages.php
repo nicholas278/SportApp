@@ -6,11 +6,10 @@ class Pages extends CI_Controller {
             {
 		parent::__construct();
                 $this->load->model('sports_model');
+                $this->load->helper('url');
             }
             
-        public function index($page = 'home'){            
-            //$data['sports'] = $this->sports_model->get_sports();
-            
+        public function view($page = 'home'){                      
             if ( ! file_exists('application/views/pages/'.$page.'.php'))
             {
                 // Whoops, we don't have a page for that!
