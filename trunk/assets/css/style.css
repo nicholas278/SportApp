@@ -284,3 +284,49 @@ body {
 	text-decoration: none;
 	color: #A4A4A4;
 }
+
+.otherpages {
+	width: 992px;
+	height: 572px;
+	margin-top: 4px;	
+}
+.pagepurposewrap {
+	width: 992px;
+	height: 100px;
+	background-color: white;
+	text-align: center;
+	display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+.pagecontentwrap {
+	width: 992px;
+	height: 468px;
+	margin-top: 4px;
+	background-color: white;
+	position: relative;
+}
+.pagecontent {
+	width: 892px;
+	height: 368px;
+	position: absolute;
+	margin: auto;
+	bottom: 0;
+	left: 0;	
+	top: 0;
+	right: 0;
+}
+.pagecontentleft {
+	width: 421px;
+	height: 368px;
+	float: left;
+	position: relative;
+	border: 1px solid black;
+}
+.pagecontentright {
+	width: 421px;
+	height: 368px;
+	float: right;
+	position: relative;
+	border: 1px solid black;
+}
