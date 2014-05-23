@@ -34,6 +34,7 @@ class Pages extends CI_Controller {
             else{
                 $data['sports'] = $this->sports_model->get_sports();
             }
+            
             $this->load->view('templates/results', $data);
 	}
 }
