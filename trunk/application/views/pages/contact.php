@@ -7,6 +7,12 @@
 			</div>
 			<div class="pagecontentwrap">
 				<div class="pagecontent">
+					<div class="pagecontentleft">
+					content content content content content
+					<br>content content content content content
+					<br>content content content content content
+					</div>
+					<div class="pagecontentright">
 					<form action="contact.php" method="post" id="contactform">
 						<div class="formlabel">
 							<label for="Name">Your Name:</label>
@@ -31,6 +37,7 @@
 							<input type="submit" value="Send" ><input type="reset" value="Clear">
 						</div>
 					</form>
+					</div>
 					</div>
 				</div>				
 			</div>
