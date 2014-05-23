@@ -334,3 +334,45 @@ body {
 	position: relative;
 	border: 1px solid black;
 }
+
+.formlabel {
+	float: left;
+	width: 100px;
+	height: 30px;
+	display: flex;
+    align-items: center; /* align vertical */
+	margin-bottom: 10px;
+	background-color: yellow;
+}
+.formtextbox {
+	float: left;
+	width: 250px;
+	height: 30px;
+	margin-bottom: 10px;
+}
+#contactform textarea {
+	float: left;
+	max-width: 250px;
+	width: 250px;
+	height: 150px;
+	max-height: 200px;
+	margin-bottom: 10px;
+}
+.messages {
+	width: 250px;
+	float: left;
+}
+.messages input{
+	border: 0px;
+    border-radius: 0px;
+        -moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+    height: 20px;
+    width: 40px;
+    position: relative;
+    top: 0px;
+    background-color: #CDCAB9;
+}
+.messages input[type="submit"] {
+	font-size: 0.85em;
+}
