@@ -325,14 +325,12 @@ body {
 	height: 368px;
 	float: left;
 	position: relative;
-	border: 1px solid black;
 }
 .pagecontentright {
 	width: 421px;
 	height: 368px;
 	float: right;
 	position: relative;
-	border: 1px solid black;
 }
 
 .formlabel {
@@ -342,13 +340,13 @@ body {
 	display: flex;
     align-items: center; /* align vertical */
 	margin-bottom: 10px;
-	background-color: yellow;
 }
 .formtextbox {
 	float: left;
 	width: 250px;
 	height: 30px;
 	margin-bottom: 10px;
+	border: 1px solid #CDCAB9;
 }
 #contactform textarea {
 	float: left;
@@ -357,6 +355,7 @@ body {
 	height: 150px;
 	max-height: 200px;
 	margin-bottom: 10px;
+	border: 1px solid #CDCAB9;
 }
 .messages {
 	width: 250px;
@@ -366,13 +365,57 @@ body {
 	border: 0px;
     border-radius: 0px;
         -moz-border-radius: 0px;
-	-webkit-border-radius: 0px;
-    height: 20px;
-    width: 40px;
+		-webkit-border-radius: 0px;
+    height: 30px;
+    width: 50px;
     position: relative;
     top: 0px;
     background-color: #CDCAB9;
+    margin-right: 10px;
 }
 .messages input[type="submit"] {
 	font-size: 0.85em;
+}
+
+.otherinfo textarea {
+	float: left;
+	max-width: 250px;
+	width: 250px;
+	height: 100px;
+	max-height: 150px;
+	margin-bottom: 10px;
+	border: 1px solid #CDCAB9;
+}
+.otherinfo {
+	width: 250px;
+	float: left;
+}
+.otherinfo input{
+	border: 0px;
+    border-radius: 0px;
+        -moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+    height: 30px;
+    width: 50px;
+    position: relative;
+    top: 0px;
+    background-color: #CDCAB9;
+    margin-right: 10px;
+}
+.otherinfo input[type="submit"] {
+	font-size: 0.85em;
+}
+#sportinput {
+	float: left;
+	height: 30px;
+    width: 120px;    
+	border: 1px solid #CDCAB9;
+	margin-right: 10px;
+}
+#othersportsbox {
+	float: left;
+	width: 120px;
+	height: 30px;
+	margin-bottom: 10px;
+	border: 1px solid #CDCAB9;
 }
