@@ -35,6 +35,9 @@
 			</ul>
 		</div>
 		<div id="banner" class="color6">
+                    <div id="bannerchild">
+			<p>Know something we don't? Visit the Contribute page and help us out!</p>
+                    </div>
 		</div>
 		<div id="map-canvas" class="color6">
 		</div>
