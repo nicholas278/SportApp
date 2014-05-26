@@ -9,7 +9,6 @@
 				<div class="pagecontent">
 					<div class="pagecontentleft">
                                             <p>Let us know how we are doing. We love to get your feedback. Leave us a message by filling out the form on the right, or send us an email at:</p>
-                                            <br>
                                             <p>[insert email]</p>
 					</div>
 					<div class="pagecontentright">
