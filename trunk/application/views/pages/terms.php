@@ -2,7 +2,7 @@
 		<div class="otherpages" class="color3">
 			<div class="pagepurposewrap">
 				<h1>
-				Terms of Service
+				TERMS OF SERVICE
 				</h1>
 			</div>
 			<div class="pagecontentwrap">
