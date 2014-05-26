@@ -9,7 +9,7 @@
 			|
 			<a href="<?php echo base_url(); ?>index.php/view/contact">Contact Us</a>
 			|
-			<a href="<?php echo base_url(); ?>index.php/view/terms">Terms of Use</a>
+			<a href="<?php echo base_url(); ?>index.php/view/terms">Terms of Service</a>
 		</div>
 	</div>
     </body>
