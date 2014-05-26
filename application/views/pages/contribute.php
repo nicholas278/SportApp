@@ -8,9 +8,13 @@
 			<div class="pagecontentwrap">
 				<div class="pagecontent">
 					<div class="pagecontentleft">
-					content content content content content
-					<br>content content content content content
-					<br>content content content content content
+                                            Are we missing your favorite place?
+                                        <br>
+                                        <br>
+                                            Or has a place been recently closed down?
+                                        <br>
+                                        <br>
+                                            Let us know! [Insert Name] relies on users to keep our content updated. If you think there is anything missing or wrong in our database, please fill out the form on the right to help us out.
 					</div>
 					<div class="pagecontentright">
 					<form action="contact.php" method="post" id="contributeform">
