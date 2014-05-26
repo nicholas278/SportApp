@@ -3,7 +3,6 @@ var markers;
 
 function initialize() {
     markers = [];
-    loaded = false;
     geocoder = new google.maps.Geocoder();
     infowindow = new google.maps.InfoWindow();
     
