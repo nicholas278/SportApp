@@ -50,6 +50,13 @@
                     </div>
 		</div>
 		<div id="results" class="color6">
+                    	<div id="resultshome" class="color6">
+				<div id="resultshomechild">
+					<p>Look up a sport by clicking on a link on the left</p>
+					<br>
+					<p>Find one near you by using the search bar at the top</p>
+				</div>
+			</div>
                         <div class="resultbox">
 				<div class="boxnumber">
 					icon
