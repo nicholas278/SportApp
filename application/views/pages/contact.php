@@ -8,10 +8,9 @@
 			<div class="pagecontentwrap">
 				<div class="pagecontent">
 					<div class="pagecontentleft">
-					Let us know how we are doing. We love to get your feedback. Leave us a message by filling out the form on the right, or send us an email at:
-                                        <br>
-                                        <br>
-                                        [insert email]
+                                            <p>Let us know how we are doing. We love to get your feedback. Leave us a message by filling out the form on the right, or send us an email at:</p>
+                                            <br>
+                                            <p>[insert email]</p>
 					</div>
 					<div class="pagecontentright">
 					<form action="contact.php" method="post" id="contactform">

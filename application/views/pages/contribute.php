@@ -8,13 +8,11 @@
 			<div class="pagecontentwrap">
 				<div class="pagecontent">
 					<div class="pagecontentleft">
-                                            Are we missing your favorite place?
-                                        <br>
-                                        <br>
-                                            Or has a place been recently closed down?
-                                        <br>
-                                        <br>
-                                            Let us know! [Insert Name] relies on users to keep our content updated. If you think there is anything missing or wrong in our database, please fill out the form on the right to help us out.
+                                            <p>Are we missing your favorite place?</p>
+                                            <br>
+                                            <p>Or has a place been recently closed down?</p>
+                                            <br>
+                                            <p>Let us know! [Insert Name] relies on users to keep our content updated. If you think there is anything missing or wrong in our database, please fill out the form on the right to help us out.</p>
 					</div>
 					<div class="pagecontentright">
 					<form action="contact.php" method="post" id="contributeform">
