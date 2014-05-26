@@ -9,9 +9,7 @@
 				<div class="pagecontent">
 					<div class="pagecontentleft">
                                             <p>Are we missing your favorite place?</p>
-                                            <br>
                                             <p>Or has a place been recently closed down?</p>
-                                            <br>
                                             <p>Let us know! [Insert Name] relies on users to keep our content updated. If you think there is anything missing or wrong in our database, please fill out the form on the right to help us out.</p>
 					</div>
 					<div class="pagecontentright">
