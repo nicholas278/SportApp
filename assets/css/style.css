@@ -179,6 +179,11 @@ body {
 	margin-top: 4px;
 	margin-bottom: 2px;
 }
+#bannerchild {
+  	display: table-cell;
+  	vertical-align: middle;
+	text-align: center;  
+}
 
 #map-canvas {
 	width: 474px;
