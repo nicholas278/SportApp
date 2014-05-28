@@ -41,7 +41,8 @@
 //$route['default_controller'] = "welcome";
 //$route['404_override'] = '';
 
-$route['lookup'] = 'pages/lookup';
+$route['add_filter'] = 'pages/add_filter';
+$route['remove_filter'] = 'pages/remove_filter';
 $route['view/(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
 

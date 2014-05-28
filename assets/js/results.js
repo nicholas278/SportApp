@@ -1,7 +1,11 @@
-function displayResults(sportArray){
+function displayResults(filtersList, sportArray){
+    document.getElementById("typebox").innerHTML = "";
+    for(var i in filtersList){
+        createFilterList(filtersList[i]);
+    }
     for(var i in sportArray){
         createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
-        createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["type"], sportArray[i]["distance"]);
+        createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["sport"], sportArray[i]["distance"]);
     }
     if(markers.length > 0){
         adjustZoom();
@@ -17,6 +21,23 @@ function createNewItem(name, address, type, dist){
     box.appendChild(createSportTypeBox(type));
     var element=document.getElementById("results");
     element.appendChild(box);
+}
+
+function createFilterList(filterItem){
+    var content = createElement("div", "filterbox");
+    var node = document.createTextNode(filterItem);
+    content.appendChild(node);
+    content.appendChild(createLink());
+    var element=document.getElementById("typebox");
+    element.appendChild(content);
+}
+
+function createLink(){
+    var a = document.createElement('a');
+    var linkText = document.createTextNode(' \u2716');
+    a.appendChild(linkText);
+    a.href = "#";
+    return a;
 }
 
 function createResultBox(){
@@ -75,10 +96,9 @@ function createElement(tag, property){
 //Sorting the array of sports by distance
 function sortSports(sports, lat, lng){
     var sortedList = [];
-    var list = [];
     for(var i in sports){
         //sortedList.push({dist: distance(sports[i].latitude, sports[i].longitude, lat, lng), sports: sports[i]});
-        sports[i]["distance"] = distance(sports[i].latitude, sports[i].longitude, lat, lng)
+        sports[i]["distance"] = distance(sports[i].latitude, sports[i].longitude, lat, lng);
         sortedList.push(sports[i]);
     }
     sortedList.sort(compare);
