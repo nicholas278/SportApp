@@ -26,20 +26,25 @@ function initialize() {
         $('.sportslist').click( function() {
             deleteMarkers();
             var p = {};
-            p['type'] = this.id;
-            $('#results').load('index.php/lookup', p); 
+            p['filterType'] = "sport";
+            p['filterValue'] = this.id;
+            $('#results').load('index.php/add_filter', p); 
             return false;
         });
         //Check what area is clicked and center map to that area
         $('.area').click( function() {
-            geocoder.geocode({'address' : this.id}, function(results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    map.setCenter(results[0].geometry.location);
-                }
-                else {
-                    alert('Geocode was not successful for the following reason: ' + status);
-                }
-            });
+            deleteMarkers();
+            var p = {};
+            p['filterType'] = "city";
+            p['filterValue'] = this.id;
+            $('#results').load('index.php/add_filter', p); 
+            return false;
+        });
+        $("#typebox").on("click", "a", function() {
+            deleteMarkers();
+            var p = {};
+            p['removeValue'] = this.parentNode.firstChild.nodeValue;
+            $('#results').load('index.php/remove_filter', p); 
             return false;
         });
         //Check location

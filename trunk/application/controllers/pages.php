@@ -1,14 +1,13 @@
 <?php
 
 class Pages extends CI_Controller {
-        private $filterArray, $reservedArray = [];
     
         public function __construct()
             {
 		parent::__construct();
                 $this->load->model('sports_model');
                 $this->load->helper('url');
-                $filterArray = [];
+                $this->load->library('session');
             }
             
         public function view($page = 'home'){                      
@@ -26,12 +25,12 @@ class Pages extends CI_Controller {
         }    
             
 	public function lookup(){   
-            $type = $this->input->post('type');
+            $filterValue = $this->input->post('filterValue');
             $data['currentLat'] = $this->input->post('currentLat');
             $data['currentLng'] = $this->input->post('currentLng');
             $data['sortByDist'] = $this->input->post('sortByDist');
-            if($type != NULL){
-                $data['sports'] = $this->sports_model->get_sports($type);
+            if($filterValue != NULL){
+                $data['sports'] = $this->sports_model->get_sports('sport', $filterValue);
             }
             else{
                 $data['sports'] = $this->sports_model->get_sports();
@@ -40,42 +39,61 @@ class Pages extends CI_Controller {
             $this->load->view('templates/results', $data);
 	}
         
-        public function add_filter($filter){
+        public function add_filter(){
             //Get input
-            $filterType = $this->input->post('');
-            $filterValue = $this->input->post('');
-            //check what filter it is being applied
-            if($filterType === "sport"){
-                //check if filter is already been applied
-                for($i=0; $i<sizeof($this->filterArray); $i++){
-                    if($this->filterArray[$i].key == "sport"){
-                        //if applied, check what position the filter is applied
-                        if($i==0){
-                            //if it is the 1st filter, search DB
-                            $data['sports'] = $this->sports_model->get_sports_byType($filterValue);
-                            //then filter new list with the rest of filters
-                        }
-                        else{
-                            //remove filter, then reapply with new filter
-                        }
-                    }
-                }
-                $this->filterArray["sport"] = $filterValue;
-                $data['sports'] = $this->sports_model->get_sports_byType($filterValue);
+            $filterType = $this->input->post('filterType');
+            $filterValue = $this->input->post('filterValue');
+            $filterIndex = $this->check_filterslist($filterType);
+            
+            //Only get from DB if the filter is not existant, or if the first filter is being changed
+            if($filterIndex === FALSE || $filterIndex === 0){              
+                $reservedList = $this->sports_model->get_sports($filterType, $filterValue);
+                $this->session->set_userdata('reservedList', $reservedList);
             }
-            elseif($filterType == "location"){
-                $this->filterArray["location"] = $filterValue;
-                $data['sports'] = $this->sports_model->get_sports_byLoc($filterValue);
+            else{
+                $reservedList = $this->session->userdata('reservedList');
             }
+            $data['filtersList'] = $this->add_filterslist($filterType, $filterValue);
+            $data['sports'] = $this->filter_list($reservedList);
+            
             $this->load->view('templates/results', $data);
         }
         
-        private function filter($filterArray, $filterList){
-            //pop filtered elements from filterArray into reservedArray
+        public function remove_filter(){
+            
         }
         
-        private function unfilter($filterArray, $filterList){
-            //filter reserve array for the current filters and add to the filterArray
+        //Check filtersList for the request filter, return position of key of exist, otherwise return FALSE
+        private function check_filterslist($filterType){
+            $list = $this->session->userdata('filtersList');
+            if($list === FALSE){
+                return FALSE;
+            }
+            else if(array_key_exists($filterType, $list)){
+                return array_search($filterType, array_keys($list));
+            }
+            return FALSE;
         }
+        
+        private function add_filterslist($filterType, $filterValue){
+            $list = $this->session->userdata('filtersList');
+            $list[$filterType] = $filterValue;
+            $this->session->set_userdata('filtersList', $list);
+            return $list;
+        }
+        
+        private function filter_list($filterFrom){
+            $resultList = [];
+            $filtersList = $this->session->userdata('filtersList'); 
+            $length = sizeof($filterFrom);
+            for($i=0; $i<$length; $i++){
+                $list = array_intersect($filterFrom[$i], $filtersList);
+                if(sizeof($list) === sizeof($filtersList)){
+                    array_push($resultList, $filterFrom[$i]);
+                }
+            }
+            return $resultList;
+        }
+
         
 }
