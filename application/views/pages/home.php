@@ -48,7 +48,7 @@
 		</div>
 		<div id="typebox" class="color5">
 			<div class="filterbox">
-				filter-type <a href="???">&#10006</a> <!--Nick fix href-->
+				<!--filter-type <a href="???">&#10006</a> -->
 			</div>
 		</div>
 		<div id="results" class="color6">
@@ -59,7 +59,7 @@
 					<p>Find one near you by using the search bar at the top</p>
 				</div>
 			</div>
-                        <div class="resultbox">
+                    <!--<div class="resultbox">
 				<div class="boxnumber">
 					icon
 				</div>
@@ -75,7 +75,7 @@
                             	<div class="sportsavailable">
 					insert types of sports available
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 
