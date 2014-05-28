@@ -6,21 +6,21 @@
 				</h2>
 			</div>
 			<ul>    
-                                <li><a href="#" id="badminton" class="sportslist">Badminton</a></li>
-                                <li><a href="#" id="baseball" class="sportslist">Baseball</a></li>
-                                <li><a href="#" id="basketball" class="sportslist">Basketball</a></li>
-                                <li><a href="#" id="golf" class="sportslist">Golf</a></li>
-                                <li><a href="#" id="gym" class="sportslist">Gym</a></li>
-                                <li><a href="#" id="hockey" class="sportslist">Hockey</a></li>
-                                <li><a href="#" id="rock_climbing" class="sportslist">Rock Climbing</a></li>
-                                <li><a href="#" id="soccer" class="sportslist">Soccer</a></li>
-                                <li><a href="#" id="squash" class="sportslist">Squash</a></li>
-                                <li><a href="#" id="swimming" class="sportslist">Swimming</a></li>
-                                <li><a href="#" id="table_tennis" class="sportslist">Table Tennis</a></li>
-                                <li><a href="#" id="tennis" class="sportslist">Tennis</a></li>
-                                <li><a href="#" id="ultimate" class="sportslist">Ultimate</a></li>
-                                <li><a href="#" id="volleyball" class="sportslist">Volleyball</a></li>
-                                <li><a href="#" id="yoga" class="sportslist">Yoga</a></li>
+                                <li><a href="#" id="Badminton" class="sportslist">Badminton</a></li>
+                                <li><a href="#" id="Baseball" class="sportslist">Baseball</a></li>
+                                <li><a href="#" id="Basketball" class="sportslist">Basketball</a></li>
+                                <li><a href="#" id="Golf" class="sportslist">Golf</a></li>
+                                <li><a href="#" id="Gym" class="sportslist">Gym</a></li>
+                                <li><a href="#" id="Hockey" class="sportslist">Hockey</a></li>
+                                <li><a href="#" id="Rock_Climbing" class="sportslist">Rock Climbing</a></li>
+                                <li><a href="#" id="Soccer" class="sportslist">Soccer</a></li>
+                                <li><a href="#" id="Squash" class="sportslist">Squash</a></li>
+                                <li><a href="#" id="Swimming" class="sportslist">Swimming</a></li>
+                                <li><a href="#" id="Table_Tennis" class="sportslist">Table Tennis</a></li>
+                                <li><a href="#" id="Tennis" class="sportslist">Tennis</a></li>
+                                <li><a href="#" id="Ultimate" class="sportslist">Ultimate</a></li>
+                                <li><a href="#" id="Volleyball" class="sportslist">Volleyball</a></li>
+                                <li><a href="#" id="Yoga" class="sportslist">Yoga</a></li>
 
 			</ul>
                         <div class="leftbarheader">

@@ -43,7 +43,7 @@ function initialize() {
         $("#typebox").on("click", "a", function() {
             deleteMarkers();
             var p = {};
-            p['removeValue'] = this.parentNode.firstChild.nodeValue;
+            p['removeType'] = this.id;
             $('#results').load('index.php/remove_filter', p); 
             return false;
         });
