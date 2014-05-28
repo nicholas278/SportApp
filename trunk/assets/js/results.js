@@ -1,7 +1,7 @@
 function displayResults(filtersList, sportArray){
     document.getElementById("typebox").innerHTML = "";
     for(var i in filtersList){
-        createFilterList(filtersList[i]);
+        createFilterList(i, filtersList[i]);
     }
     for(var i in sportArray){
         createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
@@ -23,20 +23,21 @@ function createNewItem(name, address, type, dist){
     element.appendChild(box);
 }
 
-function createFilterList(filterItem){
+function createFilterList(filterType, filterItem){
     var content = createElement("div", "filterbox");
     var node = document.createTextNode(filterItem);
     content.appendChild(node);
-    content.appendChild(createLink());
+    content.appendChild(createLink(filterType));
     var element=document.getElementById("typebox");
     element.appendChild(content);
 }
 
-function createLink(){
+function createLink(filterType){
     var a = document.createElement('a');
     var linkText = document.createTextNode(' \u2716');
     a.appendChild(linkText);
     a.href = "#";
+    a.id = filterType;
     return a;
 }
 
