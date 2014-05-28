@@ -224,6 +224,10 @@ body {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+.filterbox {
+        display: inline;
+        margin-right: 5px;
+}
 .filterbox a{
 	text-decoration: none;
 	color: black;
