@@ -41,13 +41,15 @@
 		</div>
 		<div id="map-canvas" class="color6">
 		</div>
-                <div id="resultsfilter" class="color5">
-                    <a href="???">Sort A-Z</a> <!--Nick fix href-->
-                    |
-                    <a href="???">Sort Dist.</a> <!--Nick fix href-->
-                    <div class="filterbox">
-			filter-type <a href="???">&#10006</a> <!--Nick fix href-->
-                    </div>
+		<div id="sortbox" class="color5">
+			<a href="???">Sort A-Z</a> <!--Nick fix href-->
+			|
+			<a href="???">Sort Dist.</a> <!--Nick fix href-->
+		</div>
+		<div id="typebox" class="color5">
+			<div class="filterbox">
+				filter-type <a href="???">&#10006</a> <!--Nick fix href-->
+			</div>
 		</div>
 		<div id="results" class="color6">
                     	<div id="resultshome" class="color6">
