@@ -22,8 +22,9 @@
 			<div id="topinputbox">
 				<div id="topinputcontainer">
 					<form name="input"  action="javascript:void(0);" id="searchform">
-							<input type="text" name="user_location_input" placeholder="&nbsp;Sports, Locations, Names..." id="searchinput"><!--
-							--><input type="submit" value="Search" id="searchsubmit">			        
+							Find&nbsp;<input type="text" name="user_location_input" placeholder="&nbsp;Sports, Names..." id="filtersearchinput">
+							Near&nbsp;<input type="text" name="user_location_input" placeholder="&nbsp;Address, Locations..." id="locationsearchinput">
+							<input type="submit" value="Search" id="searchsubmit">			        
 					</form>
 				</div>
 			</div>
