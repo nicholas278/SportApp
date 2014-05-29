@@ -68,20 +68,30 @@ body {
 	float: right;
 }
 #topinputcontainer {
-	width: 340px;
+	width: 600px;
 	height: 30px;
 	position: absolute;	
-	left: 202px;
-	bottom: 10px;
+	left: 150px;
+	bottom: 15px;
 }
-#searchinput {
-	width: 275px;
+#filtersearchinput {
+	width: 175px;
 	height: 30px;
 	border: 0px;
-        padding: 0px;
-        margin: 0px;
+    padding: 0px;
+	margin-right: 5px;
 }
-#searchinput[type="text"] {
+#filtersearchinput[type="text"] {
+	font-size: 0.9em;
+}
+#locationsearchinput {
+	width: 175px;
+	height: 30px;
+	border: 0px;
+    padding: 0px;
+	margin: 0px;
+}
+#locationsearchinput[type="text"] {
 	font-size: 0.9em;
 }
 #searchsubmit {
