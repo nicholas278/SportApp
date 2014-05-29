@@ -250,6 +250,7 @@ body {
 	margin-left: 2px;
 	margin-right: 4px;
 	margin-bottom: 0px;
+        overflow-x: hidden;
 }
 #resultshome {
 	width: 366px;
