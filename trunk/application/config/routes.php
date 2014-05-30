@@ -43,6 +43,7 @@
 
 $route['add_filter'] = 'pages/add_filter';
 $route['remove_filter'] = 'pages/remove_filter';
+$route['lookup'] = 'pages/lookup';
 $route['view/(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
 

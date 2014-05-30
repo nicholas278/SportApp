@@ -16,7 +16,8 @@ class Pages extends CI_Controller {
                 // Whoops, we don't have a page for that!
                 show_404();
             }
-               
+            
+            $this->session->set_userdata('filtersList', FALSE);
             $data['title'] = ucfirst($page); // Capitalize the first letter 
             
             $this->load->view('templates/header', $data);
@@ -26,15 +27,19 @@ class Pages extends CI_Controller {
             
 	public function lookup(){   
             $filterValue = $this->input->post('filterValue');
-            $data['currentLat'] = $this->input->post('currentLat');
-            $data['currentLng'] = $this->input->post('currentLng');
-            $data['sortByDist'] = $this->input->post('sortByDist');
-            if($filterValue != NULL){
-                $data['sports'] = $this->sports_model->get_sports('sport', $filterValue);
+            $currentLat = $this->input->post('currentLat');
+            $currentLng = $this->input->post('currentLng');
+            //$data['sortByDist'] = $this->input->post('sortByDist');
+            $data['filtersList'] = $this->add_filterslist('city', $filterValue);
+            $filterIndex = $this->check_filterslist('city'); 
+            if($filterIndex === 0){
+                $reservedList = $this->sports_model->get_sports(); 
             }
             else{
-                $data['sports'] = $this->sports_model->get_sports();
-            }            
+                $reservedList = $this->session->userdata('reservedList');
+            }
+            $data['sports'] = $this->filter_list($this->sort_list_byDist($reservedList, $currentLat, $currentLng));
+            $this->session->set_userdata('reservedList', $reservedList);
             $this->load->view('templates/results', $data);
 	}
         
@@ -106,6 +111,9 @@ class Pages extends CI_Controller {
         private function filter_list($filterFrom){
             $resultList = [];
             $filtersList = $this->session->userdata('filtersList'); 
+            if($filtersList['city'] === "Current Location"){
+                unset($filtersList['city']);
+            }
             $length = sizeof($filterFrom);
             for($i=0; $i<$length; $i++){
                 $list = array_intersect($filterFrom[$i], $filtersList);
@@ -115,6 +123,34 @@ class Pages extends CI_Controller {
             }
             return $resultList;
         }
-
         
+        private function filter_byDist($filterFrom, $distance){
+            return $filterFrom;
+        }
+        
+        private function sort_list_byDist($list, $lat, $lng){
+            for($i=0;$i<sizeof($list);$i++){
+                $list[$i]['distance'] = $this->distance($list[$i]['latitude'], $list[$i]['longitude'], $lat, $lng);
+            }
+            usort($list, function($a, $b){
+                if ($a['distance'] == $b['distance']){
+                    return 0;
+                }
+                else if ($a['distance'] > $b['distance']){
+                    return 1;
+                }
+                else {return -1;}
+            });
+            return $list;
+        }
+        
+        private function distance($lat1, $lon1, $lat2, $lon2) {
+            $theta = $lon1 - $lon2;
+            $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+            $dist = acos($dist);
+            $dist = rad2deg($dist);
+            $miles = $dist * 60 * 1.1515;
+            return ($miles * 1.609344);
+        }
+
 }

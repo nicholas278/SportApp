@@ -37,9 +37,28 @@ function initialize() {
             var p = {};
             p['filterType'] = "city";
             p['filterValue'] = this.id;
-            $('#results').load('index.php/add_filter', p); 
+            if(this.id === "Current Location"){
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        p['currentLat'] = position.coords.latitude;
+                        p['currentLng'] = position.coords.longitude;
+                        var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        createMarker(pos);
+                        $('#results').load('index.php/lookup', p);
+                    }, function() {
+                        alert:('Error: The Geolocation service failed.');
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    alert('Error: Your browser doesn\'t support geolocation.');
+                }
+            }
+            else{
+                $('#results').load('index.php/add_filter', p); 
+            }
             return false;
         });
+        //Check for remove filter
         $("#typebox").on("click", "a", function() {
             deleteMarkers();
             var p = {};
@@ -117,6 +136,12 @@ function adjustZoom(){
     for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
       bounds.extend (LatLngList[i]);
     }
+    //Prevent map from zooming too close when results are close together
+    google.maps.event.addListenerOnce(map, 'bounds_changed', function(event) {
+        if (this.getZoom() > 15) {
+          this.setZoom(15);
+        }
+    });
     map.fitBounds (bounds);
 }
 
