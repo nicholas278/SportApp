@@ -38,7 +38,8 @@ class Pages extends CI_Controller {
             else{
                 $reservedList = $this->session->userdata('reservedList');
             }
-            $data['sports'] = $this->filter_list($this->sort_list_byDist($reservedList, $currentLat, $currentLng));
+            $reservedList = $this->filter_list($this->sort_list_byDist($reservedList, $currentLat, $currentLng));
+            $data['sports'] = $reservedList;
             $this->session->set_userdata('reservedList', $reservedList);
             $this->load->view('templates/results', $data);
 	}
@@ -111,7 +112,7 @@ class Pages extends CI_Controller {
         private function filter_list($filterFrom){
             $resultList = [];
             $filtersList = $this->session->userdata('filtersList'); 
-            if($filtersList['city'] === "Current Location"){
+            if(array_search("Current Location", $filtersList)){
                 unset($filtersList['city']);
             }
             $length = sizeof($filterFrom);
