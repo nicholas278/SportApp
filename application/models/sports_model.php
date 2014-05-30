@@ -6,7 +6,7 @@ class Sports_model extends CI_Model {
             $this->load->database();
 	}
 
-        public function get_sports($filterType = FALSE, $filterValue)
+        public function get_sports($filterType = FALSE, $filterValue = FALSE)
         {
             if ($filterType === FALSE)
             {
