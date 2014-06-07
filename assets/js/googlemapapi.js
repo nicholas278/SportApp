@@ -42,9 +42,7 @@ function initialize() {
                     navigator.geolocation.getCurrentPosition(function(position) {
                         p['currentLat'] = position.coords.latitude;
                         p['currentLng'] = position.coords.longitude;
-                        var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                        createMarker(pos);
-                        $('#results').load('index.php/lookup', p);
+                        $('#results').load('index.php/current_location', p);
                     }, function() {
                         alert:('Error: The Geolocation service failed.');
                     });
@@ -69,14 +67,13 @@ function initialize() {
         //Check location
         $('#searchsubmit').click( function() {
             deleteMarkers();
-            geocoder.geocode({'address' : document.getElementById("searchform").elements.item(0).value}, function(results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    map.setCenter(results[0].geometry.location);
+            geocoder.geocode({'address' : document.getElementById("searchform").elements.item(1).value}, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) { 
                     var p = {};
-                    p['sortByDist'] = true;
                     p['currentLat'] = results[0].geometry.location.lat();
                     p['currentLng'] = results[0].geometry.location.lng();
-                    $('#results').load('index.php/lookup', p);
+                    p['searchValue'] = document.getElementById("searchform").elements.item(0).value;
+                    $('#results').load('index.php/search', p);
                 }
                 else {
                     alert('Geocode was not successful for the following reason: ' + status);
