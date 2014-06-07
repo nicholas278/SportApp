@@ -25,21 +25,28 @@ class Pages extends CI_Controller {
             $this->load->view('templates/footer', $data);
         }    
             
-	public function lookup(){   
+	public function current_location(){   
             $filterValue = $this->input->post('filterValue');
             $currentLat = $this->input->post('currentLat');
             $currentLng = $this->input->post('currentLng');
-            //$data['sortByDist'] = $this->input->post('sortByDist');
-            $data['filtersList'] = $this->add_filterslist('city', $filterValue);
-            $filterIndex = $this->check_filterslist('city'); 
-            if($filterIndex === 0){
-                $reservedList = $this->sports_model->get_sports(); 
-            }
-            else{
-                $reservedList = $this->session->userdata('reservedList');
-            }
-            $reservedList = $this->filter_list($this->sort_list_byDist($reservedList, $currentLat, $currentLng));
+            
+            $reservedList = $this->session->userdata('reservedList');
+            $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
             $data['sports'] = $reservedList;
+            $data['filtersList'] = $this->session->userdata('filtersList');
+            $this->session->set_userdata('reservedList', $reservedList);
+            $this->load->view('templates/results', $data);
+	}
+        
+        public function search(){   
+            $currentLat = $this->input->post('currentLat');
+            $currentLng = $this->input->post('currentLng');
+            $searchValue = $this->input->post('searchValue');
+            
+            $reservedList = $this->get_list($searchValue);
+            $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
+            $data['sports'] = $reservedList;
+            $data['filtersList'] = $this->session->userdata('filtersList');
             $this->session->set_userdata('reservedList', $reservedList);
             $this->load->view('templates/results', $data);
 	}
@@ -51,8 +58,8 @@ class Pages extends CI_Controller {
             //Add filter to the list
             $data['filtersList'] = $this->add_filterslist($filterType, $filterValue);
             //Find filter position and get list accordingly
-            $filterIndex = $this->check_filterslist($filterType);           
-            $data['sports'] = $this->get_list($filterIndex);
+            //$filterIndex = $this->check_filterslist($filterType);           
+            $data['sports'] = $this->get_list();
             $this->load->view('templates/results', $data);
         }
         
@@ -60,27 +67,30 @@ class Pages extends CI_Controller {
             //Get input
             $removeType = $this->input->post('removeType');
             //Find filter position
-            $filterIndex = $this->check_filterslist($removeType);
+            //$filterIndex = $this->check_filterslist($removeType);
             //Remove filter from list first before getting the list
             $data['filtersList'] = $this->remove_filterslist($removeType);
-            $data['sports'] = $this->get_list($filterIndex);
+            $data['sports'] = $this->get_list();
             $this->load->view('templates/results', $data);
         }
         
-        private function get_list($filterIndex){
+        private function get_list($searchValue = FALSE){
             $filtersList = $this->session->userdata('filtersList');
             //Only get from DB if the filter is not existant, or if the first filter is being changed
-            if($filterIndex === FALSE || sizeof($filtersList) === 0){
-                return FALSE;
+            //if($filterIndex === FALSE || sizeof($filtersList) === 0){
+            $reservedList = $this->sports_model->get_sports(FALSE, $searchValue);
+            //}
+            //else if($filterIndex === 0){              
+            //    $reservedList = $this->sports_model->get_sports(array(reset(array_flip($filtersList)) => reset($filtersList)));
+            //}
+            //else{
+            //    $reservedList = $this->session->userdata('reservedList');
+            //}
+            if($filtersList !== false){
+                $reservedList = $this->filter_list($reservedList);
             }
-            else if($filterIndex === 0){              
-                $reservedList = $this->sports_model->get_sports(reset(array_flip($filtersList)), reset($filtersList));
-                $this->session->set_userdata('reservedList', $reservedList);
-            }
-            else{
-                $reservedList = $this->session->userdata('reservedList');
-            }
-            return $this->filter_list($reservedList);
+            $this->session->set_userdata('reservedList', $reservedList);
+            return $reservedList;
         }
         
         //Check filtersList for the request filter, return position of key of exist, otherwise return FALSE
@@ -111,10 +121,7 @@ class Pages extends CI_Controller {
         
         private function filter_list($filterFrom){
             $resultList = [];
-            $filtersList = $this->session->userdata('filtersList'); 
-            if(array_search("Current Location", $filtersList)){
-                unset($filtersList['city']);
-            }
+            $filtersList = $this->session->userdata('filtersList');
             $length = sizeof($filterFrom);
             for($i=0; $i<$length; $i++){
                 $list = array_intersect($filterFrom[$i], $filtersList);
@@ -125,8 +132,11 @@ class Pages extends CI_Controller {
             return $resultList;
         }
         
-        private function filter_byDist($filterFrom, $distance){
-            return $filterFrom;
+        private function filter_byDist($filterFrom){
+            $result = array_filter($filterFrom, function($var){
+                return($var['distance'] < 10);
+            });
+            return $result;
         }
         
         private function sort_list_byDist($list, $lat, $lng){
@@ -142,7 +152,7 @@ class Pages extends CI_Controller {
                 }
                 else {return -1;}
             });
-            return $list;
+            return $this->filter_byDist($list);
         }
         
         private function distance($lat1, $lon1, $lat2, $lon2) {
