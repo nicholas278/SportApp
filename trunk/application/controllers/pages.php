@@ -134,7 +134,7 @@ class Pages extends CI_Controller {
         
         private function filter_byDist($filterFrom){
             $result = array_filter($filterFrom, function($var){
-                return($var['distance'] < 10);
+                return($var['distance'] < 5);
             });
             return $result;
         }
