@@ -462,3 +462,10 @@ body {
 	margin-bottom: 10px;
 	border: 1px solid #CDCAB9;
 }
+
+.pagecontentmiddle {
+	width: 421px;
+	height: 368px;
+	float: right;
+	position: relative;
+}
