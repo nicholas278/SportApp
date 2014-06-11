@@ -469,3 +469,58 @@ body {
 	float: right;
 	position: relative;
 }
+
+#dbcontentwrap {
+	width: 1200px;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+}
+#lefttable {
+	width: 798px;
+	min-height: 572px; /* change this later to overflow */
+	overflow: auto; /* see if this works */
+	float: left;
+	position: relative;
+	margin-top: 4px;
+	margin-right: 2px;
+}
+#rightinput {
+	width: 390px;
+	min-height: 564px; /* change this later to overflow */
+	overflow: auto; /* see if this works */
+	float: right;
+	position: relative;
+	margin-top: 4px;
+	margin-left: 2px;
+	padding: 4px;
+}
+#headerholder {
+    height: 80px;
+    width: 390px;
+}
+.dbbuttons input{
+	border: 0px;
+    border-radius: 0px;
+        -moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
+    height: 30px;
+    width: 50px;
+    position: relative;
+    top: 0px;
+    background-color: #CDCAB9;
+    margin-right: 10px;
+}
+.dbbuttons input[type="submit"] {
+	font-size: 0.85em;
+}
+.heading {
+	width: 100px;
+	height: 34px;
+        float: left;
+}
+.inputplaceholder{
+        width: 290px;
+	height: 34px;
+        float: left;
+}
