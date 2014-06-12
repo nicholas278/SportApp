@@ -263,23 +263,22 @@ body {
 	text-align: center;
 }
 .resultbox {
-	width: 358px;
-	height: 105px;
+	width: 366px;
+	height: 113px;
 	position: relative;
-	border: 4px solid white;
 }
 .resultbox:hover {
-	border: 4px solid #CA171B;
+	background-color: #DFDED4;
 }
 .boxnumber {
-	width: 53px;
+	width: 57px;
 	height: 53px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 }
 .boxdistance {
-	width: 53px;
+	width: 57px;
 	height: 52px;
 	position: absolute;
 	left: 0px;
@@ -287,21 +286,21 @@ body {
 	border-bottom: 1px solid #DFDED4;
 }
 .boxname {
-	width: 305px;
+	width: 309px;
 	height: 35px;
 	position: absolute;
 	top: 0px;
 	right: 0px;
 }
 .boxaddress {
-	width: 305px;
+	width: 309px;
 	height: 35px;
 	position: absolute;
 	right: 0px;
 	top: 35px;
 }
 .sportsavailable {
-	width: 305px;
+	width: 309px;
 	height: 34px;
 	border-bottom: 1px solid #DFDED4;
 	position: absolute;
