@@ -10,6 +10,21 @@ class Pages extends CI_Controller {
                 $this->load->library('session');
             }
             
+        public function index(){                      
+            if ( ! file_exists('application/views/pages/home.php'))
+            {
+                // Whoops, we don't have a page for that!
+                show_404();
+            }
+            
+            $data['title'] = 'Home'; // Capitalize the first letter 
+            
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/menu', $data);
+            $this->load->view('pages/home', $data);
+            $this->load->view('templates/footer');
+        }
+        
         public function view($page = 'home'){                      
             if ( ! file_exists('application/views/pages/'.$page.'.php'))
             {
@@ -17,13 +32,12 @@ class Pages extends CI_Controller {
                 show_404();
             }
             
-            $this->session->set_userdata('filtersList', FALSE);
             $data['title'] = ucfirst($page); // Capitalize the first letter 
             
-            $this->load->view('templates/header', $data);
+            //$this->load->view('templates/header', $data);
             $this->load->view('pages/'.$page, $data);
-            $this->load->view('templates/footer', $data);
-        }    
+            //$this->load->view('templates/footer');
+        }   
             
 	public function current_location(){   
             $filterValue = $this->input->post('filterValue');
@@ -76,33 +90,13 @@ class Pages extends CI_Controller {
         
         private function get_list($searchValue = FALSE){
             $filtersList = $this->session->userdata('filtersList');
-            //Only get from DB if the filter is not existant, or if the first filter is being changed
-            //if($filterIndex === FALSE || sizeof($filtersList) === 0){
             $reservedList = $this->sports_model->get_sports(FALSE, $searchValue);
-            //}
-            //else if($filterIndex === 0){              
-            //    $reservedList = $this->sports_model->get_sports(array(reset(array_flip($filtersList)) => reset($filtersList)));
-            //}
-            //else{
-            //    $reservedList = $this->session->userdata('reservedList');
-            //}
+
             if($filtersList !== false){
                 $reservedList = $this->filter_list($reservedList);
             }
             $this->session->set_userdata('reservedList', $reservedList);
             return $reservedList;
-        }
-        
-        //Check filtersList for the request filter, return position of key of exist, otherwise return FALSE
-        private function check_filterslist($filterType){
-            $list = $this->session->userdata('filtersList');
-            if($list === FALSE){
-                return FALSE;
-            }
-            else if(array_key_exists($filterType, $list)){
-                return array_search($filterType, array_keys($list));
-            }
-            return FALSE;
         }
         
         private function add_filterslist($filterType, $filterValue){

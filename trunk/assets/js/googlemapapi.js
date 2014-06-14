@@ -6,7 +6,12 @@ function initialize() {
     geocoder = new google.maps.Geocoder();
     infowindow = new google.maps.InfoWindow();
     
-    //Initialize map on Vancouver
+    createMap();
+    createListeners();
+}
+
+//Initialize map on Vancouver
+function createMap() {
     geocoder.geocode({'address' : "Vancouver BC"}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
             var mapOptions = {
@@ -20,76 +25,22 @@ function initialize() {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
-
-    $(document).ready(function(){
-        //Check the state of list on left panel and display the right results
-        $('.sportslist').click( function() {
-            deleteMarkers();
-            var p = {};
-            p['filterType'] = "sport";
-            p['filterValue'] = this.id;
-            $('#results').load('index.php/add_filter', p); 
-            return false;
-        });
-        //Check what area is clicked and center map to that area
-        $('.area').click( function() {
-            deleteMarkers();
-            var p = {};
-            p['filterType'] = "city";
-            p['filterValue'] = this.id;
-            if(this.id === "Current Location"){
-                if(navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        p['currentLat'] = position.coords.latitude;
-                        p['currentLng'] = position.coords.longitude;
-                        $('#results').load('index.php/current_location', p);
-                    }, function() {
-                        alert:('Error: The Geolocation service failed.');
-                    });
-                } else {
-                    // Browser doesn't support Geolocation
-                    alert('Error: Your browser doesn\'t support geolocation.');
-                }
-            }
-            else{
-                $('#results').load('index.php/add_filter', p); 
-            }
-            return false;
-        });
-        //Check for remove filter
-        $("#typebox").on("click", "a", function() {
-            deleteMarkers();
-            var p = {};
-            p['removeType'] = this.id;
-            $('#results').load('index.php/remove_filter', p); 
-            return false;
-        });
-        //Check location
-        $('#searchsubmit').click( function() {
-            deleteMarkers();
-            geocoder.geocode({'address' : document.getElementById("searchform").elements.item(1).value}, function(results, status) {
-                if (status === google.maps.GeocoderStatus.OK) { 
-                    var p = {};
-                    p['currentLat'] = results[0].geometry.location.lat();
-                    p['currentLng'] = results[0].geometry.location.lng();
-                    p['searchValue'] = document.getElementById("searchform").elements.item(0).value;
-                    $('#results').load('index.php/search', p);
-                }
-                else {
-                    alert('Geocode was not successful for the following reason: ' + status);
-                }
-            });
-        });
-    });
-    
 }
 
-// Deletes all markers in the array by removing references to them
-function deleteMarkers() {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
-  markers = [];
+//Search bar function
+function processSearch(){
+    geocoder.geocode({'address' : document.getElementById("searchform").elements.item(1).value}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) { 
+            var p = {};
+            p['currentLat'] = results[0].geometry.location.lat();
+            p['currentLng'] = results[0].geometry.location.lng();
+            p['searchValue'] = document.getElementById("searchform").elements.item(0).value;
+            $('#results').load('index.php/search', p);
+        }
+        else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
 }
 
 //Translate address into markers on the map
@@ -98,12 +49,11 @@ function findByAddress(address, country){
         address: address,
         componentRestrictions:{country: country}
     };
-    geocoder.geocode(request, callback);
+    geocoder.geocode(request, geoCallback);
 }
 
-
 //Callback function for geocoder
-function callback(results, status) {
+function geoCallback(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       createMarker(results[0].geometry.location);
     } else {
@@ -111,6 +61,7 @@ function callback(results, status) {
     }
 }
 
+//Create markers on google map
 function createMarker(place) {
   marker = new google.maps.Marker({
     map: map,
@@ -124,6 +75,15 @@ function createMarker(place) {
   });
 }
 
+// Deletes all markers in the array by removing references to them
+function deleteMarkers() {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
+}
+
+//Automatically zoom to fit all markers
 function adjustZoom(){
     var LatLngList = new Array ();
     for (var i in markers){
@@ -158,5 +118,5 @@ function distance(lat1, lon1, lat2, lon2) {
     return dist;
 }
 
-
+//Loads function after window is fully loaded
 google.maps.event.addDomListener(window, 'load', initialize);
