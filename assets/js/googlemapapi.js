@@ -35,7 +35,7 @@ function processSearch(){
             p['currentLat'] = results[0].geometry.location.lat();
             p['currentLng'] = results[0].geometry.location.lng();
             p['searchValue'] = document.getElementById("searchform").elements.item(0).value;
-            $('#results').load('index.php/search', p);
+            $('#results').load('index.php/ui/search', p);
         }
         else {
             alert('Geocode was not successful for the following reason: ' + status);
