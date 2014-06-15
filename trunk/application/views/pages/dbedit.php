@@ -3,13 +3,13 @@
 			database display table to be implemented in later versions
 		</div>
 		<div id="rightinput" class="color6">
-			<form action="sportlist.sql" method="post" id="newentryinput">
+			<form action="javascript:void(0);" id="newentryinput">
                                 <div id="headerholder">
                                     <h2>
                                         New Entry
                                     </h2>
                                     <div class="dbbuttons">
-                                            <input type="submit" value="Enter" ><input type="reset" value="Clear">
+                                            <input type="submit" id="dbSubmit" value="Enter" ><input type="reset" value="Clear">
                                     </div>
                                 </div>
 				<div class="heading">

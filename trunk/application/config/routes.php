@@ -41,10 +41,10 @@
 //$route['default_controller'] = "welcome";
 //$route['404_override'] = '';
 
-$route['default_controller'] = 'pages';
-$route['view/(:any)'] = 'pages/view/$1';
-$route['(:any)'] = 'pages/$1';
-
+$route['default_controller'] = 'ui';
+$route['view/(:any)'] = 'ui/view/$1';
+$route['ui/(:any)'] = 'ui/$1';
+$route['admin/(:any)'] = 'admin/$1';
 
 
 /* End of file routes.php */

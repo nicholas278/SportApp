@@ -22,7 +22,6 @@ function createListenerTopMenu(){
                 initializeHome();
             }
         });
-
     });
     
     //Check search bar for queries
@@ -51,7 +50,7 @@ function createListenersFilter(){
         var p = {};
         p['filterType'] = "sport";
         p['filterValue'] = this.id;
-        $('#results').load('index.php/add_filter', p); 
+        $('#results').load('index.php/ui/add_filter', p); 
         return false;
     });
     //Check what area is clicked
@@ -65,7 +64,7 @@ function createListenersFilter(){
                 navigator.geolocation.getCurrentPosition(function(position) {
                     p['currentLat'] = position.coords.latitude;
                     p['currentLng'] = position.coords.longitude;
-                    $('#results').load('index.php/current_location', p);
+                    $('#results').load('index.php/ui/current_location', p);
                 }, function() {
                     alert:('Error: The Geolocation service failed.');
                 });
@@ -75,7 +74,7 @@ function createListenersFilter(){
             }
         }
         else{
-            $('#results').load('index.php/add_filter', p); 
+            $('#results').load('index.php/ui/add_filter', p); 
         }
         return false;
     });
@@ -84,7 +83,7 @@ function createListenersFilter(){
         deleteMarkers();
         var p = {};
         p['removeType'] = this.id;
-        $('#results').load('index.php/remove_filter', p); 
+        $('#results').load('index.php/ui/remove_filter', p); 
         return false;
     });
 }
