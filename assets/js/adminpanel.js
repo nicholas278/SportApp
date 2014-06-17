@@ -1,5 +1,8 @@
+var geocoder;
+
 //Create listeners for the entire website
 function createListeners(){
+    geocoder = new google.maps.Geocoder();
     $(document).ready(function(){
         //Create listeners for the top menu
         createListenerSubmit();
@@ -8,34 +11,37 @@ function createListeners(){
 
 function createListenerSubmit(){
     $('#dbSubmit').click(function(){
-        var p = [];
-        p['sport'] = "*";
-        p['name'] = "*";
-        p['address'] = "*";
-        p['city'] = "*";
-        p['province'] = "*";
-        p['contry'] = "*";
-        p['postal_code'] = "*";
-        $('#lefttable').load('index.php/admin/createDBItem', p); 
+        var p = {};
+        p['sport'] = document.getElementById("dbsportinput").value;
+        p['name'] = document.getElementById("db_name").value;
+        p['address'] = document.getElementById("db_address").value;
+        p['city'] = document.getElementById("db_city").value;
+        p['province'] = document.getElementById("db_province").value;
+        p['country'] = document.getElementById("db_country").value;
+        //p['postal_code'] = document.getElementById("db_postalcode").value;
+        addEntry(p);
     });
 }
 
-//Translate address into markers on the map
-function findByAddress(address, country){
+//Get lat lng from google map api and save it to DB
+function addEntry(location){
     var request = {
-        address: address,
-        componentRestrictions:{country: country}
+        address: location['address'],
+        componentRestrictions:{country: location['country']}
     };
-    geocoder.geocode(request, geoCallback);
+    geocoder.geocode(request, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          var address = results[0].address_components;
+          location['postal_code'] = address[address.length - 1].long_name;
+          location['latitude'] = results[0].geometry.location.lat();
+          location['longitude'] = results[0].geometry.location.lng();
+          $('#lefttable').load('admin/createDBItem', location); 
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
 }
 
-//Callback function for geocoder
-function geoCallback(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      createMarker(results[0].geometry.location);
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-}
-
-window.onload = createListeners;
+//Loads function after window is fully loaded
+google.maps.event.addDomListener(window, 'load', createListeners);
+//window.onload = createListeners;

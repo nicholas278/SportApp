@@ -20,7 +20,19 @@ class admin extends CI_Controller {
     }
     
     public function createDBItem(){
-        
+        $sportLocation['sport'] = $this->input->post('sport');
+        $sportLocation['name'] = $this->input->post('name');
+        $sportLocation['address'] = $this->input->post('address');
+        $sportLocation['city'] = $this->input->post('city');
+        $sportLocation['province'] = $this->input->post('province');
+        $sportLocation['country'] = $this->input->post('country');
+        $sportLocation['postal_code'] = $this->input->post('postal_code');
+        $sportLocation['latitude'] = $this->input->post('latitude');
+        $sportLocation['longitude'] = $this->input->post('longitude');
+        foreach ($sportLocation as $item){
+            echo ($item . ", ");           
+        };
+        $this->sports_model->set_sports($sportLocation);
     }
     
 }

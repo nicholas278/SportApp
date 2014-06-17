@@ -22,18 +22,9 @@ class Sports_model extends CI_Model {
             return $query->result_array();
         }
         
-        public function set_sports()
+        public function set_sports($sportLocation)
         {
-            //$this->load->helper('url');
-            //$slug = url_title($this->input->post('title'), 'dash', TRUE);
-
-            $data = array(
-                    'type' => $this->input->post('type'),
-                    'name' => $this->input->post('name'),
-                    'address' => $this->input->post('address')
-            );
-
-            return $this->db->insert('sportsapp', $data);
+            return $this->db->insert('sportslist', $sportLocation);
         }
         
 }
