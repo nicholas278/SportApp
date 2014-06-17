@@ -42,20 +42,20 @@
 				</div>
                                 
                                 <div class="inputplaceholder">
-                                    <input type="text" maxlength="60" class="formtextbox" name="db_name">
+                                    <input type="text" maxlength="60" class="formtextbox" id="db_name">
                                 </div>
 				<div class="heading">
 					<label for="db_address">Address:</label>
 				</div>
                                 <div class="inputplaceholder">
-                                    <input type="text" maxlength="60" class="formtextbox" name="db_address">
+                                    <input type="text" maxlength="60" class="formtextbox" id="db_address">
 				</div>
 				<div class="heading">
 					<label for="db_city">City:</label>
 				</div>
                                 <div class="inputplaceholder">
 					<form>
-						<select name="cityinput" id="cityinput">
+						<select name="cityinput" id="db_city">
 							<option value="default" selected id="defaultsportinput">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span vertical-align: middle>- City -</span></option>
 							<option value="Richmond">Richmond</option>
 							<option value="Vancouver">Vancouver</option>
@@ -68,7 +68,7 @@
 				</div>
                                 <div class="inputplaceholder">
 					<form>
-						<select name="provinceinput" id="provinceinput">
+						<select name="provinceinput" id="db_province">
 							<option value="default" selected id="defaultsportinput">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span vertical-align: middle>- Province -</span></option>
 							<option value="BC">BC</option>
 						</select>
@@ -79,9 +79,9 @@
 				</div>
                                 <div class="inputplaceholder">
 					<form>
-						<select name="provinceinput" id="provinceinput">
+						<select name="countryinput" id="db_country">
 							<option value="default" selected id="defaultsportinput">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span vertical-align: middle>- Country -</span></option>
-							<option value="BC">Canada</option>
+							<option value="Canada">Canada</option>
 						</select>
 					</form>
 				</div>
@@ -89,7 +89,7 @@
 					<label for="db_postalcode">Postal Code:</label>
 				</div>
                                 <div class="inputplaceholder">
-                                    <input type="text" maxlength="60" class="formtextbox" name="db_postalcode">
+                                    <input type="text" maxlength="60" class="formtextbox" id="db_postalcode">
 				</div>
 			</form>
 		</div>

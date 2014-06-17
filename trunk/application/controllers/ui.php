@@ -125,9 +125,9 @@ class ui extends CI_Controller {
             return $resultList;
         }
         
-        private function filter_byDist($filterFrom){
-            $result = array_filter($filterFrom, function($var){
-                return($var['distance'] < 5);
+        private function filter_byDist($filterFrom, $dist = 7){
+            $result = array_filter($filterFrom, function($var) use($dist){
+                return($var['distance'] < $dist);
             });
             return $result;
         }
