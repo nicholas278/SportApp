@@ -26,11 +26,14 @@ function createListenerSubmit(){
 //Get lat lng from google map api and save it to DB
 function addEntry(location){
     var request = {
-        address: location['address'],
+        address: location['address']+", "+location['city']+" "+location['province'],
         componentRestrictions:{country: location['country']}
     };
     geocoder.geocode(request, function(results, status) {
-        if (status === google.maps.GeocoderStatus.OK) {
+        if(results[0].partial_match === true){
+            alert("Cannot pin point location, please double check address");
+        }
+        else if(status === google.maps.GeocoderStatus.OK) {
           var address = results[0].address_components;
           location['postal_code'] = address[address.length - 1].long_name;
           location['latitude'] = results[0].geometry.location.lat();
