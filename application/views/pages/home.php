@@ -47,9 +47,9 @@
 			<a href="???">Sort Dist.</a> <!--Nick fix href-->
 		</div>
 		<div id="typebox" class="color5">
-			<div class="filterbox">
-				<!--filter-type <a href="???">&#10006</a> -->
-			</div>
+			<!-- <div class="filterbox">
+				filter-type <a href="???">&#10006</a>
+			</div> -->
 		</div>
 		<div id="results" class="color6">
                     	<div id="resultshome" class="color6">

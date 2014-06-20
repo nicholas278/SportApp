@@ -1,10 +1,12 @@
 //Create listeners for the entire website
 function createListeners(){
     $(document).ready(function(){
-        //Create listeners for the top menu
+        //Create listener for the top menu
         createListenerTopMenu();
         //Create listeners for the filters
-        createListenersFilter();   
+        createListenersFilter();  
+        //Create listener for the result highlight
+        createListenerResult();
     });
 }
 
@@ -85,6 +87,15 @@ function createListenersFilter(){
         p['removeType'] = this.id;
         $('#results').load('index.php/ui/remove_filter', p); 
         return false;
+    });
+}
+
+function createListenerResult(){
+    $("#results").on("mouseover", ".resultbox", function(){
+        markers[this.id].setIcon('assets/img/purplemarker.png');
+    });
+    $("#results").on("mouseout", ".resultbox", function(){
+        markers[this.id].setIcon('assets/img/redmarker.png');
     });
 }
 
