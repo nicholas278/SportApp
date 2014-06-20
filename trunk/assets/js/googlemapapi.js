@@ -66,7 +66,8 @@ function createMarker(place) {
   marker = new google.maps.Marker({
     map: map,
     position: place,
-    animation: google.maps.Animation.DROP
+    animation: google.maps.Animation.DROP,
+    icon: 'assets/img/redmarker.png'
   });
   markers.push(marker);
   google.maps.event.addListener(marker, 'click', function() {

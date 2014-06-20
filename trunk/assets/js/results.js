@@ -5,15 +5,15 @@ function displayResults(filtersList, sportArray){
     }
     for(var i in sportArray){
         createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
-        createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["sport"], sportArray[i]["distance"]);
+        createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["sport"], sportArray[i]["distance"], i);
     }
     if(markers.length > 0){
         adjustZoom();
     }
 }
 
-function createNewItem(name, address, type, dist){
-    var box = createResultBox();
+function createNewItem(name, address, type, dist, index){
+    var box = createResultBox(index);
     box.appendChild(createIcon());
     box.appendChild(createDistBox(dist));
     box.appendChild(createNameBox(name));
@@ -41,8 +41,10 @@ function createLink(filterType){
     return a;
 }
 
-function createResultBox(){
-    return createElement("div", "resultbox");
+function createResultBox(index){
+    var box = createElement("div", "resultbox");
+    box.id = index;
+    return box;
 }
 
 function createIcon(){
