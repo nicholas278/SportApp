@@ -41,6 +41,7 @@ body {
 	font-size: 0.85em	;
 }
 
+/* TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP TOP */
 #top {
 	height: 100px;
 	position: relative;
@@ -139,6 +140,7 @@ body {
 	margin-right: auto;
 }
 
+/* LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR */
 #leftbar {
 	width: 144px;
 	min-height: 572px; /* change this later to overflow */
@@ -180,6 +182,7 @@ body {
 	color: blue;
 }
 
+/* BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER */
 #banner {
 	width: 844px;
 	height: 94px;
@@ -196,6 +199,7 @@ body {
 	text-align: center;  
 }
 
+/* MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP */
 #map-canvas {
 	width: 474px;
 	height: 474px;
@@ -204,8 +208,16 @@ body {
 	margin-right: 2px;
 	margin-top: 2px;
 	margin-bottom: 4px;
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+}
+#resultpopup {
+	width: 92%;
+	height: 92%;
 }
 
+/* RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS */
 #sortbox {
 	width: 366px;
 	height: 18px;
@@ -244,12 +256,12 @@ body {
 }
 #results {
 	width: 366px;
-	height: 439px;
+	height: 400px;
 	overflow: auto;
 	float: right;
 	margin-left: 2px;
 	margin-right: 4px;
-	margin-bottom: 0px;
+	margin-bottom: 1px;
         overflow-x: hidden;
 }
 #resultshome {
@@ -307,7 +319,38 @@ body {
 	right: 0px;
 	bottom: 0px;
 }
+#pagesdirectory {
+	width: 358px;
+	height: 30px;
+	padding: 4px;
+	float: right;
+	margin-right: 4px;
+	background-color: white;
+} /* PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY */
+.pageselect {
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin-left: 4px;
+}
+#firstpage {
+	margin-left: 79px;
+}
+#previouspage {
+}
+#currentpage {
+	width: 60px;
+	height: 30px;
+	float: left;
+	margin-left: 4px;
+}
+#nextpage {
+}
+#lastpage {
+	margin-right: 79px;
+}
 
+/* FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
 #footer {
 	width: 100%;
 	height: 100px;
@@ -380,7 +423,7 @@ body {
 	width: 100px;
 	height: 30px;
 	display: flex;
-    align-items: center; /* align vertical */
+        align-items: center; /* align vertical */
 	margin-bottom: 10px;
 }
 .formtextbox {
