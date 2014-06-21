@@ -55,11 +55,11 @@ class ui extends CI_Controller {
             $currentLat = $this->input->post('currentLat');
             $currentLng = $this->input->post('currentLng');
             $searchValue = $this->input->post('searchValue');
-            
+            $this->session->set_userdata('filtersList', false);
             $reservedList = $this->get_list($searchValue);
             $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
             $data['sports'] = $reservedList;
-            $data['filtersList'] = $this->session->userdata('filtersList');
+            $data['filtersList'] = '';
             $this->session->set_userdata('reservedList', $reservedList);
             $this->load->view('templates/results', $data);
 	}

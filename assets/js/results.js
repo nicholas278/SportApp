@@ -43,7 +43,7 @@ function createLink(filterType){
 
 function createResultBox(index){
     var box = createElement("div", "resultbox");
-    box.id = index;
+    box.dataset.id = index;
     return box;
 }
 

@@ -71,7 +71,7 @@ function createMarker(place) {
   });
   markers.push(marker);
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.formatted_address);
+    infowindow.setContent("<strong>latitude</strong> = " + place.lat() + "<br\><strong>longitude</strong> = " + place.lng());
     infowindow.open(map, this);
   });
 }
