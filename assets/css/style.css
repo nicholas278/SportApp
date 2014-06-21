@@ -256,12 +256,12 @@ body {
 }
 #results {
 	width: 366px;
-	height: 400px;
+	height: 401px;
 	overflow: auto;
 	float: right;
 	margin-left: 2px;
 	margin-right: 4px;
-	margin-bottom: 1px;
+	margin-bottom: 0px;
         overflow-x: hidden;
 }
 #resultshome {
@@ -325,13 +325,15 @@ body {
 	padding: 4px;
 	float: right;
 	margin-right: 4px;
-	background-color: white;
 } /* PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY */
 .pageselect {
 	width: 30px;
 	height: 30px;
 	float: left;
 	margin-left: 4px;
+}
+.pageselect:hover {
+    background-color: white;
 }
 #firstpage {
 	margin-left: 79px;
