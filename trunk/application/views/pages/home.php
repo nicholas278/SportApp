@@ -40,6 +40,8 @@
                     </div>
 		</div>
 		<div id="map-canvas" class="color6">
+                        <div id="resultpopup">
+			</div>
 		</div>
 		<div id="sortbox" class="color5">
 			<a href="???">Sort A-Z</a> <!--Nick fix href-->
@@ -76,6 +78,22 @@
 					insert types of sports available
 				</div>
 			</div>-->
+		</div>
+                <div id="pagesdirectory">
+			<div id="firstpage" class="pageselect">
+                            <img src="assets/img/firstpage.png">
+			</div>
+			<div id="previouspage" class="pageselect">
+                            <img src="assets/img/previouspage.png">
+			</div>
+			<div id="currentpage">
+			</div>
+			<div id="nextpage" class="pageselect">
+                            <img src="assets/img/nextpage.png">
+			</div>
+			<div id="lastpage" class="pageselect">
+                            <img src="assets/img/lastpage.png">
+			</div>
 		</div>
 	</div>
 
