@@ -79,20 +79,28 @@
 				</div>
 			</div>-->
 		</div>
-                <div id="pagesdirectory">
-			<div id="firstpage" class="pageselect">
-                            <img src="assets/img/firstpage.png">
-			</div>
+                <div id="pagesdirectory" class="color5">
+                        <div id="firstpage" class="pageselect">
+                            <a href="???">
+                                <img src="assets/img/firstpage.png">
+                            </a>    
+                        </div>
 			<div id="previouspage" class="pageselect">
-                            <img src="assets/img/previouspage.png">
+                            <a href="???">
+                                <img src="assets/img/previouspage.png">
+                            </a>
 			</div>
 			<div id="currentpage">
 			</div>
 			<div id="nextpage" class="pageselect">
-                            <img src="assets/img/nextpage.png">
+                            <a href=""???">
+                                <img src="assets/img/nextpage.png">
+                            </a>
 			</div>
 			<div id="lastpage" class="pageselect">
-                            <img src="assets/img/lastpage.png">
+                            <a href=""???">
+                                <img src="assets/img/lastpage.png">
+                            </a>
 			</div>
 		</div>
 	</div>
