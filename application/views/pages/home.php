@@ -81,24 +81,24 @@
 		</div>
                 <div id="pagesdirectory" class="color5">
                         <div id="firstpage" class="pageselect">
-                            <a href="???">
+                            <a href="#">
                                 <img src="assets/img/firstpage.png">
                             </a>    
                         </div>
 			<div id="previouspage" class="pageselect">
-                            <a href="???">
+                            <a href="#">
                                 <img src="assets/img/previouspage.png">
                             </a>
 			</div>
 			<div id="currentpage">
 			</div>
 			<div id="nextpage" class="pageselect">
-                            <a href=""???">
+                            <a href="#">
                                 <img src="assets/img/nextpage.png">
                             </a>
 			</div>
 			<div id="lastpage" class="pageselect">
-                            <a href=""???">
+                            <a href="#">
                                 <img src="assets/img/lastpage.png">
                             </a>
 			</div>

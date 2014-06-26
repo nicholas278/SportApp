@@ -352,6 +352,19 @@ body {
 	margin-right: 79px;
 }
 
+#firstpage a{
+        display: none;
+}
+#previouspage a{
+        display: none;
+}
+#nextpage a{
+        display: none;
+}
+#lastpage a{
+	display: none;
+}
+
 /* FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
 #footer {
 	width: 100%;
@@ -495,7 +508,7 @@ body {
 #sportinput {
 	float: left;
 	height: 30px;
-    width: 120px;    
+        width: 120px;    
 	border: 1px solid #CDCAB9;
 	margin-right: 10px;
 }

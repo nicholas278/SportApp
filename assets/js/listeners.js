@@ -4,9 +4,11 @@ function createListeners(){
         //Create listener for the top menu
         createListenerTopMenu();
         //Create listeners for the filters
-        createListenersFilter();  
+        createListenerFilter();  
         //Create listener for the result highlight
         createListenerResult();
+        //Create listener for page change
+        createListenerPageChange();
     });
 }
 
@@ -45,7 +47,7 @@ function createListenerTopMenu(){
 }
 
 //Create listeners for the left menu bar and the filter controls
-function createListenersFilter(){
+function createListenerFilter(){
     //Check what sport is clicked
     $('.sportslist').on("click", function() {
         deleteMarkers();
@@ -96,6 +98,25 @@ function createListenerResult(){
     });
     $("#results").on("mouseout", ".resultbox", function(){
         markers[this.dataset.id].setIcon('assets/img/redmarker.png');
+    });
+}
+
+function createListenerPageChange(){
+    $("#firstpage").on("click", "a", function(){
+        deleteMarkers();
+        $('#results').load('index.php/ui/first_page'); 
+    });
+    $("#previouspage").on("click", "a", function(){
+        deleteMarkers();
+        $('#results').load('index.php/ui/previous_page'); 
+    });
+    $("#nextpage").on("click", "a", function(){
+        deleteMarkers();
+        $('#results').load('index.php/ui/next_page'); 
+    });
+    $("#lastpage").on("click", "a", function(){
+        deleteMarkers();
+        $('#results').load('index.php/ui/last_page'); 
     });
 }
 
