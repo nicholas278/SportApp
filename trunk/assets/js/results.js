@@ -7,8 +7,6 @@ function displayResults(filtersList, sportArray, currentPage, maxPage){
         createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
         createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["sport"], sportArray[i]["distance"], i);
     }
-    var element=document.getElementById("currentpage");
-    element.innerHTML = currentPage + " / " + maxPage;
     if(markers.length > 0){
         adjustZoom();
     }
@@ -101,7 +99,13 @@ function createElement(tag, property){
 
 //Hide or show page navigation buttons when not needed
 function pageNavButtons(currentPage, maxPage){
-    if(currentPage === 1 && currentPage === maxPage){
+    var element=document.getElementById("currentpage");
+    element.innerHTML = currentPage + " / " + maxPage;
+    
+    if(currentPage > maxPage){
+        element.innerHTML = "";
+    }
+    else if(currentPage === 1 && currentPage === maxPage || currentPage > maxPage){
         document.getElementById("firstpage").firstElementChild.style.display = "none";
         document.getElementById("previouspage").firstElementChild.style.display = "none";
         document.getElementById("nextpage").firstElementChild.style.display = "none";
