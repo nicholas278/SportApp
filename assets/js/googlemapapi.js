@@ -1,10 +1,13 @@
-var map, geocoder, infowindow; //Google Objects
+var map, geocoder, infowindow, autocomplete; //Google Objects
 var markers;
 
 function initialize() {
     markers = [];
     geocoder = new google.maps.Geocoder();
     infowindow = new google.maps.InfoWindow();
+    autocomplete = new google.maps.places.Autocomplete(
+      (document.getElementById('locationsearchinput')),
+      { types: ['geocode'] });
     
     createMap();
     createListeners();
@@ -130,6 +133,19 @@ function adjustZoom(){
         }
     });
     map.fitBounds (bounds);
+}
+
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = new google.maps.LatLng(
+          position.coords.latitude, position.coords.longitude);
+      autocomplete.setBounds(new google.maps.LatLngBounds(geolocation,
+          geolocation));
+    });
+  }
 }
 
 //Return distance (KM) between 2 latlng points

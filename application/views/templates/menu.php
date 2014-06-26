@@ -7,7 +7,7 @@
 				<div id="topinputcontainer">
 					<form name="input"  action="javascript:void(0);" id="searchform">
 							Find&nbsp;<input type="text" name="user_filter_input" placeholder="&nbsp;Sports, Names..." id="filtersearchinput">
-							Near&nbsp;<input type="text" name="user_location_input" placeholder="&nbsp;Address, Locations..." id="locationsearchinput">
+							Near&nbsp;<input type="text" name="user_location_input" placeholder="&nbsp;Address, Locations..." id="locationsearchinput" onFocus="geolocate()">
 							<input type="submit" value="Search" id="searchsubmit">			        
 					</form>
 				</div>
