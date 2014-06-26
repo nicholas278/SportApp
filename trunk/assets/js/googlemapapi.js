@@ -29,18 +29,35 @@ function createMap() {
 
 //Search bar function
 function processSearch(){
-    geocoder.geocode({'address' : document.getElementById("searchform").elements.item(1).value}, function(results, status) {
-        if (status === google.maps.GeocoderStatus.OK) { 
-            var p = {};
-            p['currentLat'] = results[0].geometry.location.lat();
-            p['currentLng'] = results[0].geometry.location.lng();
-            p['searchValue'] = document.getElementById("searchform").elements.item(0).value;
-            $('#results').load('index.php/ui/search', p);
+    var p = {};
+    if(document.getElementById("searchform").elements['user_location_input'].value !== ""){
+        geocoder.geocode({'address' : document.getElementById("searchform").elements.item(1).value}, function(results, status) {
+            if (status === google.maps.GeocoderStatus.OK) { 
+                p['currentLat'] = results[0].geometry.location.lat();
+                p['currentLng'] = results[0].geometry.location.lng();
+                p['searchValue'] = document.getElementById("searchform").elements['user_filter_input'].value;
+                $('#results').load('index.php/ui/search', p);
+            }
+            else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+    else{
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                p['currentLat'] = position.coords.latitude;
+                p['currentLng'] = position.coords.longitude;
+                p['searchValue'] = document.getElementById("searchform").elements['user_filter_input'].value;
+                $('#results').load('index.php/ui/search', p);
+            }, function() {
+                alert:('Error: The Geolocation service failed.');
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            alert('Error: Your browser doesn\'t support geolocation.');
         }
-        else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
-    });
+    }
 }
 
 //Translate address into markers on the map
