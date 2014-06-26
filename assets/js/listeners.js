@@ -123,5 +123,5 @@ function createListenerPageChange(){
 //Setup homepage mechanics
 function initializeHome(){
     createMap(); 
-    createListenersFilter();
+    createListenerFilter();
 }
