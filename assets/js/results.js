@@ -3,10 +3,16 @@ function displayResults(filtersList, sportArray, currentPage, maxPage){
     for(var i in filtersList){
         createFilterList(i, filtersList[i]);
     }
-    for(var i in sportArray){
-        createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
-        createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["sport"], sportArray[i]["distance"], i);
+    if(sportArray.length !== 0){
+        for(var i in sportArray){
+            createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
+            createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["sport"], sportArray[i]["distance"], i);
+        }
     }
+    else{
+        document.getElementById("results").innerHTML = "0 results returned"
+    }
+    
     if(markers.length > 0){
         adjustZoom();
     }

@@ -1,14 +1,10 @@
 //Create listeners for the entire website
 function createListeners(){
     $(document).ready(function(){
-        //Create listener for the top menu
+        //Create listeners for the top menu
         createListenerTopMenu();
-        //Create listeners for the filters
-        createListenerFilter();  
-        //Create listener for the result highlight
-        createListenerResult();
-        //Create listener for page change
-        createListenerPageChange();
+        //Create listeners for home page
+        createListenerHome();
     });
 }
 
@@ -92,6 +88,15 @@ function createListenerFilter(){
     });
 }
 
+function createListenerSort(){
+    $("#sortbox a").click(function(){
+        deleteMarkers();
+        var p = {};
+        p['sortBy'] = this.id;
+        $('#results').load('index.php/ui/sort_list', p);
+    });
+}
+
 function createListenerResult(){
     $("#results").on("mouseover", ".resultbox", function(){
         markers[this.dataset.id].setIcon('assets/img/purplemarker.png');
@@ -123,7 +128,16 @@ function createListenerPageChange(){
 //Setup homepage mechanics
 function initializeHome(){
     createMap(); 
+    createListenerHome();
+}
+
+function createListenerHome(){
+    //Create listeners for the filters
     createListenerFilter();
+    //Create listener for sorting
+    createListenerSort();
+    //Create listener for the result highlight
     createListenerResult();
+    //Create listener for page change
     createListenerPageChange();
 }

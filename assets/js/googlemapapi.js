@@ -34,7 +34,7 @@ function createMap() {
 function processSearch(){
     var p = {};
     if(document.getElementById("searchform").elements['user_location_input'].value !== ""){
-        geocoder.geocode({'address' : document.getElementById("searchform").elements.item(1).value}, function(results, status) {
+        geocoder.geocode({'address' : document.getElementById("searchform").elements['user_location_input'].value}, function(results, status) {
             if (status === google.maps.GeocoderStatus.OK) { 
                 p['currentLat'] = results[0].geometry.location.lat();
                 p['currentLng'] = results[0].geometry.location.lng();
