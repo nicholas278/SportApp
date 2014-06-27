@@ -124,4 +124,6 @@ function createListenerPageChange(){
 function initializeHome(){
     createMap(); 
     createListenerFilter();
+    createListenerResult();
+    createListenerPageChange();
 }
