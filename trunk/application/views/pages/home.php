@@ -28,7 +28,7 @@
 				</h2>
 			</div>
 			<ul>    
-                                <li><a href="#" id="Current Location" class="area">Current Location</a></li> <!--Nick work on this-->
+                                <li><a href="#" id="Current Location" class="area">Sports Nearby</a></li> <!--Nick work on this-->
                                 <li><a href="#" id="Burnaby" class="area">Burnaby</a></li>
                                 <li><a href="#" id="Richmond" class="area">Richmond</a></li>
                                 <li><a href="#" id="Vancouver" class="area">Vancouver</a></li>
