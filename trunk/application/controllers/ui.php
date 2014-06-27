@@ -59,7 +59,8 @@ class ui extends CI_Controller {
             $searchValue = $this->input->post('searchValue');
             $this->session->set_userdata('filtersList', false);
             $reservedList = $this->get_list($searchValue);
-            $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);           
+            $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
+            $this->get_page($reservedList, 1); //Hardcode workaround, will improve later
             $data['sports'] = $reservedList;
             $data['filtersList'] = '';
             $data['currentPage'] = $this->session->userdata('currentPage');
@@ -92,6 +93,23 @@ class ui extends CI_Controller {
             //Remove filter from list first before getting the list
             $data['filtersList'] = $this->remove_filterslist($removeType);
             $data['sports'] = $this->get_list();
+            $data['currentPage'] = $this->session->userdata('currentPage');
+            $data['maxPage'] = $this->session->userdata('maxPage');
+            $this->load->view('templates/results', $data);
+        }
+        
+        public function sort_list(){
+            $sortBy = $this->input->post('sortBy');
+            $reservedList = $this->session->userdata('reservedList');
+            if($sortBy === "alphabet"){
+                 $reservedList = $this->sort_list_byName($reservedList);
+            }
+            else if($sortBy === "distance"){
+                
+            }
+            $this->session->set_userdata('reservedList', $reservedList);
+            $data['filtersList'] = $this->session->userdata('filtersList');
+            $data['sports'] = $this->get_page($reservedList, 1);
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
             $this->load->view('templates/results', $data);
@@ -198,6 +216,13 @@ class ui extends CI_Controller {
                 else {return -1;}
             });
             return $this->filter_byDist($list);
+        }
+        
+        private function sort_list_byName($list){
+            usort($list, function($a, $b){
+                return strcmp($a['name'], $b['name']);
+            });
+            return $list;
         }
         
         private function distance($lat1, $lon1, $lat2, $lon2) {
