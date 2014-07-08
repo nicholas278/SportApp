@@ -3,6 +3,7 @@
         
         <title><?php echo $title ?> - Sports App</title>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <script> var base_url = "<?php echo base_url(); ?>"; </script>
         
         <!--Declare all linked files -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">

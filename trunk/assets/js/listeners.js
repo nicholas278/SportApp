@@ -14,10 +14,9 @@ function createListeners(){
 function createListenerHeader(){
     //Check menu bar for page change
     $('#buttonbox button').click(function(){
-        var shost = window.location.origin;
         var page = this.id;
 
-        $('#contentwrap').load(shost+'/SportApp/index.php/view/'+page, function(){
+        $('#contentwrap').load(base_url +'index.php/view/'+page, function(){
             document.title = page.charAt(0).toUpperCase() + page.slice(1) + " - Sports App";
             //Initialize the map and listeners
             if(page === 'home'){
@@ -29,11 +28,10 @@ function createListenerHeader(){
     //Check search bar for queries
     $("#searchsubmit").click(function() {
         deleteMarkers();
-        var shost = window.location.origin;
         if(document.title !== "Home - Sports App"){
             document.title = "Home - Sports App";
             //load home page
-            $('#contentwrap').load(shost+'/sportapp/index.php/view/home', function(){
+            $('#contentwrap').load(base_url+'index.php/view/home', function(){
                 initializeHome();
                 processSearch();
             });
@@ -47,10 +45,9 @@ function createListenerHeader(){
 function createListenerFooter(){
     //Check menu bar for page change
     $('#footerchild a').click(function(){
-        var shost = window.location.origin;
         var page = this.id;
 
-        $('#contentwrap').load(shost+'/SportApp/index.php/view/'+page, function(){
+        $('#contentwrap').load(base_url+'index.php/view/'+page, function(){
             document.title = page.charAt(0).toUpperCase() + page.slice(1) + " - Sports App";
             //Initialize the map and listeners
             if(page === 'home'){
