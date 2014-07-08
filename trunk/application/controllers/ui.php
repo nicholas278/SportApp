@@ -45,9 +45,15 @@ class ui extends CI_Controller {
             $currentLng = $this->input->post('currentLng');
             
             $reservedList = $this->session->userdata('reservedList');
+            if($reservedList === false){
+                $reservedList = $this->get_list($searchValue);
+            }
             $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
+            $this->get_page($reservedList, 1); //Hardcode workaround, will improve later
             $data['sports'] = $reservedList;
             $data['filtersList'] = $this->session->userdata('filtersList');
+            $data['currentPage'] = $this->session->userdata('currentPage');
+            $data['maxPage'] = $this->session->userdata('maxPage');
             $this->session->set_userdata('reservedList', $reservedList);
             $this->load->view('templates/results', $data);
 	}
@@ -196,7 +202,7 @@ class ui extends CI_Controller {
         }
         
         private function filter_byDist($filterFrom, $dist = 7){
-            $result = array_filter($filterFrom, function($var) use($dist){
+                $result = array_filter($filterFrom, function($var) use($dist){
                 return($var['distance'] < $dist);
             });
             return $result;

@@ -2,14 +2,16 @@
 function createListeners(){
     $(document).ready(function(){
         //Create listeners for the top menu
-        createListenerTopMenu();
+        createListenerHeader();
         //Create listeners for home page
         createListenerHome();
+        //Create listener for footer menu
+        createListenerFooter()
     });
 }
 
 //Create listeners for the search bar and the menu bar
-function createListenerTopMenu(){
+function createListenerHeader(){
     //Check menu bar for page change
     $('#buttonbox button').click(function(){
         var shost = window.location.origin;
@@ -39,6 +41,22 @@ function createListenerTopMenu(){
         else{
             processSearch();
         }
+    });
+}
+
+function createListenerFooter(){
+    //Check menu bar for page change
+    $('#footerchild a').click(function(){
+        var shost = window.location.origin;
+        var page = this.id;
+
+        $('#contentwrap').load(shost+'/SportApp/index.php/view/'+page, function(){
+            document.title = page.charAt(0).toUpperCase() + page.slice(1) + " - Sports App";
+            //Initialize the map and listeners
+            if(page === 'home'){
+                initializeHome();
+            }
+        });
     });
 }
 
