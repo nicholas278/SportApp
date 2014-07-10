@@ -227,6 +227,9 @@ body {
 	margin-top: 2px;
 	margin-bottom: 0px;
 }
+#sortbox span{
+    display:none;
+}
 #sortbox a {
 	text-decoration: none;
 	color: blue;
@@ -279,9 +282,6 @@ body {
 	height: 113px;
 	position: relative;
 }
-.resultbox:hover {
-	background-color: #DFDED4;
-}
 .boxnumber {
 	width: 57px;
 	height: 53px;
@@ -331,9 +331,6 @@ body {
 	height: 30px;
 	float: left;
 	margin-left: 4px;
-}
-.pageselect:hover {
-    background-color: white;
 }
 #firstpage {
 	margin-left: 79px;

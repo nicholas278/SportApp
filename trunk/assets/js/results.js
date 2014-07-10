@@ -4,13 +4,15 @@ function displayResults(filtersList, sportArray, currentPage, maxPage){
         createFilterList(i, filtersList[i]);
     }
     if(sportArray.length !== 0){
+        document.getElementById("sortoptions").style.display = "block";
         for(var i in sportArray){
             createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
             createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["sport"], sportArray[i]["distance"], i);
         }
     }
     else{
-        document.getElementById("results").innerHTML = "0 results returned"
+        document.getElementById("sortoptions").style.display = "none";
+        document.getElementById("results").innerHTML = "0 results returned";
     }
     
     if(markers.length > 0){
@@ -50,7 +52,7 @@ function createLink(filterType){
 
 function createResultBox(index){
     var box = createElement("div", "resultbox");
-    box.dataset.id = index;
+    box.id = index;
     return box;
 }
 
@@ -113,23 +115,41 @@ function pageNavButtons(currentPage, maxPage){
         element.innerHTML = currentPage + " / " + maxPage;
     }
     if(currentPage === 1 && currentPage === maxPage || currentPage > maxPage){
-        document.getElementById("firstpage").firstElementChild.style.display = "none";
-        document.getElementById("previouspage").firstElementChild.style.display = "none";
-        document.getElementById("nextpage").firstElementChild.style.display = "none";
-        document.getElementById("lastpage").firstElementChild.style.display = "none";
+        displaySwitch("firstpage", false);
+        displaySwitch("previouspage", false);
+        displaySwitch("nextpage", false);
+        displaySwitch("lastpage", false);
     }
     else if(currentPage === 1){
-        document.getElementById("firstpage").firstElementChild.style.display = "none";
-        document.getElementById("previouspage").firstElementChild.style.display = "none";
-        document.getElementById("nextpage").firstElementChild.style.display = "block";
-        document.getElementById("lastpage").firstElementChild.style.display = "block";
+        displaySwitch("firstpage", false);
+        displaySwitch("previouspage", false);
+        displaySwitch("nextpage", true);
+        displaySwitch("lastpage", true);
     }
     else if(currentPage === maxPage){
-        document.getElementById("firstpage").firstElementChild.style.display = "block";
-        document.getElementById("previouspage").firstElementChild.style.display = "block";
-        document.getElementById("nextpage").firstElementChild.style.display = "none";
-        document.getElementById("lastpage").firstElementChild.style.display = "none";
+        displaySwitch("firstpage", true);
+        displaySwitch("previouspage", true);
+        displaySwitch("nextpage", false);
+        displaySwitch("lastpage", false);
     } 
+}
+
+function displaySwitch(id, on){
+    if(on){
+        document.getElementById(id).firstElementChild.style.display = "block";
+        $('#'+id).mouseover(function(){
+            document.getElementById(id).style.backgroundColor = "white";
+        });
+        $('#'+id).mouseout(function(){
+            document.getElementById(id).style.backgroundColor = "transparent";
+        });
+    }
+    else{
+        document.getElementById(id).firstElementChild.style.display = "none";
+        $('#'+id).unbind("mouseover");
+        $('#'+id).unbind("mouseout");
+        document.getElementById(id).style.backgroundColor = "transparent";
+    }
 }
 
 //Sorting the array of sports by distance

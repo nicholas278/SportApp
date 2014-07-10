@@ -6,7 +6,7 @@ function createListeners(){
         //Create listeners for home page
         createListenerHome();
         //Create listener for footer menu
-        createListenerFooter()
+        createListenerFooter();
     });
 }
 
@@ -114,10 +114,12 @@ function createListenerSort(){
 
 function createListenerResult(){
     $("#results").on("mouseover", ".resultbox", function(){
-        markers[this.dataset.id].setIcon('assets/img/purplemarker.png');
+        document.getElementById(this.id).style.backgroundColor = "#DFDED4";
+        markers[this.id].setIcon('assets/img/purplemarker.png');
     });
     $("#results").on("mouseout", ".resultbox", function(){
-        markers[this.dataset.id].setIcon('assets/img/redmarker.png');
+        document.getElementById(this.id).style.backgroundColor = "transparent";
+        markers[this.id].setIcon('assets/img/redmarker.png');
     });
 }
 
