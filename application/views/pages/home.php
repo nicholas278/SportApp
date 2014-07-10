@@ -44,9 +44,11 @@
 			</div>
 		</div>
 		<div id="sortbox" class="color5">
+                    <span id="sortoptions">
 			<a href="#" id="alphabet">Sort A-Z</a> <!--Nick fix href-->
 			|
 			<a href="#" id="distance">Sort Dist.</a> <!--Nick fix href-->
+                    </span>
 		</div>
 		<div id="typebox" class="color5">
 			<!-- <div class="filterbox">
