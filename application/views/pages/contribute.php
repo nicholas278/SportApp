@@ -29,7 +29,7 @@
 						</div>
 							<form action="URL"> <!--finish off the action nick-->
 								<select name="sportsinput" id="sportinput">
-									<option value="default" selected id="defaultsportinput">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Sports -</option>
+									<option value="default" selected id="defaultsportinput">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Sports -</option>
 									<option value="Badminton">Badminton</option>
 									<option value="Baseball">Baseball</option>
 									<option value="Basketball">Basketball</option>
@@ -52,7 +52,7 @@
 						<div class="formlabel">
 							<label for="Location">Location:*</label>
 						</div>
-						<input type="text" maxlength="60" class="formtextbox" name="c_location">
+						<input type="text" maxlength="60" class="formtextbox" name="c_location" placeholder="&nbsp;Address, Facility Name, etc">
 						<br>
 						<div class="formlabel">
 							<label for="OtherInfo">Other Information:</label>
