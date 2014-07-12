@@ -325,7 +325,7 @@ body {
 	padding: 4px;
 	float: right;
 	margin-right: 4px;
-} /* PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY */
+} /* PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY PAGE DIRECTORY */
 .pageselect {
 	width: 30px;
 	height: 30px;
@@ -504,17 +504,19 @@ body {
 }
 #sportinput {
 	float: left;
-	height: 30px;
+	height: 34px;
         width: 120px;    
 	border: 1px solid #CDCAB9;
 	margin-right: 10px;
+        line-height: 16px;
+        padding: 9px 0px 9px 0px;
 }
 #othersportsbox {
 	float: left;
 	width: 120px;
 	height: 30px;
-	margin-bottom: 10px;
 	border: 1px solid #CDCAB9;
+        margin-bottom: 10px;
 }
 
 .pagecontentmiddle {
