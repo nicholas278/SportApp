@@ -32,6 +32,9 @@
                                 <li><a href="#" id="Burnaby" class="area">Burnaby</a></li>
                                 <li><a href="#" id="Richmond" class="area">Richmond</a></li>
                                 <li><a href="#" id="Vancouver" class="area">Vancouver</a></li>
+                                <li><a href="#" id="Delta" class="area">Delta</a></li>
+                                <li><a href="#" id="New Westminister" class="area">New Westminister</a></li>
+                                <li><a href="#" id="Surrey" class="area">Surrey</a></li>
 			</ul>
 		</div>
 		<div id="banner" class="color6">
