@@ -41,20 +41,16 @@ class ui extends CI_Controller {
         //The Current Location button takes the current coords, then calculate and sort the current list by distance
 	public function current_location(){   
             $filterValue = $this->input->post('filterValue');
-            $currentLat = $this->input->post('currentLat');
-            $currentLng = $this->input->post('currentLng');
+            $this->session->set_userdata('currentLat', $this->input->post('currentLat'));
+            $this->session->set_userdata('currentLng', $this->input->post('currentLng'));
             
-            $reservedList = $this->session->userdata('reservedList');
-            if($reservedList === false){
-                $reservedList = $this->get_list($searchValue);
-            }
-            $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
-            $this->get_page($reservedList, 1); //Hardcode workaround, will improve later
+            $this->add_filterslist("city", $filterValue);
+            $reservedList = $this->get_list();
+
             $data['sports'] = $reservedList;
             $data['filtersList'] = $this->session->userdata('filtersList');
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->session->set_userdata('reservedList', $reservedList);
             $this->load->view('templates/results', $data);
 	}
         
@@ -64,10 +60,12 @@ class ui extends CI_Controller {
             $currentLng = $this->input->post('currentLng');
             $searchValue = $this->input->post('searchValue');
             $this->session->set_userdata('filtersList', false);
-            $reservedList = $this->get_list($searchValue);
+
+            $reservedList = $this->sports_model->get_sports(FALSE, $searchValue);
             $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
-            $this->get_page($reservedList, 1); //Hardcode workaround, will improve later
-            $data['sports'] = $reservedList;
+            $resultList = $this->get_page($reservedList, 1);
+            
+            $data['sports'] = $resultList;
             $data['filtersList'] = '';
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
@@ -82,8 +80,7 @@ class ui extends CI_Controller {
             $filterValue = $this->input->post('filterValue');
             //Add filter to the list
             $data['filtersList'] = $this->add_filterslist($filterType, $filterValue);
-            //Find filter position and get list accordingly
-            //$filterIndex = $this->check_filterslist($filterType);           
+          
             $data['sports'] = $this->get_list();
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
@@ -94,9 +91,7 @@ class ui extends CI_Controller {
         public function remove_filter(){
             //Get input
             $removeType = $this->input->post('removeType');
-            //Find filter position
-            //$filterIndex = $this->check_filterslist($removeType);
-            //Remove filter from list first before getting the list
+
             $data['filtersList'] = $this->remove_filterslist($removeType);
             $data['sports'] = $this->get_list();
             $data['currentPage'] = $this->session->userdata('currentPage');
@@ -160,9 +155,15 @@ class ui extends CI_Controller {
         private function get_list($searchValue = FALSE){
             $filtersList = $this->session->userdata('filtersList');
             $reservedList = $this->sports_model->get_sports(FALSE, $searchValue);
-
-            if($filtersList !== false){
-                $reservedList = $this->filter_list($reservedList);
+            if(sizeof($filtersList)!== 0 && $filtersList !== false){
+                if(in_array("Current Location", $filtersList)){
+                    $reservedList = $this->sort_list_byDist($reservedList, $this->session->userdata('currentLat'), $this->session->userdata('currentLng'));
+                    unset($filtersList["city"]);
+                }
+                //check if there are other items other than Current Location
+                if(sizeof($filtersList)!== 0){
+                    $reservedList = $this->filter_list($reservedList);
+                }
             }
             $this->session->set_userdata('reservedList', $reservedList);
             return $this->get_page($reservedList, 1);
@@ -191,6 +192,9 @@ class ui extends CI_Controller {
         private function filter_list($filterFrom){
             $resultList = [];
             $filtersList = $this->session->userdata('filtersList');
+            if(in_array("Current Location", $filtersList)){
+                unset($filtersList["city"]);
+            }
             $length = sizeof($filterFrom);
             for($i=0; $i<$length; $i++){
                 $list = array_intersect($filterFrom[$i], $filtersList);
