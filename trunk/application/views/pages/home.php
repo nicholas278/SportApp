@@ -12,11 +12,11 @@
                                 <li><a href="#" id="Golf" class="sportslist">Golf</a></li>
                                 <li><a href="#" id="Gym" class="sportslist">Gym</a></li>
                                 <li><a href="#" id="Hockey" class="sportslist">Hockey</a></li>
-                                <li><a href="#" id="Rock_Climbing" class="sportslist">Rock Climbing</a></li>
+                                <li><a href="#" id="Rock Climbing" class="sportslist">Rock Climbing</a></li>
                                 <li><a href="#" id="Soccer" class="sportslist">Soccer</a></li>
                                 <li><a href="#" id="Squash" class="sportslist">Squash</a></li>
                                 <li><a href="#" id="Swimming" class="sportslist">Swimming</a></li>
-                                <li><a href="#" id="Table_Tennis" class="sportslist">Table Tennis</a></li>
+                                <li><a href="#" id="Table Tennis" class="sportslist">Table Tennis</a></li>
                                 <li><a href="#" id="Tennis" class="sportslist">Tennis</a></li>
                                 <li><a href="#" id="Ultimate" class="sportslist">Ultimate</a></li>
                                 <li><a href="#" id="Volleyball" class="sportslist">Volleyball</a></li>
