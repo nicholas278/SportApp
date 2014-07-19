@@ -29,9 +29,6 @@ class admin extends CI_Controller {
         $sportLocation['postal_code'] = $this->input->post('postal_code');
         $sportLocation['latitude'] = $this->input->post('latitude');
         $sportLocation['longitude'] = $this->input->post('longitude');
-        foreach ($sportLocation as $item){
-            echo ($item . ", ");           
-        };
         $this->sports_model->set_sports($sportLocation);
     }
     
