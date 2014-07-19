@@ -11,7 +11,7 @@
             </div>
             <p><strong>Find Location by Name with Map:</strong></p>
             <div class="heading">
-                <label for="db_namesearch">Search Map by Name:</label>
+                <label for="db_namesearch">Search Map:</label>
             </div>
 
             <div class="inputplaceholder">
@@ -20,7 +20,7 @@
             <div class="dbbuttons">
                 <input type="submit" id="dbSearch" value="Search" >
             </div>
-            <br/>                            
+                                       
             <p><strong>Insert Location Manually:</strong></p>    
             <div class="heading">
                 <label for="db_sport">Sport:</label>
