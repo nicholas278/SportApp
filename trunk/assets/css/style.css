@@ -51,19 +51,19 @@ body {
 }
 #topwrapper {
 	height: 100px;
-	width: 992px;
+	width: 1162px;
 	margin-left: auto;
 	margin-right: auto;
 }
 #logo {
 	height: 100px;
-	width: 144px;
+	width: 164px;
 	margin-right: 2px;
 	float: left;
 }
 #topinputbox {
 	height: 70px;
-	width: 844px;
+	width: 994px;
 	margin-left: 2px;
 	position: relative;
 	float: right;
@@ -72,7 +72,7 @@ body {
 	width: 600px;
 	height: 30px;
 	position: absolute;	
-	left: 150px;
+	left: 165px;
 	bottom: 15px;
 }
 #filtersearchinput {
@@ -111,7 +111,7 @@ body {
 }
 #buttonbox {
 	height: 30px;
-	width: 844px;
+	width: 994px;
 	margin-left: 2px;
 	position: relative;
 	float: right;	
@@ -134,7 +134,7 @@ body {
 }
 
 #contentwrap {
-	width: 1000px;
+	width: 1162px;
 	overflow: hidden;
 	margin-left: auto;
 	margin-right: auto;
@@ -142,7 +142,7 @@ body {
 
 /* LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR LEFTBAR */
 #leftbar {
-	width: 144px;
+	width: 162px;
 	min-height: 572px; /* change this later to overflow */
 	overflow: auto; /* see if this works */
 	float: left;
@@ -184,7 +184,7 @@ body {
 
 /* BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER BANNER */
 #banner {
-	width: 844px;
+	width: 988px;
 	height: 94px;
 	float: right;
 	margin-left: 2px;
@@ -216,10 +216,9 @@ body {
 	width: 92%;
 	height: 92%;
 }
-
-/* RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS */
+/* SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT */
 #sortbox {
-	width: 366px;
+	width: 510px;
 	height: 18px;
 	float: right;
 	margin-left: 2px;
@@ -241,7 +240,7 @@ body {
 	color: blue;
 }
 #typebox {
-	width: 366px;
+	width: 510px;
 	min-height: 18px;
 	float: right;
 	margin-left: 2px;
@@ -257,8 +256,9 @@ body {
 	text-decoration: none;
 	color: black;
 }
+/* RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS RESULTS */
 #results {
-	width: 366px;
+	width: 510px;
 	height: 401px;
 	overflow: auto;
 	float: right;
@@ -268,8 +268,8 @@ body {
         overflow-x: hidden;
 }
 #resultshome {
-	width: 366px;
-	height: 439px;
+	width: 510px;
+	height: 408px;
 	display: table;
 }
 #resultshomechild {
@@ -278,7 +278,7 @@ body {
 	text-align: center;
 }
 .resultbox {
-	width: 366px;
+	width: 502px;
 	height: 113px;
 	position: relative;
 }
@@ -298,21 +298,21 @@ body {
 	border-bottom: 1px solid #DFDED4;
 }
 .boxname {
-	width: 309px;
+	width: 449px;
 	height: 35px;
 	position: absolute;
 	top: 0px;
 	right: 0px;
 }
 .boxaddress {
-	width: 309px;
+	width: 449px;
 	height: 35px;
 	position: absolute;
 	right: 0px;
 	top: 35px;
 }
 .sportsavailable {
-	width: 309px;
+	width: 449px;
 	height: 34px;
 	border-bottom: 1px solid #DFDED4;
 	position: absolute;
@@ -320,7 +320,7 @@ body {
 	bottom: 0px;
 }
 #pagesdirectory {
-	width: 358px;
+	width: 502px;
 	height: 30px;
 	padding: 4px;
 	float: right;
@@ -333,7 +333,7 @@ body {
 	margin-left: 4px;
 }
 #firstpage {
-	margin-left: 79px;
+	margin-left: 151px; /* need to fix this for the new buttons */
 }
 #previouspage {
 }
@@ -346,7 +346,6 @@ body {
 #nextpage {
 }
 #lastpage {
-	margin-right: 79px;
 }
 
 #firstpage a{
