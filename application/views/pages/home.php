@@ -108,6 +108,37 @@
                             </a>
 			</div>
 		</div>
+        <!--    <div id="detailedplace" class="color6">
+			<div class="placeinfo">
+				<ul>    
+					<li>Place Name</li>
+					<li>Street</li>
+					<li>City, Province PostalCode</li>
+					<li>Country</li>
+				</ul>
+			</div>
+			<div class="detailedinfo">
+				<div class="acsinfo">
+					<ul>    
+						<li>Features: Sport</li>
+						<li>Free/Paid</li>
+						<li>indoor/outdoor</li>
+					</ul>
+				</div>
+				<div class="courtinfo">
+				</div>
+			</div>
+        		<div id="reviews">
+			</div>
+			<div id="images">
+			</div>
+			<div id="detailedmenu">
+				<a href="backtoresultsbox">Back to Results</a>
+				<a href="detailedsportinfo">Detailed Info</a> 
+				<a href="reviewbox">Reviews</a>
+				<a href="imagesbox">Images</a>
+			</div>
+		</div> -->
 	</div>
 
 
