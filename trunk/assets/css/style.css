@@ -361,6 +361,55 @@ body {
 	display: none;
 }
 
+/* DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE */
+#detailedplace {
+	height: 464px;
+	width: 502px;
+	float: right;
+	margin-top: 2px;
+	margin-right: 4px;
+	margin-left: 2px;
+	padding: 4px;
+}
+.placeinfo {
+	width: 500px;
+	height: 144px;
+	border: 1px #CDCAB9 solid;
+	margin-bottom: 4px;
+}
+.detailedinfo {
+	width: 500px;
+	height: 282px;
+	border: 1px #CDCAB9 solid;
+}
+.acsinfo {
+}
+.courtinfo {
+}
+#detailedmenu {
+	width: 502px;
+	height: 30px;
+}
+
+#reviews {
+	height: 464px;
+	width: 502px;
+	float: right;
+	margin-top: 2px;
+	margin-right: 4px;
+	margin-left: 2px;
+	padding: 4px;
+}
+#images {
+	height: 464px;
+	width: 502px;
+	float: right;
+	margin-top: 2px;
+	margin-right: 4px;
+	margin-left: 2px;
+	padding: 4px;
+}
+
 /* FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
 #footer {
 	width: 100%;
