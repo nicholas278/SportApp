@@ -363,12 +363,13 @@ body {
 
 /* DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE */
 #detailedplace {
-	height: 464px;
+	height: 432px;
 	width: 502px;
 	float: right;
 	margin-top: 2px;
 	margin-right: 4px;
 	margin-left: 2px;
+	margin-bottom: 2px;
 	padding: 4px;
 }
 .placeinfo {
@@ -379,30 +380,36 @@ body {
 }
 .detailedinfo {
 	width: 500px;
-	height: 282px;
+	height: 280px;
 	border: 1px #CDCAB9 solid;
 }
 .acsinfo {
 }
 .courtinfo {
 }
-#detailedmenu {
-	width: 502px;
-	height: 30px;
-}
-
 #reviews {
-	height: 464px;
+	height: 432px;
 	width: 502px;
 	float: right;
 	margin-top: 2px;
 	margin-right: 4px;
 	margin-left: 2px;
+	margin-bottom: 2px;
 	padding: 4px;
 }
 #images {
-	height: 464px;
+	height: 432px;
 	width: 502px;
+	float: right;
+	margin-top: 2px;
+	margin-right: 4px;
+	margin-left: 2px;
+	margin-bottom: 2px;
+	padding: 4px;
+}
+#detailedmenu {
+	width: 502px;
+	height: 22px;
 	float: right;
 	margin-top: 2px;
 	margin-right: 4px;
