@@ -108,7 +108,7 @@
                             </a>
 			</div>
 		</div>
-        <!--    <div id="detailedplace" class="color6">
+        	<!--	<div id="detailedplace" class="color6">
 			<div class="placeinfo">
 				<ul>    
 					<li>Place Name</li>
@@ -128,17 +128,17 @@
 				<div class="courtinfo">
 				</div>
 			</div>
-        		<div id="reviews">
-			</div>
-			<div id="images">
-			</div>
-			<div id="detailedmenu">
-				<a href="backtoresultsbox">Back to Results</a>
-				<a href="detailedsportinfo">Detailed Info</a> 
-				<a href="reviewbox">Reviews</a>
-				<a href="imagesbox">Images</a>
-			</div>
-		</div> -->
+		</div>
+                <div id="reviews">
+		</div>
+		<div id="images">
+		</div>
+		<div id="detailedmenu" class="color6">
+			<a href="backtoresultsbox">Back to Results</a>
+			<a href="detailedsportinfo">Detailed Info</a>
+			<a href="reviewbox">Reviews</a>
+			<a href="imagesbox">Images</a>
+		</div>-->
 	</div>
 
 
