@@ -20,8 +20,8 @@ class admin extends CI_Controller {
 
         $data['title'] = "Admin Panel"; // Capitalize the first letter 
         
-        $this->load->view('templates/headeradmin', $data);
-        $this->load->view('templates/menu', $data);
+        $this->load->view('templates/header_admin', $data);
+        $this->load->view('templates/menu_admin', $data);
         $this->load->view('pages/dbedit', $data);
         
     }
