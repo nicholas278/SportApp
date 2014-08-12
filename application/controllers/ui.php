@@ -63,9 +63,8 @@ class ui extends CI_Controller {
 
             $reservedList = $this->sports_model->get_sports(FALSE, $searchValue);
             $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
-            $resultList = $this->get_page($reservedList, 1);
             
-            $data['sports'] = $resultList;
+            $data['sports'] = $this->get_page($reservedList, 1);
             $data['filtersList'] = '';
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
