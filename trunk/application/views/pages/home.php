@@ -43,72 +43,74 @@
                     </div>
 		</div>
 		<div id="map-canvas" class="color6">
-                        <div id="resultpopup">
-			</div>
 		</div>
-		<div id="sortbox" class="color5">
-                    <span id="sortoptions">
-			<a href="#" id="alphabet">Sort A-Z</a> <!--Nick fix href-->
-			|
-			<a href="#" id="distance">Sort Dist.</a> <!--Nick fix href-->
-                    </span>
-		</div>
-		<div id="typebox" class="color5">
-			<!-- <div class="filterbox">
-				filter-type <a href="???">&#10006</a>
-			</div> -->
-		</div>
-		<div id="results" class="color6">
-                    	<div id="resultshome" class="color6">
-				<div id="resultshomechild">
-					<p>Look up a sport by clicking on a link on the left</p>
-					<br>
-					<p>Find one near you by using the search bar at the top</p>
-				</div>
-			</div>
-                    <!--<div class="resultbox">
-				<div class="boxnumber">
-					icon
-				</div>
-				<div class="boxdistance">
-					dist.
-				</div>
-				<div class="boxname">
-					insert name of place here
-				</div>
-				<div class="boxaddress">
-					insert address of place here
-				</div>
-                            	<div class="sportsavailable">
-					insert types of sports available
-				</div>
-			</div>-->
-		</div>
-                <div id="pagesdirectory" class="color5">
-                        <div id="firstpage" class="pageselect">
-                            <a href="#">
-                                <img src="assets/img/firstpage.png">
-                            </a>    
+                <div id="rightboxlvl1">
+                    <div id="rightboxlvl21">
+                        <div id="sortbox" class="color5">
+                            <span id="sortoptions">
+                                <a href="#" id="alphabet">Sort A-Z</a> <!--Nick fix href-->
+                                |
+                                <a href="#" id="distance">Sort Dist.</a> <!--Nick fix href-->
+                            </span>
                         </div>
-			<div id="previouspage" class="pageselect">
-                            <a href="#">
-                                <img src="assets/img/previouspage.png">
-                            </a>
-			</div>
-			<div id="currentpage">
-			</div>
-			<div id="nextpage" class="pageselect">
-                            <a href="#">
-                                <img src="assets/img/nextpage.png">
-                            </a>
-			</div>
-			<div id="lastpage" class="pageselect">
-                            <a href="#">
-                                <img src="assets/img/lastpage.png">
-                            </a>
-			</div>
-		</div>
-        	<!--	<div id="detailedplace" class="color6">
+                        <div id="typebox" class="color5">
+                                <!-- <div class="filterbox">
+                                        filter-type <a href="???">&#10006</a>
+                                </div> -->
+                        </div>
+                        <div id="results" class="color6">
+                                <div id="resultshome" class="color6">
+                                        <div id="resultshomechild">
+                                                <p>Look up a sport by clicking on a link on the left</p>
+                                                <br>
+                                                <p>Find one near you by using the search bar at the top</p>
+                                        </div>
+                                </div>
+                            <!--<div class="resultbox">
+                                        <div class="boxnumber">
+                                                icon
+                                        </div>
+                                        <div class="boxdistance">
+                                                dist.
+                                        </div>
+                                        <div class="boxname">
+                                                insert name of place here
+                                        </div>
+                                        <div class="boxaddress">
+                                                insert address of place here
+                                        </div>
+                                        <div class="sportsavailable">
+                                                insert types of sports available
+                                        </div>
+                                </div>-->
+                        </div>
+                        <div id="pagesdirectory" class="color5">
+                                <div id="firstpage" class="pageselect">
+                                    <a href="#">
+                                        <img src="assets/img/firstpage.png">
+                                    </a>    
+                                </div>
+                                <div id="previouspage" class="pageselect">
+                                    <a href="#">
+                                        <img src="assets/img/previouspage.png">
+                                    </a>
+                                </div>
+                                <div id="currentpage">
+                                </div>
+                                <div id="nextpage" class="pageselect">
+                                    <a href="#">
+                                        <img src="assets/img/nextpage.png">
+                                    </a>
+                                </div>
+                                <div id="lastpage" class="pageselect">
+                                    <a href="#">
+                                        <img src="assets/img/lastpage.png">
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                    <div id="rightboxlvl22">
+                 <!--	<div id="detailedplace" class="color6">
 			<div class="placeinfo">
 				<ul>    
 					<li>Place Name</li>
@@ -128,17 +130,19 @@
 				<div class="courtinfo">
 				</div>
 			</div>
-		</div>
-                <div id="reviews">
-		</div>
-		<div id="images">
-		</div>
-		<div id="detailedmenu" class="color6">
-			<a href="backtoresultsbox">Back to Results</a>
-			<a href="detailedsportinfo">Detailed Info</a>
-			<a href="reviewbox">Reviews</a>
-			<a href="imagesbox">Images</a>
-		</div>-->
+                        </div>
+                        <div id="reviews">
+                        </div>
+                        <div id="images">
+                        </div>
+                        <div id="detailedmenu" class="color6">
+                                <a href="backtoresultsbox">Back to Results</a>
+                                <a href="detailedsportinfo">Detailed Info</a>
+                                <a href="reviewbox">Reviews</a>
+                                <a href="imagesbox">Images</a>
+                        </div>-->
+                    </div>
+                </div>
 	</div>
 
 
