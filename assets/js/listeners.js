@@ -115,11 +115,11 @@ function createListenerSort(){
 function createListenerResult(){
     $("#results").on("mouseover", ".resultbox", function(){
         document.getElementById(this.id).style.backgroundColor = "#DFDED4";
-        markers[this.id].setIcon('assets/img/purplemarker.png');
+        markers[this.id].setIcon(constants.PURPLEMARKER);
     });
     $("#results").on("mouseout", ".resultbox", function(){
         document.getElementById(this.id).style.backgroundColor = "transparent";
-        markers[this.id].setIcon('assets/img/redmarker.png');
+        markers[this.id].setIcon(constants.REDMARKER);
     });
 }
 

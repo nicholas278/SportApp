@@ -1,6 +1,11 @@
 var map, geocoder, infowindow, autocomplete; //Google Objects
 var markers;
 
+var constants = {
+   REDMARKER: 'assets/img/reddot.png',
+   PURPLEMARKER: 'assets/img/purplemarker.png'
+};
+
 function initialize() {
     markers = [];
     geocoder = new google.maps.Geocoder();
@@ -87,7 +92,7 @@ function createMarker(place) {
     map: map,
     position: place,
     animation: google.maps.Animation.DROP,
-    icon: 'assets/img/redmarker.png',
+    icon: constants.REDMARKER,
     index: markers.length
   });
   markers.push(marker);
@@ -95,17 +100,19 @@ function createMarker(place) {
     infowindow.setContent("<strong>latitude</strong> = " + place.lat() + "<br\><strong>longitude</strong> = " + place.lng());
     infowindow.open(map, this);
   });
+  /*
   google.maps.event.addListener(marker, 'mouseover', function() {
-    this.setIcon('assets/img/purplemarker.png');
+    this.setIcon(constants.PURPLEMARKER);
     var div = document.getElementsByClassName('resultbox');
     div[this.index].style.backgroundColor = "#DFDED4";
     div[this.index].scrollIntoView();
   });
   google.maps.event.addListener(marker, 'mouseout', function() {
-    this.setIcon('assets/img/redmarker.png');
+    this.setIcon(constants.REDMARKER);
     var div = document.getElementsByClassName('resultbox');
     div[this.index].style.backgroundColor = "white";
   });
+  */
 }
 
 // Deletes all markers in the array by removing references to them
