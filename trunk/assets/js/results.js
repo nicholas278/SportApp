@@ -1,4 +1,4 @@
-function displayResults(filtersList, sportArray, currentPage, maxPage){
+function displayResults(filtersList, sportArray, resultArray, currentPage, maxPage){
     document.getElementById("typebox").innerHTML = "";
     for(var i in filtersList){
         createFilterList(i, filtersList[i]);
@@ -7,7 +7,10 @@ function displayResults(filtersList, sportArray, currentPage, maxPage){
         document.getElementById("sortoptions").style.display = "block";
         for(var i in sportArray){
             createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
-            createNewItem(sportArray[i].name, sportArray[i].address, sportArray[i]["sport"], sportArray[i]["distance"], i);
+        }
+        for(var i in resultArray){
+            var p = (currentPage-1)*10+parseInt(i,10);
+            createNewItem(resultArray[i].name, resultArray[i].address, resultArray[i]["sport"], resultArray[i]["distance"], p);
         }
     }
     else{

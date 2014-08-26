@@ -46,8 +46,9 @@ class ui extends CI_Controller {
             
             $this->add_filterslist("city", $filterValue);
             $reservedList = $this->get_list();
-
+            
             $data['sports'] = $reservedList;
+            $data['resultList'] = $this->get_page($reservedList, 1);
             $data['filtersList'] = $this->session->userdata('filtersList');
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
@@ -64,7 +65,8 @@ class ui extends CI_Controller {
             $reservedList = $this->sports_model->get_sports(FALSE, $searchValue);
             $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
             
-            $data['sports'] = $this->get_page($reservedList, 1);
+            $data['sports'] = $reservedList;
+            $data['resultList'] = $this->get_page($reservedList, 1);
             $data['filtersList'] = '';
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
@@ -77,10 +79,12 @@ class ui extends CI_Controller {
             //Get input
             $filterType = $this->input->post('filterType');
             $filterValue = $this->input->post('filterValue');
+            
             //Add filter to the list
             $data['filtersList'] = $this->add_filterslist($filterType, $filterValue);
-          
-            $data['sports'] = $this->get_list();
+            $reservedList = $this->get_list();
+            $data['sports'] = $reservedList;
+            $data['resultList'] = $this->get_page($reservedList, 1);
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
             $this->load->view('templates/results', $data);
@@ -92,7 +96,9 @@ class ui extends CI_Controller {
             $removeType = $this->input->post('removeType');
 
             $data['filtersList'] = $this->remove_filterslist($removeType);
-            $data['sports'] = $this->get_list();
+            $reservedList = $this->get_list();
+            $data['sports'] = $reservedList;
+            $data['resultList'] = $this->get_page($reservedList, 1);
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
             $this->load->view('templates/results', $data);
@@ -109,7 +115,8 @@ class ui extends CI_Controller {
             }
             $this->session->set_userdata('reservedList', $reservedList);
             $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['sports'] = $this->get_page($reservedList, 1);
+            $data['sports'] = $reservedList;
+            $data['resultList'] = $this->get_page($reservedList, 1);
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
             $this->load->view('templates/results', $data);
@@ -119,7 +126,8 @@ class ui extends CI_Controller {
         public function next_page(){
             $currentPage = $this->session->userdata('currentPage');
             $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['sports'] = $this->get_page($this->session->userdata('reservedList'), $currentPage+1);
+            $data['sports'] = $this->session->userdata('reservedList');
+            $data['resultList'] = $this->get_page($this->session->userdata('reservedList'), $currentPage+1);
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
             $this->load->view('templates/results', $data);
@@ -128,7 +136,8 @@ class ui extends CI_Controller {
         public function previous_page(){
             $currentPage = $this->session->userdata('currentPage');
             $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['sports'] = $this->get_page($this->session->userdata('reservedList'), $currentPage-1);
+            $data['sports'] = $this->session->userdata('reservedList');
+            $data['resultList'] = $this->get_page($this->session->userdata('reservedList'), $currentPage-1);
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
             $this->load->view('templates/results', $data);
@@ -136,7 +145,8 @@ class ui extends CI_Controller {
         
         public function first_page(){
             $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['sports'] = $this->get_page($this->session->userdata('reservedList'), 1);
+            $data['sports'] = $this->session->userdata('reservedList');
+            $data['resultList'] = $this->get_page($this->session->userdata('reservedList'), 1);
             $data['currentPage'] = 1;
             $data['maxPage'] = $this->session->userdata('maxPage');
             $this->load->view('templates/results', $data);
@@ -145,7 +155,8 @@ class ui extends CI_Controller {
         public function last_page(){
             $data['filtersList'] = $this->session->userdata('filtersList');
             $reservedList = $this->session->userdata('reservedList');
-            $data['sports'] = $this->get_page($reservedList, ceil(sizeof($reservedList)/10));
+            $data['sports'] = $reservedList;
+            $data['resultList'] = $this->get_page($reservedList, ceil(sizeof($reservedList)/10));
             $data['currentPage'] = $this->session->userdata('currentPage');
             $data['maxPage'] = $this->session->userdata('maxPage');
             $this->load->view('templates/results', $data);
@@ -165,7 +176,7 @@ class ui extends CI_Controller {
                 }
             }
             $this->session->set_userdata('reservedList', $reservedList);
-            return $this->get_page($reservedList, 1);
+            return $reservedList;
         }
         
         private function get_page($list, $pageNumber){
