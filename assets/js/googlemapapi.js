@@ -3,7 +3,7 @@ var markers;
 
 var constants = {
    REDMARKER: 'assets/img/reddot.png',
-   PURPLEMARKER: 'assets/img/purplemarker.png'
+   PURPLEMARKER: 'assets/img/purpledot.png'
 };
 
 function initialize() {
