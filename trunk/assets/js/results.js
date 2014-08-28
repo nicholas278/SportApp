@@ -132,6 +132,12 @@ function pageNavButtons(currentPage, maxPage){
         displaySwitch("nextpage", true);
         displaySwitch("lastpage", true);
     }
+    else if(currentPage < maxPage){
+        displaySwitch("firstpage", true);
+        displaySwitch("previouspage", true);
+        displaySwitch("nextpage", true);
+        displaySwitch("lastpage", true);
+    }
     else if(currentPage === maxPage){
         displaySwitch("firstpage", true);
         displaySwitch("previouspage", true);
