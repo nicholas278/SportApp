@@ -45,14 +45,9 @@ class ui extends CI_Controller {
             $this->session->set_userdata('currentLng', $this->input->post('currentLng'));
             
             $this->add_filterslist("city", $filterValue);
-            $reservedList = $this->get_list();
+            $this->get_list();
             
-            $data['sports'] = $reservedList;
-            $data['resultList'] = $this->get_page($reservedList, 1);
-            $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['currentPage'] = $this->session->userdata('currentPage');
-            $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->load->view('templates/results', $data);
+            $this->load_page(1);
 	}
         
         //The search bar function
@@ -62,16 +57,12 @@ class ui extends CI_Controller {
             $searchValue = $this->input->post('searchValue');
             $this->session->set_userdata('filtersList', false);
 
+            //Get list and sort them according to distance from target location
             $reservedList = $this->sports_model->get_sports(FALSE, $searchValue);
             $reservedList = $this->sort_list_byDist($reservedList, $currentLat, $currentLng);
-            
-            $data['sports'] = $reservedList;
-            $data['resultList'] = $this->get_page($reservedList, 1);
-            $data['filtersList'] = '';
-            $data['currentPage'] = $this->session->userdata('currentPage');
-            $data['maxPage'] = $this->session->userdata('maxPage');
             $this->session->set_userdata('reservedList', $reservedList);
-            $this->load->view('templates/results', $data);
+            
+            $this->load_page(1);
 	}
         
         //Add filter when the left bar is clicked
@@ -79,29 +70,18 @@ class ui extends CI_Controller {
             //Get input
             $filterType = $this->input->post('filterType');
             $filterValue = $this->input->post('filterValue');
-            
-            //Add filter to the list
-            $data['filtersList'] = $this->add_filterslist($filterType, $filterValue);
-            $reservedList = $this->get_list();
-            $data['sports'] = $reservedList;
-            $data['resultList'] = $this->get_page($reservedList, 1);
-            $data['currentPage'] = $this->session->userdata('currentPage');
-            $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->load->view('templates/results', $data);
+            $this->add_filterslist($filterType, $filterValue);
+            $this->get_list();
+            $this->load_page(1);
         }
         
         //Remove filter when the filter is deleted
         public function remove_filter(){
             //Get input
             $removeType = $this->input->post('removeType');
-
-            $data['filtersList'] = $this->remove_filterslist($removeType);
-            $reservedList = $this->get_list();
-            $data['sports'] = $reservedList;
-            $data['resultList'] = $this->get_page($reservedList, 1);
-            $data['currentPage'] = $this->session->userdata('currentPage');
-            $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->load->view('templates/results', $data);
+            $this->remove_filterslist($removeType);
+            $this->get_list();
+            $this->load_page(1);
         }
         
         public function sort_list(){
@@ -114,54 +94,30 @@ class ui extends CI_Controller {
                 
             }
             $this->session->set_userdata('reservedList', $reservedList);
-            $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['sports'] = $reservedList;
-            $data['resultList'] = $this->get_page($reservedList, 1);
-            $data['currentPage'] = $this->session->userdata('currentPage');
-            $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->load->view('templates/results', $data);
+            $this->load_page(1);
         }
         
         //Page control
         public function next_page(){
             $currentPage = $this->session->userdata('currentPage');
-            $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['sports'] = $this->session->userdata('reservedList');
-            $data['resultList'] = $this->get_page($this->session->userdata('reservedList'), $currentPage+1);
-            $data['currentPage'] = $this->session->userdata('currentPage');
-            $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->load->view('templates/results', $data);
+            $this->load_page($currentPage+1, true);
         }
         
         public function previous_page(){
             $currentPage = $this->session->userdata('currentPage');
-            $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['sports'] = $this->session->userdata('reservedList');
-            $data['resultList'] = $this->get_page($this->session->userdata('reservedList'), $currentPage-1);
-            $data['currentPage'] = $this->session->userdata('currentPage');
-            $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->load->view('templates/results', $data);
+            $this->load_page($currentPage-1, true);
         }
         
         public function first_page(){
-            $data['filtersList'] = $this->session->userdata('filtersList');
-            $data['sports'] = $this->session->userdata('reservedList');
-            $data['resultList'] = $this->get_page($this->session->userdata('reservedList'), 1);
-            $data['currentPage'] = 1;
-            $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->load->view('templates/results', $data);
+            $this->load_page(1, true);
         }
         
         public function last_page(){
-            $data['filtersList'] = $this->session->userdata('filtersList');
             $reservedList = $this->session->userdata('reservedList');
-            $data['sports'] = $reservedList;
-            $data['resultList'] = $this->get_page($reservedList, ceil(sizeof($reservedList)/10));
-            $data['currentPage'] = $this->session->userdata('currentPage');
-            $data['maxPage'] = $this->session->userdata('maxPage');
-            $this->load->view('templates/results', $data);
+            $this->load_page(ceil(sizeof($reservedList)/10), true);
         }
         
+        //Get list depending on search value, then save it in session data under 'reservedList'
         private function get_list($searchValue = FALSE){
             $filtersList = $this->session->userdata('filtersList');
             $reservedList = $this->sports_model->get_sports(FALSE, $searchValue);
@@ -176,7 +132,6 @@ class ui extends CI_Controller {
                 }
             }
             $this->session->set_userdata('reservedList', $reservedList);
-            return $reservedList;
         }
         
         private function get_page($list, $pageNumber){
@@ -189,14 +144,12 @@ class ui extends CI_Controller {
             $list = $this->session->userdata('filtersList');
             $list[$filterType] = $filterValue;
             $this->session->set_userdata('filtersList', $list);
-            return $list;
         }
         
         private function remove_filterslist($filterType){
             $list = $this->session->userdata('filtersList');
             unset($list[$filterType]);
             $this->session->set_userdata('filtersList', $list);
-            return $list;
         }
         
         private function filter_list($filterFrom){
@@ -213,6 +166,20 @@ class ui extends CI_Controller {
                 }
             }
             return $resultList;
+        }
+        
+        //Loads all session data to view.  All data must be set in session before calling this function
+        private function load_page($pageNumber, $reloadMap = FALSE){
+            if($reloadMap !== FALSE){
+                $data['reloadMap'] = TRUE;
+            }
+            $reservedList = $this->session->userdata('reservedList');
+            $data['sports'] = $reservedList;
+            $data['resultList'] = $this->get_page($reservedList, $pageNumber);
+            $data['filtersList'] = $this->session->userdata('filtersList');
+            $data['currentPage'] = $this->session->userdata('currentPage');
+            $data['maxPage'] = $this->session->userdata('maxPage');
+            $this->load->view('templates/results', $data);
         }
         
         private function filter_byDist($filterFrom, $dist = 7){

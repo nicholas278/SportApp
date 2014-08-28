@@ -1,12 +1,14 @@
-function displayResults(filtersList, sportArray, resultArray, currentPage, maxPage){
+function displayResults(filtersList, sportArray, resultArray, currentPage, maxPage, reloadMap){
     document.getElementById("typebox").innerHTML = "";
     for(var i in filtersList){
         createFilterList(i, filtersList[i]);
     }
     if(sportArray.length !== 0){
         document.getElementById("sortoptions").style.display = "block";
-        for(var i in sportArray){
-            createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
+        if(reloadMap){
+            for(var i in sportArray){
+                createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
+            }
         }
         for(var i in resultArray){
             var p = (currentPage-1)*10+parseInt(i,10);
