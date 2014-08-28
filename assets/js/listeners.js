@@ -125,19 +125,15 @@ function createListenerResult(){
 
 function createListenerPageChange(){
     $("#firstpage").on("click", "a", function(){
-        deleteMarkers();
         $('#results').load('index.php/ui/first_page'); 
     });
     $("#previouspage").on("click", "a", function(){
-        deleteMarkers();
         $('#results').load('index.php/ui/previous_page'); 
     });
     $("#nextpage").on("click", "a", function(){
-        deleteMarkers();
         $('#results').load('index.php/ui/next_page'); 
     });
     $("#lastpage").on("click", "a", function(){
-        deleteMarkers();
         $('#results').load('index.php/ui/last_page'); 
     });
 }
