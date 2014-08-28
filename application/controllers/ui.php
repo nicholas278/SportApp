@@ -169,12 +169,17 @@ class ui extends CI_Controller {
         }
         
         //Loads all session data to view.  All data must be set in session before calling this function
-        private function load_page($pageNumber, $reloadMap = FALSE){
-            if($reloadMap !== FALSE){
-                $data['reloadMap'] = TRUE;
-            }
+        private function load_page($pageNumber, $pageChange = FALSE){
+            
             $reservedList = $this->session->userdata('reservedList');
-            $data['sports'] = $reservedList;
+            if($pageChange === TRUE){
+                $data['reloadMap'] = 0;
+                $data['sports'] = NULL;
+            }
+            else{
+                $data['reloadMap'] = 1;
+                $data['sports'] = $reservedList;
+            }
             $data['resultList'] = $this->get_page($reservedList, $pageNumber);
             $data['filtersList'] = $this->session->userdata('filtersList');
             $data['currentPage'] = $this->session->userdata('currentPage');
