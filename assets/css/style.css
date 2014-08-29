@@ -212,10 +212,7 @@ body {
         justify-content: center; /* align horizontal */
         align-items: center; /* align vertical */
 }
-#resultpopup {
-	width: 92%;
-	height: 92%;
-}
+
 /* SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT SORT */
 #sortbox {
 	width: 510px;
@@ -278,19 +275,22 @@ body {
 	text-align: center;
 }
 .resultbox {
-	width: 502px;
-	height: 113px;
+	width: 494px;
+	height: 97px;
 	position: relative;
+	border: 4px solid white;
+	padding: 4px;
 }
-.boxnumber {
-	width: 57px;
+.rating {
+	width: 53px;
 	height: 53px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	background-color: #DFDED4;
 }
 .boxdistance {
-	width: 57px;
+	width: 53px;
 	height: 52px;
 	position: absolute;
 	left: 0px;
@@ -298,26 +298,36 @@ body {
 	border-bottom: 1px solid #DFDED4;
 }
 .boxname {
-	width: 449px;
+	width: 396px;
 	height: 35px;
 	position: absolute;
 	top: 0px;
-	right: 0px;
+	right: 53px;
+	font-size: 1.2em;
+	color: #CA171B;
 }
 .boxaddress {
-	width: 449px;
+	width: 396px;
 	height: 35px;
 	position: absolute;
-	right: 0px;
+	right: 53px;
 	top: 35px;
 }
 .sportsavailable {
-	width: 449px;
+	width: 396px;
 	height: 34px;
 	border-bottom: 1px solid #DFDED4;
 	position: absolute;
-	right: 0px;
+	right: 53px;
 	bottom: 0px;
+}
+.moresportsbox {
+	width: 53px;
+	height: 104px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+        border-bottom: 1px solid #DFDED4;
 }
 #pagesdirectory {
 	width: 502px;
