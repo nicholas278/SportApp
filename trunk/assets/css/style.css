@@ -371,6 +371,9 @@ body {
 	display: none;
 }
 
+#rightboxlvl22 {
+    display: none;
+}
 /* DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE DETAILEDPLACE */
 #detailedplace {
 	height: 432px;
@@ -381,7 +384,6 @@ body {
 	margin-left: 2px;
 	margin-bottom: 2px;
 	padding: 4px;
-        display: none;
 }
 .placeinfo {
 	width: 500px;
