@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div id="rightboxlvl22">
-                 <!--	<div id="detailedplace" class="color6">
+                 	<div id="detailedplace" class="color6">
 			<div class="placeinfo">
 				<ul>    
 					<li>Place Name</li>
@@ -140,7 +140,7 @@
                                 <a href="detailedsportinfo">Detailed Info</a>
                                 <a href="reviewbox">Reviews</a>
                                 <a href="imagesbox">Images</a>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
 	</div>
