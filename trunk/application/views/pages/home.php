@@ -67,7 +67,7 @@
                                         </div>
                                 </div>
                             <!--<div class="resultbox">
-                                        <div class="boxnumber">
+                                        <div class="rating">
                                                 icon
                                         </div>
                                         <div class="boxdistance">
@@ -81,6 +81,8 @@
                                         </div>
                                         <div class="sportsavailable">
                                                 insert types of sports available
+                                        </div>
+                                        <div class="moresportsbox">
                                         </div>
                                 </div>-->
                         </div>
