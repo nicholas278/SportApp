@@ -34,6 +34,7 @@ function createNewItem(name, address, type, dist, index){
     box.appendChild(createNameBox(name));
     box.appendChild(createAddressBox(address));
     box.appendChild(createSportTypeBox(type));
+    box.appendChild(createMoreSportBox());
     var element=document.getElementById("results");
     element.appendChild(box);
 }
@@ -95,6 +96,13 @@ function createSportTypeBox(sportType){
     var content = createElement("div", "sportsavailable");
     var node=document.createTextNode(sportType);
     content.appendChild(node);
+    return content;
+}
+
+function createMoreSportBox(){
+    var content = createElement("div", "moresportsbox");
+    //var node=document.createTextNode();
+    //content.appendChild(node);
     return content;
 }
 
