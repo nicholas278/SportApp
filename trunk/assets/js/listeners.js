@@ -109,6 +109,7 @@ function createListenerSort(){
         var p = {};
         p['sortBy'] = this.id;
         $('#results').load('index.php/ui/sort_list', p);
+        return false;
     });
 }
 
@@ -120,6 +121,15 @@ function createListenerResult(){
     $("#results").on("mouseout", ".resultbox", function(){
         document.getElementById(this.id).style.backgroundColor = "transparent";
         markers[this.id].setIcon(constants.REDMARKER);
+    });
+    $("#results").on("click", ".resultbox", function(){
+        document.getElementById("rightboxlvl21").style.display = "none";
+        document.getElementById("rightboxlvl22").style.display = "block";
+    });
+    $("#detailedmenu").on("click", "a", function(){
+        document.getElementById("rightboxlvl21").style.display = "block";
+        document.getElementById("rightboxlvl22").style.display = "none";
+        return false;
     });
 }
 

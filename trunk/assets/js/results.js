@@ -12,8 +12,8 @@ function displayResults(filtersList, sportArray, resultArray, currentPage, maxPa
         document.getElementById("sortoptions").style.display = "block";
         
         for(var i in resultArray){
-            var p = (currentPage-1)*10+parseInt(i,10);
-            createNewItem(resultArray[i].name, resultArray[i].address, resultArray[i]["sport"], resultArray[i]["distance"], p);
+            var index = (currentPage-1)*10+parseInt(i,10);
+            createNewItem(resultArray[i], index);
         }
     }
     else{
@@ -27,13 +27,13 @@ function displayResults(filtersList, sportArray, resultArray, currentPage, maxPa
     pageNavButtons(currentPage, maxPage);   
 }
 
-function createNewItem(name, address, type, dist, index){
+function createNewItem(resultArray, index){
     var box = createResultBox(index);
     box.appendChild(createIcon());
-    box.appendChild(createDistBox(dist));
-    box.appendChild(createNameBox(name));
-    box.appendChild(createAddressBox(address));
-    box.appendChild(createSportTypeBox(type));
+    box.appendChild(createDistBox(resultArray.distance));
+    box.appendChild(createNameBox(resultArray.name));
+    box.appendChild(createAddressBox(resultArray.address, resultArray.city, resultArray.province));
+    box.appendChild(createSportTypeBox(resultArray.sport));
     box.appendChild(createMoreSportBox());
     var element=document.getElementById("results");
     element.appendChild(box);
@@ -85,9 +85,9 @@ function createNameBox(name){
     return content;
 }
 
-function createAddressBox(address){
+function createAddressBox(address, city, province){
     var content = createElement("div", "boxaddress");
-    var node=document.createTextNode(address);
+    var node=document.createTextNode(address+", "+city+" "+province);
     content.appendChild(node);
     return content;
 }
