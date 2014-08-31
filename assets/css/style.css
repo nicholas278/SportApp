@@ -433,7 +433,7 @@ body {
 	padding: 4px;
         display: table;
 }
-.dmbuttonbox {
+.dmbbox {
         height: 18px; 
         width: 124.5px;
         border: 1px solid #CDCAB9;
@@ -441,8 +441,14 @@ body {
         vertical-align: middle;
 	text-align: center;
 }
-.dmbuttonbox a {
-    text-decoration: none;
+.dmbbox a {
+        text-decoration: none;
+        color: blue;
+}
+#dmbboxcurrent a {
+        color: #CDCAB9;
+        pointer-events: none;
+        cursor: default;
 }
 
 /* FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
