@@ -138,16 +138,16 @@
                         <div id="images">
                         </div>
                         <div id="detailedmenu" class="color6">
-                            <div class="dmbuttonbox">
+                            <div class="dmbbox">
                                 <a href="#" id="backtoresultsbox">Back to Results</a>
                             </div>
-                            <div class="dmbuttonbox">
+                            <div class="dmbbox">
                                 <a href="#" id="detailedsportinfo">Detailed Info</a>
                             </div>
-                            <div class="dmbuttonbox">
+                            <div class="dmbbox">
                                 <a href="#" id="reviewbox">Reviews</a>
                             </div>
-                            <div class="dmbuttonbox">
+                            <div class="dmbbox">
                                 <a href="#" id="imagesbox">Images</a>
                             </div>
                         </div>
