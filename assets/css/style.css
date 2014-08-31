@@ -431,6 +431,18 @@ body {
 	margin-right: 4px;
 	margin-left: 2px;
 	padding: 4px;
+        display: table;
+}
+.dmbuttonbox {
+        height: 18px; 
+        width: 124.5px;
+        border: 1px solid #CDCAB9;
+        display: table-cell;
+        vertical-align: middle;
+	text-align: center;
+}
+.dmbuttonbox a {
+    text-decoration: none;
 }
 
 /* FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
@@ -457,6 +469,7 @@ body {
 	color: #A4A4A4;
 }
 
+/* OTHER PAGES OTHER PAGES OTHER PAGES OTHER PAGES OTHER PAGES OTHER PAGES OTHER PAGES */
 .otherpages {
 	width: 992px;
 	height: 572px;
