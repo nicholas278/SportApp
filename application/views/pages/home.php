@@ -83,6 +83,9 @@
                                                 insert types of sports available
                                         </div>
                                         <div class="moresportsbox">
+                                            <a href="#">
+                                                <img src="assets/img/moreinfobox.png">
+                                            </a>
                                         </div>
                                 </div>-->
                         </div>
