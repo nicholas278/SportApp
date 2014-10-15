@@ -87,7 +87,7 @@ function geoCallback(results, status) {
 }
 
 //Create markers on google map
-function createMarker(place) {
+function createMarker(name, place) {
   marker = new google.maps.Marker({
     map: map,
     position: place,
@@ -97,7 +97,7 @@ function createMarker(place) {
   });
   markers.push(marker);
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent("<strong>latitude</strong> = " + place.lat() + "<br\><strong>longitude</strong> = " + place.lng());
+    infowindow.setContent(name+"<br\>"+"<strong>latitude</strong> = " + place.lat() + "<br\><strong>longitude</strong> = " + place.lng());
     infowindow.open(map, this);
   });
   /*
