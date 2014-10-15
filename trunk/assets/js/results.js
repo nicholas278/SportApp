@@ -5,7 +5,7 @@ function displayResults(filtersList, sportArray, resultArray, currentPage, maxPa
     }
     if(reloadMap){
         for(var i in sportArray){
-            createMarker(new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
+            createMarker(sportArray[i].name, new google.maps.LatLng(sportArray[i].latitude, sportArray[i].longitude));
         }
     }
     if(resultArray.length !== 0){
@@ -101,8 +101,7 @@ function createSportTypeBox(sportType){
 
 function createMoreSportBox(){
     var content = createElement("div", "moresportsbox");
-    //var node=document.createTextNode();
-    //content.appendChild(node);
+    content.appendChild(createElement("img", "assets/img/moreinfobox.png"));
     return content;
 }
 
@@ -114,6 +113,9 @@ function createElement(tag, property){
         }
         else if(tag === "img"){
             element.src = property;
+        }
+        else{
+            element.id = property;
         }
     }
     return element;

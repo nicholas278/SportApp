@@ -115,36 +115,45 @@ function createListenerSort(){
 
 function createListenerResult(){
     $("#results").on("mouseover", ".resultbox", function(){
-        document.getElementById(this.id).style.backgroundColor = "#DFDED4";
         markers[this.id].setIcon(constants.PURPLEMARKER);
     });
     $("#results").on("mouseout", ".resultbox", function(){
-        document.getElementById(this.id).style.backgroundColor = "transparent";
         markers[this.id].setIcon(constants.REDMARKER);
     });
-    $("#results").on("click", ".resultbox", function(){
+    /*
+    $("#results").on("mouseover", ".moresportsbox", function(){
+        document.getElementById(this.id).style.backgroundColor = "#DFDED4";
+    });
+    $("#results").on("mouseout", ".moresportsbox", function(){
+        document.getElementById(this.id).style.backgroundColor = "transparent";
+    });
+    */
+    $("#results").on("click", ".moresportsbox", function(){
         document.getElementById("rightboxlvl21").style.display = "none";
         document.getElementById("rightboxlvl22").style.display = "block";
     });
-    $("#detailedmenu").on("click", "a", function(){
+    $("#backtoresultsbox").on("click", function(){
         document.getElementById("rightboxlvl21").style.display = "block";
         document.getElementById("rightboxlvl22").style.display = "none";
-        return false;
     });
 }
 
 function createListenerPageChange(){
     $("#firstpage").on("click", "a", function(){
         $('#results').load('index.php/ui/first_page'); 
+        return false;
     });
     $("#previouspage").on("click", "a", function(){
-        $('#results').load('index.php/ui/previous_page'); 
+        $('#results').load('index.php/ui/previous_page');
+        return false;
     });
     $("#nextpage").on("click", "a", function(){
         $('#results').load('index.php/ui/next_page'); 
+        return false;
     });
     $("#lastpage").on("click", "a", function(){
-        $('#results').load('index.php/ui/last_page'); 
+        $('#results').load('index.php/ui/last_page');
+        return false;
     });
 }
 
