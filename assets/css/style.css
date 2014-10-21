@@ -388,19 +388,101 @@ body {
 }
 .placeinfo {
 	width: 500px;
-	height: 144px;
+	height: 140px;
 	border: 1px #CDCAB9 solid;
 	margin-bottom: 4px;
 }
+#piplacenamedisplay {
+    width: 500px;
+    height: 40px;
+    display: table;
+}
+#piplacenamedisplay {
+    width: 500px;
+    height: 40px;
+    font-size: 1.2em;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+#piaddressdisplay {
+    width: 500px;
+    height: 20px;
+    float: left;
+    padding-left: 8px;
+}
+#picitydisplay {
+    width: 500px;
+    height: 20px;
+    float: left;
+    padding-left: 8px;
+}
+#piphonedisplay {
+    width: 500px;
+    height: 20px;
+    float: left;
+    padding-left: 8px;
+}
+#piwebsitedisplay {
+    width: 500px;
+    height: 20px;
+    float: left;
+    padding-left: 8px;
+}
+#piemaildisplay {
+    width: 500px;
+    height: 20px;
+    float: left;
+    padding-left: 8px;
+}
+
 .detailedinfo {
 	width: 500px;
-	height: 280px;
+	height: 284px;
 	border: 1px #CDCAB9 solid;
+        overflow: auto;
+        overflow-x: hidden;
 }
-.acsinfo {
+#disporttag {
+    width: 50px;
+    height: 20px;
+    float: left;
+    padding-left: 8px;
+    padding-top: 8px;
 }
-.courtinfo {
+#disportdisplay {
+    width: 442px;
+    height: 20px;
+    float: right;
+    padding-top: 8px;
 }
+#diosportbox {
+    width: 500px;
+    min-height: 20px;
+    float: left;
+}
+#diosportholder {
+    width: 50px;
+    height: 20px;
+    float: left;
+    padding-left: 8px;
+}
+#diosportdisplay {
+    width: 442px;
+    float: right;
+}
+#dihourbox {
+    width: 500px;
+    min-height: 20px;
+    float: left;
+    background-color: green;
+}
+#dihourtag {
+    width: 50px;
+    height: 100%;
+    background-color: blue;
+}
+
 #reviews {
 	display: none;
         height: 432px;
@@ -446,9 +528,12 @@ body {
         color: blue;
 }
 #dmbboxcurrent a {
-        color: #CDCAB9;
+        color: black;
         pointer-events: none;
         cursor: default;
+}
+.dmbbox a:hover {
+    text-decoration: underline;
 }
 
 /* FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
