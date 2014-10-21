@@ -117,23 +117,46 @@
                     <div id="rightboxlvl22">
                  	<div id="detailedplace" class="color6">
 			<div class="placeinfo">
-				<ul>    
-					<li>Place Name</li>
-					<li>Street</li>
-					<li>City, Province PostalCode</li>
-					<li>Country</li>
-				</ul>
+                            <div id="piplacenamedisplay">
+                                <div id="piplacenamedisplaylvl21">
+                                [Insert Place Name]
+                                </div>
+                            </div>
+                            <div id="piaddressdisplay">
+                                [Insert Address Here]
+                            </div>
+                            <div id="picitydisplay">
+                                [Insert City, Postal Code Here]
+                            </div>
+                            <div id="piphonedisplay">
+                                [Insert Phone #]
+                            </div>
+                            <div id="piwebsitedisplay">
+                                [Insert Website]
+                            </div>
+                            <div id="piemaildisplay">
+                                [Insert Email]
+                            </div>
 			</div>
 			<div class="detailedinfo">
-				<div class="acsinfo">
-					<ul>    
-						<li>Features: Sport</li>
-						<li>Free/Paid</li>
-						<li>indoor/outdoor</li>
-					</ul>
-				</div>
-				<div class="courtinfo">
-				</div>
+                            <div id="disporttag">
+                                Sports:
+                            </div>
+                            <div id="disportdisplay">
+                                [Insert Current Sport]
+                            </div>
+                            <div id="diosportbox">
+                                <div id="diosportholder">
+                                </div>
+                                <div id="diosportdisplay">
+                                    also here: [Insert Other Sports as Links; if there are more sports]
+                                </div>
+                            </div>
+                            <div id="dihourbox">
+                                <div id="dihourtag">
+                                    Hours:
+                                </div>
+                            </div>
 			</div>
                         </div>
                         <div id="reviews">
@@ -148,10 +171,10 @@
                                 <a href="#" id="detailedsportinfo">Detailed Info</a>
                             </div>
                             <div class="dmbbox">
-                                <a href="#" id="reviewbox">Reviews</a>
+                                <!--<a href="#" id="reviewbox">-->Reviews<!--</a>-->
                             </div>
                             <div class="dmbbox">
-                                <a href="#" id="imagesbox">Images</a>
+                                <!--<a href="#" id="imagesbox">-->Images<!--</a>-->
                             </div>
                         </div>
                     </div>
