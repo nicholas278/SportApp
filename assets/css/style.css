@@ -473,14 +473,41 @@ body {
 }
 #dihourbox {
     width: 500px;
-    min-height: 20px;
+    min-height: 40px;
     float: left;
-    background-color: green;
+    padding-top: 4px;
 }
 #dihourtag {
     width: 50px;
     height: 100%;
-    background-color: blue;
+    padding-left: 8px;
+    float: left;
+}
+#dihourdisplay {
+    width: 442px;
+    float: right;
+}
+.dihourdays {
+    width: 63px;
+    min-height: 20px;
+    float: left;
+    text-align: center;
+}
+#dicostbox {
+    width: 500px;
+    min-height: 20px;
+    float: left;
+    padding-top: 4px;
+}
+#dicosttag {
+    width: 50px;
+    height: 100%;
+    padding-left: 8px;
+    float: left;
+}
+#dicostdisplay {
+    width: 442px;
+    float: right;
 }
 
 #reviews {
