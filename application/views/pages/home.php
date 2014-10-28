@@ -156,6 +156,30 @@
                                 <div id="dihourtag">
                                     Hours:
                                 </div>
+                                <div id="dihourdisplay">
+                                    <div class="dihourdays">Mon</div>
+                                    <div class="dihourdays">Tues</div>
+                                    <div class="dihourdays">Wed</div>
+                                    <div class="dihourdays">Thurs</div>
+                                    <div class="dihourdays">Fri</div>
+                                    <div class="dihourdays">Sat</div>
+                                    <div class="dihourdays">Sun</div>
+                                    <div class="dihourdays" id="MonH">[Insert]</div>
+                                    <div class="dihourdays" id="TuesH">[Insert]</div>
+                                    <div class="dihourdays" id="WedH">[Insert]</div>
+                                    <div class="dihourdays" id="ThurH">[Insert]</div>
+                                    <div class="dihourdays" id="FriH">[Insert]</div>
+                                    <div class="dihourdays" id="SatH">[Insert]</div>
+                                    <div class="dihourdays" id="SunH">[Insert]</div>
+                                </div>
+                            </div>
+                            <div id="dicostbox">
+                                <div id="dicosttag">
+                                    Cost:
+                                </div>
+                                <div id="dicostdisplay">
+                                    testing 1 2 3
+                                </div>
                             </div>
 			</div>
                         </div>
