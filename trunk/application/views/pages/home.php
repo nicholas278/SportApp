@@ -116,76 +116,84 @@
                     </div>
                     <div id="rightboxlvl22">
                  	<div id="detailedplace" class="color6">
-			<div class="placeinfo">
-                            <div id="piplacenamedisplay">
-                                <div id="piplacenamedisplaylvl21">
-                                [Insert Place Name]
+                            <div class="placeinfo">
+                                <div id="piplacenamedisplay">
+                                    <div id="piplacenamedisplaylvl21">
+                                    [Insert Place Name]
+                                    </div>
+                                </div>
+                                <div id="piaddressdisplay">
+                                    [Insert Address Here]
+                                </div>
+                                <div id="picitydisplay">
+                                    [Insert City, Postal Code Here]
+                                </div>
+                                <div id="piphonedisplay">
+                                    [Insert Phone #]
+                                </div>
+                                <div id="piwebsitedisplay">
+                                    [Insert Website]
+                                </div>
+                                <div id="piemaildisplay">
+                                    [Insert Email]
                                 </div>
                             </div>
-                            <div id="piaddressdisplay">
-                                [Insert Address Here]
-                            </div>
-                            <div id="picitydisplay">
-                                [Insert City, Postal Code Here]
-                            </div>
-                            <div id="piphonedisplay">
-                                [Insert Phone #]
-                            </div>
-                            <div id="piwebsitedisplay">
-                                [Insert Website]
-                            </div>
-                            <div id="piemaildisplay">
-                                [Insert Email]
-                            </div>
-			</div>
-			<div class="detailedinfo">
-                            <div id="disporttag">
-                                Sports:
-                            </div>
-                            <div id="disportdisplay">
-                                [Insert Current Sport]
-                            </div>
-                            <div id="diosportbox">
-                                <div id="diosportholder">
+                            <div class="detailedinfo">
+                                <div id="disporttag">
+                                    Sports:
                                 </div>
-                                <div id="diosportdisplay">
-                                    also here: [Insert Other Sports as Links; if there are more sports]
+                                <div id="disportdisplay">
+                                    [Insert Current Sport]
                                 </div>
-                            </div>
-                            <div id="dihourbox">
-                                <div id="dihourtag">
-                                    Hours:
+                                <div id="diosportbox">
+                                    <div id="diosportholder">
+                                    </div>
+                                    <div id="diosportdisplay">
+                                        also here: [Insert Other Sports as Links; if there are more sports]
+                                    </div>
                                 </div>
-                                <div id="dihourdisplay">
-                                    <div class="dihourdays">Mon</div>
-                                    <div class="dihourdays">Tues</div>
-                                    <div class="dihourdays">Wed</div>
-                                    <div class="dihourdays">Thurs</div>
-                                    <div class="dihourdays">Fri</div>
-                                    <div class="dihourdays">Sat</div>
-                                    <div class="dihourdays">Sun</div>
-                                    <div class="dihourdays" id="MonH">[Insert]</div>
-                                    <div class="dihourdays" id="TuesH">[Insert]</div>
-                                    <div class="dihourdays" id="WedH">[Insert]</div>
-                                    <div class="dihourdays" id="ThurH">[Insert]</div>
-                                    <div class="dihourdays" id="FriH">[Insert]</div>
-                                    <div class="dihourdays" id="SatH">[Insert]</div>
-                                    <div class="dihourdays" id="SunH">[Insert]</div>
+                                <div id="dihourbox">
+                                    <div id="dihourtag">
+                                        Hours:
+                                    </div>
+                                    <div id="dihourdisplay">
+                                        <div class="dihourdays">Mon</div>
+                                        <div class="dihourdays">Tues</div>
+                                        <div class="dihourdays">Wed</div>
+                                        <div class="dihourdays">Thurs</div>
+                                        <div class="dihourdays">Fri</div>
+                                        <div class="dihourdays">Sat</div>
+                                        <div class="dihourdays">Sun</div>
+                                        <div class="dihourdays" id="MonH">[Insert]</div>
+                                        <div class="dihourdays" id="TuesH">[Insert]</div>
+                                        <div class="dihourdays" id="WedH">[Insert]</div>
+                                        <div class="dihourdays" id="ThurH">[Insert]</div>
+                                        <div class="dihourdays" id="FriH">[Insert]</div>
+                                        <div class="dihourdays" id="SatH">[Insert]</div>
+                                        <div class="dihourdays" id="SunH">[Insert]</div>
+                                    </div>
+                                </div>
+                                <div id="dicostbox">
+                                    <div id="dicosttag">
+                                        Cost:
+                                    </div>
+                                    <div id="dicostdisplay">
+                                        testing 1 2 3
+                                    </div>
                                 </div>
                             </div>
-                            <div id="dicostbox">
-                                <div id="dicosttag">
-                                    Cost:
-                                </div>
-                                <div id="dicostdisplay">
-                                    testing 1 2 3
-                                </div>
-                            </div>
-			</div>
                         </div>
-                        <div id="reviews">
+                        <div id="reviews" class="color6">
+                            <div class="userreview">
+                                <div class ="userreviewtext">
+                                    test  1 2 3 (input data here)
+                                </div>
+                            </div>
                         </div>
-                        <div id="images">
+                        <div id="images" class="color6">
+                            <div class="userimage">
+                                test 7 8 9 (input image here)
+                            </div>
                         </div>
                         <div id="detailedmenu" class="color6">
                             <div class="dmbbox">
@@ -195,10 +203,10 @@
                                 <a href="#" id="detailedsportinfo">Detailed Info</a>
                             </div>
                             <div class="dmbbox">
-                                <!--<a href="#" id="reviewbox">-->Reviews<!--</a>-->
+                                <a href="#" id="reviewbox">Reviews</a>
                             </div>
                             <div class="dmbbox">
-                                <!--<a href="#" id="imagesbox">-->Images<!--</a>-->
+                                <a href="#" id="imagesbox">Images</a>
                             </div>
                         </div>
                     </div>
